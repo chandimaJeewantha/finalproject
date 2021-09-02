@@ -10,7 +10,7 @@ namespace synchr2
 {
     public partial class login : System.Web.UI.Page
     {
-        string connectionString = "Data Source=DESKTOP-M9R4O4O;Initial Catalog=hrmsdatabase;Integrated Security=True";
+        string connectionString = "Data Source=LAPTOP-BSTFBS4U;Initial Catalog=hrmsDB;Integrated Security=True";
         protected void Page_Load(object sender, EventArgs e)
         {
 
