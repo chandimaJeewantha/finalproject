@@ -15,6 +15,8 @@
     <script src="boostrap/js/bootstrap.min.js"></script>
     <link href="css/supervisorcss.css" rel="stylesheet" />
 
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -26,12 +28,11 @@
         <ul>
             <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
             <li><a href="#"><i class="fas fa-umbrella"></i>Daily Production</a></li>
-            <li><a href="#"><i class="fa-solid fa-screwdriver-wrench""></i>Training Needs</a></li>
-            <li><a href="#"><i class="fas fa-project-diagram"></i>Enter Leaves</a></li>
-            <li><a href="#"><i class="fas fa-blog"></i>Blogs</a></li>
-            <li><a href="#"><i class="fas fa-address-book"></i>Contact</a></li>
-            <li><a href="#"><i class="fas fa-map-pin"></i>Map</a></li>
-            
+            <li><a href="#"><i class="fa-solid fa-child"></i>Training Needs</a></li>
+            <li><a href="#"><i class="fa-solid fa-screwdriver-wrench"></i>Enter Leaves</a></li>
+            <li><a href="#"><i class="fas fa-blog"></i>Production Details</a></li>
+            <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>Exit</a></li>
+          
             
         </ul> 
         <div class="social_media">
@@ -42,11 +43,9 @@
     </div>
     <div class="main_content">
         <div class="header">Welcome!! Have a nice day.</div>  
-        <div class="info">
-          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit natus officiis totam blanditiis at eum nemo, !</div>
-          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet </div>
-          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit natus !</div>
-      </div>
+       
+
+
     </div>
 </div>
     </form>
