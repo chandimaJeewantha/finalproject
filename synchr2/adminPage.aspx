@@ -64,10 +64,10 @@
                                                    <label style="color:#2c3e50"><b>Answer</b></label>&nbsp<asp:TextBox style="height:30px;" CssClass="form-control" ID="txtAnswer" runat="server"></asp:TextBox>
                                                   <br />
                                                     <center>
-                                                        <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+                                                        <div class="btn-group btn-group-lg" role="group" aria-label="Basic example" style="margin-left:-200px">
                                                          <asp:Button ID="btnAdd" runat="server" Text="Add" class="btn btn-secondary" OnClick="btnAdd_Click"  />
                                                             <asp:Button ID="btnUpdate" runat="server" Text="Update" class="btn btn-secondary" OnClick="btnUpdate_Click" />
-                                                             <asp:Button ID="btnClear" runat="server" Text="Clear" class="btn btn-secondary" OnClick="btnClear_Click" />
+                                                             <asp:Button ID="btnClearr" runat="server" Text="Clear" class="btn btn-secondary" OnClick="btnClearr_Click" />
                                                         </div>
                                                     </center>
                                                         

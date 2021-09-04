@@ -11,7 +11,7 @@ namespace synchr2
 {
     public partial class adminPage : System.Web.UI.Page
     {
-        string connectionstring = "Data Source=localhost;Initial Catalog=HrmsDatabase;Integrated Security=True";
+        string connectionstring = "Data Source=LAPTOP-BSTFBS4U;Initial Catalog=HrmsDatabase;Integrated Security=True";
         protected void Page_Load(object sender, EventArgs e)
         {
             GridViewHrDepartment.DataBind();
@@ -346,7 +346,7 @@ namespace synchr2
 
         }
 
-        protected void btnClear_Click(object sender, EventArgs e)
+        protected void btnClearr_Click(object sender, EventArgs e)
         {
             txtEmployeeId.Text = "";
             txtAnswer.Text = "";
