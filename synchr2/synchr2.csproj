@@ -73,6 +73,7 @@
     <Content Include="boostrap\js\jquery-3.3.1.slim.min.js" />
     <Content Include="boostrap\js\popper.min.js" />
     <Content Include="css\CustmCss.css" />
+    <Content Include="css\supervisorcss.css" />
     <Content Include="fontawesome\attribution.js" />
     <Content Include="fontawesome\css\all.css" />
     <Content Include="fontawesome\css\all.min.css" />
@@ -1721,6 +1722,9 @@
     <Content Include="fontawesome\webfonts\fa-regular-400.svg" />
     <Content Include="fontawesome\webfonts\fa-solid-900.svg" />
     <Content Include="hrDepartment.aspx" />
+    <Content Include="imgs\MicrosoftTeams-image %2811%29.png" />
+    <Content Include="imgs\MicrosoftTeams-image %287%29.png" />
+    <Content Include="imgs\MicrosoftTeams-image %289%29.png" />
     <Content Include="imgs\syncHR2.png" />
     <Content Include="login.aspx" />
     <Content Include="productionManager.aspx" />
