@@ -10,7 +10,7 @@ namespace synchr2
 {
     public partial class login : System.Web.UI.Page
     {
-        string connectionString = "Data Source=LAPTOP-BSTFBS4U;Initial Catalog=hrmsDB;Integrated Security=True";
+        string connectionString = "Data Source=localhost;Initial Catalog=HrmsDatabase;Integrated Security=True";
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -46,7 +46,9 @@ namespace synchr2
                     }
                     else
                     {
+                        Response.Write("<script>alert('okkk')</script>");
                         try
+                            
                         {
                           //  string connectionString = "Data Source=DESKTOP-M9R4O4O;Initial Catalog=hrmsdatabase;Integrated Security=True";
                             SqlConnection con = new SqlConnection(connectionString);
@@ -54,16 +56,19 @@ namespace synchr2
                             SqlCommand cmd = new SqlCommand(quary,con);
                             con.Open();
                             SqlDataReader rdr = cmd.ExecuteReader();
+                            
                             //con.Close();
 
-                            if(rdr.HasRows)
+                            if (rdr.HasRows)
                             {
                                 while(rdr.Read())
                                 {
                                     string username = txtUserName.Text;
                                     string password = txtPassword.Text;
                                     
-                                    if(username == rdr.GetValue(0).ToString() && password == rdr.GetValue(1).ToString())
+
+
+                                    if (username == rdr.GetValue(1).ToString() && password == rdr.GetValue(2).ToString())
                                     {
                                         Response.Redirect("hrDepartment.aspx");
                                     }
@@ -111,7 +116,7 @@ namespace synchr2
                                     string username = txtUserName.Text;
                                     string password = txtPassword.Text;
 
-                                    if (username == rdr.GetValue(0).ToString() && password == rdr.GetValue(1).ToString())
+                                    if (username == rdr.GetValue(1).ToString() && password == rdr.GetValue(2).ToString())
                                     {
                                         Response.Redirect("supervisor.aspx");
                                     }
@@ -158,7 +163,7 @@ namespace synchr2
                                     string username = txtUserName.Text;
                                     string password = txtPassword.Text;
 
-                                    if (username == rdr.GetValue(0).ToString() && password == rdr.GetValue(1).ToString())
+                                    if (username == rdr.GetValue(1).ToString() && password == rdr.GetValue(2).ToString())
                                     {
                                         Response.Redirect("productionManager.aspx");
                                     }

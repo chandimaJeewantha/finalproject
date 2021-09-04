@@ -36,12 +36,12 @@
                                            <div class="card-body">
                                              <h3 class="card-title" id="cardtitle" style="color:black;text-align:center;font-family:Segoe UI;color:#303952" >Add Operator</h3>
                                                <center>
-                                                  <asp:DropDownList ID="dplDepartment" runat="server">
-                                                  <asp:ListItem Value="">Please Select</asp:ListItem>  
-                                                  <asp:ListItem Value="admin">Admin</asp:ListItem>  
-                                                  <asp:ListItem Value="HrDepartment">HR Department </asp:ListItem>  
-                                                  <asp:ListItem Value="supervisor">Supervisor</asp:ListItem>  
-                                                  <asp:ListItem Value="ProductionManager">Production Manager</asp:ListItem>  
+                                                  <asp:DropDownList ID="selectDepartment" runat="server">
+                                                  <asp:ListItem Value="0">Please Select</asp:ListItem>  
+                                                    
+                                                  <asp:ListItem Value="1">HR Department </asp:ListItem>  
+                                                  <asp:ListItem Value="2">Supervisor</asp:ListItem>  
+                                                  <asp:ListItem Value="3">Production Manager</asp:ListItem>  
                                                  </asp:DropDownList>
                                                </center>
                                                <br />
@@ -65,9 +65,9 @@
                                                   <br />
                                                     <center>
                                                         <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
-                                                        <button type="button" class="btn btn-secondary">Add</button>
-                                                         <button type="button" class="btn btn-secondary">Update</button>
-                                                             <button type="button" class="btn btn-secondary">Clear</button>
+                                                         <asp:Button ID="btnAdd" runat="server" Text="Add" class="btn btn-secondary" OnClick="btnAdd_Click"  />
+                                                            <asp:Button ID="btnUpdate" runat="server" Text="Update" class="btn btn-secondary" OnClick="btnUpdate_Click" />
+                                                             <asp:Button ID="btnClear" runat="server" Text="Clear" class="btn btn-secondary" OnClick="btnClear_Click" />
                                                         </div>
                                                     </center>
                                                         
@@ -92,6 +92,17 @@
                                            <div class="card" style="width: 18rem; margin-left:-16%; background-color:#50DBB4; margin-top:20px">
                                             <div class="card-body">
                                                 <h5 class="card-title" style="color:black">Delete Operator</h5>
+                                                
+                                                 <left>
+                                                  <asp:DropDownList ID="deleteDropdown" runat="server">
+                                                  <asp:ListItem Value="0">Please Select</asp:ListItem>  
+                                                    
+                                                  <asp:ListItem Value="1">HR Department </asp:ListItem>  
+                                                  <asp:ListItem Value="2">Supervisor</asp:ListItem>  
+                                                  <asp:ListItem Value="3">Production Manager</asp:ListItem>  
+                                                 </asp:DropDownList>
+                                               </left>
+                                                <br />
                                                 <br />
                                                 <table>
                                                     <tr>
@@ -116,7 +127,8 @@
                                                 </table>
                                                 <br />
                                                 <center>
-                                                <button style="width:130px; margin-top:10px; width:150px" type="button" class="btn btn-danger">Delete</button>
+                                                 <asp:Button ID="btnDelete" runat="server" Text="Delete" style="width:130px; margin-top:10px; width:150px" type="button" class="btn btn-danger" OnClick="btnDelete_Click" />
+                                              
                                                 </center>
                                          </div>
                                     </div>
@@ -143,7 +155,7 @@
                                  </div>
 
                                 <div class="row" style="width:150px">
-                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:hrmsDBConnectionString %>" SelectCommand="SELECT * FROM [hrDepartmentTbl]"></asp:SqlDataSource>
+                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabaseConnectionString %>" SelectCommand="SELECT * FROM [hrDepartmentTbl]"></asp:SqlDataSource>
                                     <div class="col">
                                         <asp:GridView ID="GridViewHrDepartment" style="margin-left:-90px" Width="150px" class="table table-striped table-bordered" runat="server" AutoGenerateColumns="False" DataKeyNames="employeeid" DataSourceID="SqlDataSource1">
                                             <Columns>
@@ -171,7 +183,7 @@
                                </div>
 
                                 <div class="row" style="width:150px"> 
-                                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:hrmsDBConnectionString %>" SelectCommand="SELECT * FROM [supervisorTbl]"></asp:SqlDataSource>
+                                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabaseConnectionString2 %>" SelectCommand="SELECT * FROM [supervisorTbl]"></asp:SqlDataSource>
                                     <div class="col">
                                         <asp:GridView ID="GridViewSupervisor" style="margin-left:-90px" Width="150px" class="table table-striped table-bordered" runat="server" AutoGenerateColumns="False" DataKeyNames="employeeid" DataSourceID="SqlDataSource2">
                                             <Columns>
@@ -200,7 +212,7 @@
                                </div>
 
                                 <div class="row" style="width:150px">
-                                    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:hrmsDBConnectionString %>" SelectCommand="SELECT * FROM [productionManagerTbl]"></asp:SqlDataSource>
+                                    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabaseConnectionString2 %>" SelectCommand="SELECT * FROM [productionManagerTbl]"></asp:SqlDataSource>
                                     <div class="col">
                                         <asp:GridView ID="GridViewProductionMan" style="margin-left:-90px" Width="150px" class="table table-striped table-bordered" runat="server" AutoGenerateColumns="False" DataKeyNames="employeeid" DataSourceID="SqlDataSource3">
                                             <Columns>
@@ -213,6 +225,14 @@
                                         </asp:GridView>
                                     </div>
                                 </div>
+                                <div style="align-content:center">
+                                    <center>
+                                      
+                                         <asp:Button ID="btnRefresh" runat="server" Text="Refresh" class="btn btn-secondary" OnClick="btnRefresh_Click" />
+
+                                    </center>
+                                   
+                                </div>
 
                             </div>
                         </div>
@@ -223,12 +243,13 @@
 
 
             <%--footer--%>
-            <footer style="width:1349.3px; margin-left:-119.5px">
-                <div id="footer1" class="container-fluid" style="width:100%">
+            <footer style="width:1550px;margin-left:-199px">
+                <div id="footer1" class="container-fluid">
                     <div align="center">
                         <h5>&copy All right #####.<a class="footerlinks" href="#" target="_blank">E Rats</a></h5>
                     </div>
-                   </div>
+                
+                </div>
            </footer>
             
         </div>

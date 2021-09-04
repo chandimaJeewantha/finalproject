@@ -90,6 +90,9 @@
            <!-- Footer -->
             <footer>
                 <div id="footer1" class="container-fluid">
+                    <div align="center">
+                        <h5>&copy All right #####.<a class="footerlinks" href="#" target="_blank">E Rats</a></h5>
+                    </div>
                 
                 </div>
            </footer>
