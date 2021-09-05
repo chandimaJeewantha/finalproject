@@ -42,7 +42,7 @@
       </div>
     </div>
     <div class="main_content">
-        <div class="header">Welcome!! Have a nice day.</div>
+        
         
         <asp:MultiView ID="MultiViewSupervisor" runat="server" ActiveViewIndex="0">
 
@@ -55,7 +55,24 @@
 
 
             <asp:View ID="ViewProduction" runat="server">
-                
+                <div class="container">
+                    <div class="row justify-content-start">
+                    <div class="col-4">
+                          <div class="card" style="width: 22rem;background-color:#50DBB4; margin-left:-30%; margin-top:20px; margin-bottom:20px">
+                                           <div class="card-body">
+                                             <h3 class="card-title" id="cardtitle" style="color:black;text-align:center;font-family:Segoe UI;color:#303952" >Daily Production</h3>
+                                               
+                                                
+                                             
+                                             
+                                          </div>
+                                        </div>
+                    </div><div class="col-4">
+                          One of two columns
+                        </div>
+
+                   </div>
+                   </div>                
 
             </asp:View>
 
