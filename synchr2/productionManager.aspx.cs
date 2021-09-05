@@ -11,7 +11,27 @@ namespace synchr2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            MultiViewProduction.ActiveViewIndex = 0;
+        }
 
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            MultiViewProduction.ActiveViewIndex = 0;
+        }
+
+        protected void btnStatus_Click(object sender, EventArgs e)
+        {
+            MultiViewProduction.ActiveViewIndex = 1;
+        }
+
+        protected void btnExpenses_Click(object sender, EventArgs e)
+        {
+            MultiViewProduction.ActiveViewIndex = 2;
+        }
+
+        protected void btnExit_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/login.aspx");
         }
     }
 }

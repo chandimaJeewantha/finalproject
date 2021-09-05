@@ -26,11 +26,12 @@
             <img src="imgs/MicrosoftTeams-image%20(11).png" />
         
         <ul>
-            <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
-            <li><a href="#"><i class="fas fa-umbrella"></i>Daily view ProductionEfficiency and status of each unit</a></li>
-            <li><a href="#"><i class="fas fa-child"></i>Daily view of Expenses in each</a></li>
-            <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>Exit</a></li>
-          
+            <li><asp:LinkButton ID="btnHome" runat="server" class="fas fa-home" OnClick="btnHome_Click"> Home</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnStatus" runat="server" class="fas fa-umbrella" OnClick="btnStatus_Click"> Daily view Production Efficiency and status of each unit</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnExpenses" runat="server" class="fas fa-child" OnClick="btnExpenses_Click"> Daily view of Expenses in each</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnExit" runat="server" class="fas fa-hand-point-left" OnClick="btnExit_Click"> Exit</asp:LinkButton></li>
+
+       
             
         </ul> 
         <div class="social_media">
@@ -41,6 +42,28 @@
     </div>
     <div class="main_content">
         <div class="header">Welcome!! Have a nice day.</div>  
+
+        <asp:MultiView ID="MultiViewProduction" runat="server" ActiveViewIndex="0">
+
+
+
+            <asp:View ID="ViewHome" runat="server">
+
+            </asp:View>
+
+
+            <asp:View ID="ViewStatus" runat="server">
+
+            </asp:View>
+
+
+            <asp:View ID="ViewExpenses" runat="server">
+
+            </asp:View>
+
+
+
+        </asp:MultiView>
         
 
 

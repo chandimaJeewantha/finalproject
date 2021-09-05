@@ -15,15 +15,16 @@
             <img src="imgs/MicrosoftTeams-image%20(11).png" />
         
         <ul>
-            <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
-            <li><a href="#"><i class="fas fa-umbrella"></i>Add New Employee</a></li>
-            <li><a href="#"><i class="fa-solid fa-child"></i>Active/Inactive Profiles</a></li>
-            <li><a href="#"><i class="fa-solid fa-screwdriver-wrench"></i>Generate labour turn over reports</a></li>
-            <li><a href="#"><i class="fas fa-blog"></i>Monthly Recruitment report</a></li>
-             <li><a href="#"><i class="fas fa-blog"></i>Payroll</a></li>
-             <li><a href="#"><i class="fas fa-blog"></i>Performance Evaluation of outside workers</a></li>
-            <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>Exit</a></li>
-          
+            <li><asp:LinkButton ID="btnHome" runat="server" class="fas fa-home" OnClick="btnHome_Click"> Home</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnAddemp" runat="server" class="fas fa-umbrella" OnClick="btnAddemp_Click"> Add New Employee</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnProfiles" runat="server" class="fas fa-child" OnClick="btnProfiles_Click"> Active/Inactive Profiles</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnLabourrep" runat="server" class="fas fa-mug-hot" OnClick="btnLabourrep_Click"> Generate labour turn over reports</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnMonthlyrep" runat="server" class="fas fa-address-card" OnClick="btnMonthlyrep_Click"> Monthly Recruitment report</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnPayroll" runat="server" class="fas fa-hand-point-left" OnClick="btnPayroll_Click"> Payroll</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnOutsideworkers" runat="server" class="fas fa-hand-point-left" OnClick="btnOutsideworkers_Click"> Performance Evaluation of outside workers</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnExit" runat="server" class="fas fa-hand-point-left" OnClick="btnExit_Click"> Exit</asp:LinkButton></li>
+
+
             
         </ul> 
         <div class="social_media">
@@ -34,6 +35,53 @@
     </div>
     <div class="main_content">
         <div class="header">Welcome!! Have a nice day.</div>  
+
+        <asp:MultiView ID="MultiViewSupervisor" runat="server">
+
+
+            <asp:View ID="ViewHome" runat="server">
+
+              
+            </asp:View>
+
+
+
+            <asp:View ID="ViewAddemp" runat="server">
+           
+
+            </asp:View>
+
+
+
+            <asp:View ID="ViewProfiles" runat="server">
+
+            </asp:View>
+
+
+            
+            <asp:View ID="ViewLabourrep" runat="server">
+
+
+            </asp:View>
+
+
+
+            <asp:View ID="ViewMonthlyrep" runat="server">
+
+            </asp:View>
+
+
+            <asp:View ID="ViewPayroll" runat="server">
+
+            </asp:View>
+
+
+            <asp:View ID="ViewOutsideworkers" runat="server">
+
+            </asp:View>
+
+
+        </asp:MultiView>
         
 
 

@@ -26,17 +26,13 @@
             <img src="imgs/MicrosoftTeams-image%20(11).png" />
         
         <ul>
-            <li>
-                <asp:LinkButton ID="btnHome" runat="server" class="fas fa-home"> Home</asp:LinkButton></li>
-            
-            <li><a href="#"><i class="fas fa-umbrella"></i>Daily Production</a></li>
-            <li><a href="#"><i class="fas fa-child"></i>Training Needs</a></li>
-            <li><a href="#"><i class="fas fa-mug-hot"></i>Enter Leaves</a></li>
-            <li><a href="#"><i class="fas fa-address-card"></i>Employee Profiles</a></li>
-            <li><a href="#"><i class="fas fa-hand-point-left"></i>Exit</a></li>
-            
-            
-          
+            <li><asp:LinkButton ID="btnHome" runat="server" class="fas fa-home" OnClick="btnHome_Click"> Home</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnProduction" runat="server" class="fas fa-umbrella" OnClick="btnProduction_Click"> Daily Production</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnTrain" runat="server" class="fas fa-child" OnClick="btnTrain_Click"> Training Needs</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnLeaves" runat="server" class="fas fa-mug-hot" OnClick="btnLeaves_Click"> Enter Leaves</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnEmployee" runat="server" class="fas fa-address-card" OnClick="btnEmployee_Click"> Employee Profiles</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnExit" runat="server" class="fas fa-hand-point-left" OnClick="btnExit_Click"> Exit</asp:LinkButton></li>
+                     
             
         </ul> 
         <div class="social_media">
@@ -48,16 +44,39 @@
     <div class="main_content">
         <div class="header">Welcome!! Have a nice day.</div>
         
-        <asp:MultiView ID="MultiViewSupervisor" runat="server">
+        <asp:MultiView ID="MultiViewSupervisor" runat="server" ActiveViewIndex="0">
+
+
             <asp:View ID="ViewHome" runat="server">
 
-                <h1>tharindu</h1>
+                
             </asp:View>
+
+
+
             <asp:View ID="ViewProduction" runat="server">
-                <h1>dushyantha</h1>
+                
 
             </asp:View>
+
+
+
+            <asp:View ID="ViewTraining" runat="server">
+                <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+            </asp:View>
+
+
             
+            <asp:View ID="ViewLeaves" runat="server">
+
+
+            </asp:View>
+
+
+
+            <asp:View ID="ViewEmployee" runat="server">
+
+            </asp:View>
 
 
         </asp:MultiView>      
