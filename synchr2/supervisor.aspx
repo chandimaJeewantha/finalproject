@@ -26,12 +26,16 @@
             <img src="imgs/MicrosoftTeams-image%20(11).png" />
         
         <ul>
-            <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
+            <li>
+                <asp:LinkButton ID="btnHome" runat="server" class="fas fa-home"> Home</asp:LinkButton></li>
+            
             <li><a href="#"><i class="fas fa-umbrella"></i>Daily Production</a></li>
-            <li><a href="#"><i class="fa-solid fa-child"></i>Training Needs</a></li>
-            <li><a href="#"><i class="fa-solid fa-screwdriver-wrench"></i>Enter Leaves</a></li>
-            <li><a href="#"><i class="fas fa-blog"></i>Production Details</a></li>
-            <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>Exit</a></li>
+            <li><a href="#"><i class="fas fa-child"></i>Training Needs</a></li>
+            <li><a href="#"><i class="fas fa-mug-hot"></i>Enter Leaves</a></li>
+            <li><a href="#"><i class="fas fa-address-card"></i>Employee Profiles</a></li>
+            <li><a href="#"><i class="fas fa-hand-point-left"></i>Exit</a></li>
+            
+            
           
             
         </ul> 
@@ -42,8 +46,21 @@
       </div>
     </div>
     <div class="main_content">
-        <div class="header">Welcome!! Have a nice day.</div>  
-       
+        <div class="header">Welcome!! Have a nice day.</div>
+        
+        <asp:MultiView ID="MultiViewSupervisor" runat="server">
+            <asp:View ID="ViewHome" runat="server">
+
+                <h1>tharindu</h1>
+            </asp:View>
+            <asp:View ID="ViewProduction" runat="server">
+                <h1>dushyantha</h1>
+
+            </asp:View>
+            
+
+
+        </asp:MultiView>      
 
 
     </div>

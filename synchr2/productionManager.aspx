@@ -6,6 +6,17 @@
 <head runat="server">
     <title></title>
     <link href="css/supervisorcss.css" rel="stylesheet" />
+    <link href="boostrap/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <link href="fontawesome/css/all.css" rel="stylesheet" />
+    <link href="table/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+    <script src="boostrap/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="boostrap/js/popper.min.js"></script>
+    <script src="boostrap/js/bootstrap.min.js"></script>
+    <link href="css/supervisorcss.css" rel="stylesheet" />
+
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -17,7 +28,7 @@
         <ul>
             <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
             <li><a href="#"><i class="fas fa-umbrella"></i>Daily view ProductionEfficiency and status of each unit</a></li>
-            <li><a href="#"><i class="fa-solid fa-child"></i>Daily view of Expenses in each</a></li>
+            <li><a href="#"><i class="fas fa-child"></i>Daily view of Expenses in each</a></li>
             <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>Exit</a></li>
           
             
