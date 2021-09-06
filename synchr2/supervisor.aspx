@@ -17,6 +17,57 @@
 
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
+
+
+
+       <!-- Bootstrap -->
+    <script type="text/javascript" src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js'></script>
+    <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js'></script>
+    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css'
+    media="screen" />
+    <!-- Bootstrap -->
+    <!-- Bootstrap DatePicker -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css"
+    type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"
+    type="text/javascript"></script>
+    <!-- Bootstrap DatePicker -->
+    <script type="text/javascript">
+        $(function () {
+            $('[id*=txtDate]').datepicker({
+                changeMonth: true,
+                changeYear: true,
+                format: "dd/mm/yyyy",
+                language: "tr"
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('[id*=txtDate2]').datepicker({
+                changeMonth: true,
+                changeYear: true,
+                format: "dd/mm/yyyy",
+                language: "tr"
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('[id*=trainDate]').datepicker({
+                changeMonth: true,
+                changeYear: true,
+                format: "dd/mm/yyyy",
+                language: "tr"
+            });
+        });
+    </script>
+
+
+
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -56,31 +107,191 @@
 
             <asp:View ID="ViewProduction" runat="server">
                 <div class="container">
-                    <div class="row justify-content-start">
-                    <div class="col-4">
-                          <div class="card" style="width: 22rem;background-color:#50DBB4; margin-left:-30%; margin-top:20px; margin-bottom:20px">
+                <div class="row justify-content-start">
+                <div class="col-4">
+                          <div class="card" style="height:60rem; width: 40rem;background-color:#50DBB4; margin-left:-60px;margin-right:5px; margin-top:60px; margin-bottom:20px">
                                            <div class="card-body">
                                              <h3 class="card-title" id="cardtitle" style="color:black;text-align:center;font-family:Segoe UI;color:#303952" >Daily Production</h3>
+
+                                              
+                                            <ul>
+                                                <li>
+                                                    <label style="color:#2c3e50; margin-top:20px; margin-bottom:20px"><b>Unit</b></label>&nbsp<asp:DropDownList ID="selectUnit" runat="server" style="float: right; margin-top:20px; width: 200px; margin-bottom:30px">
+                                                        <asp:ListItem Value="0">Please Select</asp:ListItem>  
+                                                    
+                                                        <asp:ListItem Value="1">Print Unit </asp:ListItem>  
+                                                        <asp:ListItem Value="2">Handle Unit</asp:ListItem>  
+                                                        <asp:ListItem Value="3">Cutting Unit</asp:ListItem> 
+                                                        <asp:ListItem Value="3">Bordering Unit</asp:ListItem>
+                                                        <asp:ListItem Value="3">Tailoring Unit</asp:ListItem>
+                                                        <asp:ListItem Value="3">Complete Unit</asp:ListItem>
+                                                  </asp:DropDownList>
+                                               </li>
+                                             </ul>
+                                       
+    <ul>                                    
+
+<li>
+                                            
+    <label style="color:#2c3e50; margin-bottom:30px"><b>Date</b></label><asp:TextBox ID="txtDate" runat="server" ReadOnly="true" style="margin-left: 50px; width:200px; float: right; margin-bottom:20px"></asp:TextBox>
+ 
+</li>
+</ul>
+
+
+
+                                
+                                          <div class="form-group">
+                                            <ul>
+                                                <li>
+                                                  <label style="color:#2c3e50; float: left; margin-top: 5px"><b>Employee Id</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px; margin-bottom: 30px" CssClass="form-control" ID="txtEmployeeId" runat="server"></asp:TextBox>
+                                                </li>
                                                
+                                                 <li>
+                                                   <label style="color:#2c3e50; float: left; margin-top: 35px"><b>Present Employee</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px; margin-bottom: 30px" CssClass="form-control" ID="txtUserName" runat="server"></asp:TextBox>
+                                                 </li>
+                                                 
+                                                 <li>
+                                                   <label style="color:#2c3e50; float: left; margin-top: 35px"><b>Absence Employee</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px; margin-bottom: 30px" CssClass="form-control" ID="txtPassword" runat="server"></asp:TextBox>
+                                                 </li>
+                                                 
+                                                  <li>
+                                                   <label style="color:#2c3e50; float: left; margin-top: 35px"><b>Total Production</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px; margin-bottom: 30px" CssClass="form-control" ID="TextBox1" runat="server"></asp:TextBox>
+                                                  </li>
+
+                                                   <li>
+                                                   <label style="color:#2c3e50; float: left; margin-top: 35px"><b>Damage Count</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px" CssClass="form-control" ID="TextBox2" runat="server"></asp:TextBox>
+                                                  </li>
                                                 
-                                             
-                                             
-                                          </div>
-                                        </div>
-                    </div><div class="col-4">
-                          One of two columns
-                        </div>
+                                            </ul>
+                                         </div>
+                                        
+                                              <div>
+                                                  <ul>
+                                                      <li>
+                                                  <asp:Button class="btn btn-primary" style="float:left; margin-top: 80px" ID="txtSaveSup" runat="server" Text="Save" />
+                                                  <asp:Button class="btn btn-primary" style="float:right; margin-top: 50px; margin-right: 50px" ID="txtUpdateSup" runat="server" Text="Update" />
+                                                        </li>
+                                                            
+                                                      </ul>
+                                              </div>
+                                            </div>
+                                     
+                                 </div>            
+                            </div>
+      
+                 
+                               
 
-                   </div>
-                   </div>                
+               <div class="col-4">
+                    
 
-            </asp:View>
+                            <div class="card" style="height:60rem; width: 80rem;background-color:#50DBB4; margin-left:-20px; margin-right:40px; margin-top:60px; margin-bottom:20px">
+                            <div class="card-body">
+                            <h3 class="card-title" id="viewDataSup" style="position: absolute; top: 1px; left: 5px; text-align: left; color:black;font-family:Segoe UI; font-size:25px; color:#303952" >View Data</h3>
+
+                                            <ul>
+                                                <li>
+                                                    <label style="color:#2c3e50; font-size: 17px; margin-top:70px; margin-left:20px; margin-bottom:10px"><b>Unit</b></label>&nbsp<asp:DropDownList ID="DropDownList1" runat="server" style=" margin-top:70px; margin-left:30px; width: 200px; height: 25px; margin-bottom:10px">
+                                                        <asp:ListItem Value="0">Please Select</asp:ListItem>  
+                                                    
+                                                        <asp:ListItem Value="1">Print Unit </asp:ListItem>  
+                                                        <asp:ListItem Value="2">Handle Unit</asp:ListItem>  
+                                                        <asp:ListItem Value="3">Cutting Unit</asp:ListItem> 
+                                                        <asp:ListItem Value="3">Bordering Unit</asp:ListItem>
+                                                        <asp:ListItem Value="3">Tailoring Unit</asp:ListItem>
+                                                        <asp:ListItem Value="3">Complete Unit</asp:ListItem>
+                                                   </asp:DropDownList>
+                                               </li>
+
+                                                <li>
+                                                    <label style="color:#2c3e50; font-size: 17px; margin-top:30px; margin-left:20px; margin-bottom:10px"><b>Date</b></label><asp:TextBox ID="txtDate2" runat="server" ReadOnly="true" style="margin-left: 30px; width:200px;height: 25px;  margin-bottom:10px"></asp:TextBox>
+                                                </li>
+
+                                                 </ul>
+
+                                              
+                                           <div>
+                                                    <asp:GridView ID="GridView1" style=" Width:150px" class="table table-striped table-bordered" runat="server">
+                                                    <Columns>
+                                                <asp:BoundField DataField="date" HeaderText="Date" ReadOnly="True" SortExpression="date" />
+                                                <asp:BoundField DataField="employeeid" HeaderText="Employee ID" SortExpression="employeeid" />
+                                                <asp:BoundField DataField="password" HeaderText="password" SortExpression="password" />
+                                                <asp:BoundField DataField="security_question" HeaderText="security_question" SortExpression="security_question" />
+                                                <asp:BoundField DataField="answer" HeaderText="answer" SortExpression="answer" />
+                                                        </Columns>
+                                                        </asp:GridView>
+                                              
+                                            </div>
+
+
+
+                            </div>
+                            </div>
+                        
+
+
+              </div>
+      </div>
+                      
+     </div>
+               
+             
+ </asp:View>
 
 
 
             <asp:View ID="ViewTraining" runat="server">
-                <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
-            </asp:View>
+
+                <div class="container">
+                <div class="row justify-content-start">
+                <div class="col-4">
+                                            
+
+
+                                           <div class="card" style="height:50rem; width: 40rem;background-color:#50DBB4; margin-left:-60px;margin-right:5px; margin-top:60px; margin-bottom:20px">
+                                           <div class="card-body">
+                                           <h3 class="card-title" id="traineeCard" style="color:black;text-align:center;font-family:Segoe UI;color:#303952" >Training Need</h3>
+                                            
+                                                        
+
+                                                               <ul>
+                                                               <li>
+                                                                <label style="color:#2c3e50; font-size: 17px; margin-top:70px; margin-left:20px"><b>Unit</b></label>&nbsp<asp:DropDownList ID="DropDownList2" runat="server" style="float:right; margin-top:70px; width: 200px; height: 25px">
+                                                                <asp:ListItem Value="0">Please Select</asp:ListItem>  
+                                                    
+                                                                <asp:ListItem Value="1">Print Unit </asp:ListItem>  
+                                                                <asp:ListItem Value="2">Handle Unit</asp:ListItem>  
+                                                                <asp:ListItem Value="3">Cutting Unit</asp:ListItem> 
+                                                                <asp:ListItem Value="3">Bordering Unit</asp:ListItem>
+                                                                <asp:ListItem Value="3">Tailoring Unit</asp:ListItem>
+                                                                <asp:ListItem Value="3">Complete Unit</asp:ListItem>
+                                                                </asp:DropDownList>
+                                                                </li>
+
+                                                                <li>
+                                                                <label style=" font-size: 17px; color:#2c3e50; margin-top: 30px""><b>Employee Id</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px; margin-left: 20px; margin-top: 30px" CssClass="form-control" ID="TextBox3" runat="server"></asp:TextBox>
+                                                                </li>
+                                                                <li>
+                                                                <label style="margin-bottom: 40px; margin-top: 40px; float:left; font-size: 17px; color:#2c3e50"><b>Date</b></label>&nbsp<asp:TextBox ID="trainDate" runat="server" ReadOnly="true" style="width:200px;height: 25px; float:right; margin-top: 25px; margin-bottom: 40px"></asp:TextBox>
+                                                                </li>
+                                                                <li>
+                                                                <asp:Button class="btn btn-primary" style="float:right; margin-top: 130px; margin-right: -50px" ID="btnSubmitTrain" runat="server" Text="Submit" />
+                                                                </li>
+                                                                </ul>
+
+                                           </div>
+                                           </div>
+            </div>
+
+
+
+                <div class="col-4">
+                         One of two columns
+                </div>
+                </div>
+                </div>
+           </asp:View>
 
 
             

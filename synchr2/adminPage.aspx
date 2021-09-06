@@ -107,7 +107,7 @@
                                                 <table>
                                                     <tr>
                                                         <td>
-                                                            <label style="width:100px; color:#2c3e50"><b>Employee ID<b/></label>
+                                                            <label style="width:100px; color:#2c3e50"><b>Employee ID</b></label>
                                                         </td>
                                                             
                                                         <td>
@@ -253,6 +253,7 @@
            </footer>
             
         </div>
+            </div>
 
         
           
