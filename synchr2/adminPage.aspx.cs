@@ -129,6 +129,10 @@ namespace synchr2
 
         protected void btnRefresh_Click(object sender, EventArgs e)
         {
+            GridViewHrDepartment.DataBind();
+            GridViewSupervisor.DataBind();
+
+            GridViewProductionMan.DataBind();
             try
             {
 

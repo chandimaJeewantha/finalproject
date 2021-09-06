@@ -114,13 +114,13 @@ namespace synchr2
         protected global::System.Web.UI.WebControls.DropDownList selectUnit;
 
         /// <summary>
-        /// txtDate control.
+        /// txtdatenew control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDate;
+        protected global::System.Web.UI.WebControls.TextBox txtdatenew;
 
         /// <summary>
         /// txtEmployeeId control.
@@ -132,40 +132,40 @@ namespace synchr2
         protected global::System.Web.UI.WebControls.TextBox txtEmployeeId;
 
         /// <summary>
-        /// txtUserName control.
+        /// txtPresentEmployees control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUserName;
+        protected global::System.Web.UI.WebControls.TextBox txtPresentEmployees;
 
         /// <summary>
-        /// txtPassword control.
+        /// txtAbsenceEmployees control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword;
+        protected global::System.Web.UI.WebControls.TextBox txtAbsenceEmployees;
 
         /// <summary>
-        /// TextBox1 control.
+        /// txtTotalProduction control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtTotalProduction;
 
         /// <summary>
-        /// TextBox2 control.
+        /// txtDamageCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox txtDamageCount;
 
         /// <summary>
         /// txtSaveSup control.
@@ -177,13 +177,13 @@ namespace synchr2
         protected global::System.Web.UI.WebControls.Button txtSaveSup;
 
         /// <summary>
-        /// txtUpdateSup control.
+        /// btnUpdateSup control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button txtUpdateSup;
+        protected global::System.Web.UI.WebControls.Button btnUpdateSup;
 
         /// <summary>
         /// DropDownList1 control.
@@ -195,22 +195,85 @@ namespace synchr2
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
 
         /// <summary>
-        /// txtDate2 control.
+        /// MultiViewunittables control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDate2;
+        protected global::System.Web.UI.WebControls.MultiView MultiViewunittables;
 
         /// <summary>
-        /// GridView1 control.
+        /// Viewprintunit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.View Viewprintunit;
+
+        /// <summary>
+        /// SqlDataSource1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+
+        /// <summary>
+        /// GridViewPrintunit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewPrintunit;
+
+        /// <summary>
+        /// ViewHandleunit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View ViewHandleunit;
+
+        /// <summary>
+        /// Viewcuttingunit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View Viewcuttingunit;
+
+        /// <summary>
+        /// Viewborderingunit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View Viewborderingunit;
+
+        /// <summary>
+        /// Viewtailoringunit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View Viewtailoringunit;
+
+        /// <summary>
+        /// Viewcompleteunit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View Viewcompleteunit;
 
         /// <summary>
         /// ViewTraining control.

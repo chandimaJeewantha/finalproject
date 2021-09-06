@@ -122,9 +122,9 @@
                                                         <asp:ListItem Value="1">Print Unit </asp:ListItem>  
                                                         <asp:ListItem Value="2">Handle Unit</asp:ListItem>  
                                                         <asp:ListItem Value="3">Cutting Unit</asp:ListItem> 
-                                                        <asp:ListItem Value="3">Bordering Unit</asp:ListItem>
-                                                        <asp:ListItem Value="3">Tailoring Unit</asp:ListItem>
-                                                        <asp:ListItem Value="3">Complete Unit</asp:ListItem>
+                                                        <asp:ListItem Value="4">Bordering Unit</asp:ListItem>
+                                                        <asp:ListItem Value="5">Tailoring Unit</asp:ListItem>
+                                                        <asp:ListItem Value="6">Complete Unit</asp:ListItem>
                                                   </asp:DropDownList>
                                                </li>
                                              </ul>
@@ -133,7 +133,7 @@
 
 <li>
                                             
-    <label style="color:#2c3e50; margin-bottom:30px"><b>Date</b></label><asp:TextBox ID="txtDate" runat="server" ReadOnly="true" style="margin-left: 50px; width:200px; float: right; margin-bottom:20px"></asp:TextBox>
+    <label style="color:#2c3e50; margin-bottom:30px"><b>Date</b></label><asp:TextBox ID="txtdatenew" runat="server" style="margin-left:100px;width:200px;height:25px;margin-bottom:10px" TextMode="Date"></asp:TextBox>
  
 </li>
 </ul>
@@ -148,19 +148,19 @@
                                                 </li>
                                                
                                                  <li>
-                                                   <label style="color:#2c3e50; float: left; margin-top: 35px"><b>Present Employee</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px; margin-bottom: 30px" CssClass="form-control" ID="txtUserName" runat="server"></asp:TextBox>
+                                                   <label style="color:#2c3e50; float: left; margin-top: 35px"><b>Present Employee</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px; margin-bottom: 30px" CssClass="form-control" ID="txtPresentEmployees" runat="server"></asp:TextBox>
                                                  </li>
                                                  
                                                  <li>
-                                                   <label style="color:#2c3e50; float: left; margin-top: 35px"><b>Absence Employee</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px; margin-bottom: 30px" CssClass="form-control" ID="txtPassword" runat="server"></asp:TextBox>
+                                                   <label style="color:#2c3e50; float: left; margin-top: 35px"><b>Absence Employee</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px; margin-bottom: 30px" CssClass="form-control" ID="txtAbsenceEmployees" runat="server"></asp:TextBox>
                                                  </li>
                                                  
                                                   <li>
-                                                   <label style="color:#2c3e50; float: left; margin-top: 35px"><b>Total Production</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px; margin-bottom: 30px" CssClass="form-control" ID="TextBox1" runat="server"></asp:TextBox>
+                                                   <label style="color:#2c3e50; float: left; margin-top: 35px"><b>Total Production</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px; margin-bottom: 30px" CssClass="form-control" ID="txtTotalProduction" runat="server"></asp:TextBox>
                                                   </li>
 
                                                    <li>
-                                                   <label style="color:#2c3e50; float: left; margin-top: 35px"><b>Damage Count</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px" CssClass="form-control" ID="TextBox2" runat="server"></asp:TextBox>
+                                                   <label style="color:#2c3e50; float: left; margin-top: 35px"><b>Damage Count</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px" CssClass="form-control" ID="txtDamageCount" runat="server"></asp:TextBox>
                                                   </li>
                                                 
                                             </ul>
@@ -169,8 +169,8 @@
                                               <div>
                                                   <ul>
                                                       <li>
-                                                  <asp:Button class="btn btn-primary" style="float:left; margin-top: 80px" ID="txtSaveSup" runat="server" Text="Save" />
-                                                  <asp:Button class="btn btn-primary" style="float:right; margin-top: 50px; margin-right: 50px" ID="txtUpdateSup" runat="server" Text="Update" />
+                                                  <asp:Button class="btn btn-primary" style="float:left; margin-top: 80px" ID="txtSaveSup" runat="server" Text="Save" OnClick="txtSaveSup_Click" />
+                                                  <asp:Button class="btn btn-primary" style="float:right; margin-top: 50px; margin-right: 50px" ID="btnUpdateSup" runat="server" Text="Update" />
                                                         </li>
                                                             
                                                       </ul>
@@ -192,37 +192,63 @@
 
                                             <ul>
                                                 <li>
-                                                    <label style="color:#2c3e50; font-size: 17px; margin-top:70px; margin-left:20px; margin-bottom:10px"><b>Unit</b></label>&nbsp<asp:DropDownList ID="DropDownList1" runat="server" style=" margin-top:70px; margin-left:30px; width: 200px; height: 25px; margin-bottom:10px">
+                                                    <label style="color:#2c3e50; font-size: 17px; margin-top:70px; margin-left:20px; margin-bottom:10px"><b>Unit</b></label>&nbsp<asp:DropDownList ID="DropDownList1" runat="server" style=" margin-top:70px; margin-left:30px; width: 200px; height: 25px; margin-bottom:10px" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
                                                         <asp:ListItem Value="0">Please Select</asp:ListItem>  
                                                     
                                                         <asp:ListItem Value="1">Print Unit </asp:ListItem>  
                                                         <asp:ListItem Value="2">Handle Unit</asp:ListItem>  
                                                         <asp:ListItem Value="3">Cutting Unit</asp:ListItem> 
-                                                        <asp:ListItem Value="3">Bordering Unit</asp:ListItem>
-                                                        <asp:ListItem Value="3">Tailoring Unit</asp:ListItem>
-                                                        <asp:ListItem Value="3">Complete Unit</asp:ListItem>
+                                                        <asp:ListItem Value="4">Bordering Unit</asp:ListItem>
+                                                        <asp:ListItem Value="5">Tailoring Unit</asp:ListItem>
+                                                        <asp:ListItem Value="6">Complete Unit</asp:ListItem>
                                                    </asp:DropDownList>
                                                </li>
 
-                                                <li>
-                                                    <label style="color:#2c3e50; font-size: 17px; margin-top:30px; margin-left:20px; margin-bottom:10px"><b>Date</b></label><asp:TextBox ID="txtDate2" runat="server" ReadOnly="true" style="margin-left: 30px; width:200px;height: 25px;  margin-bottom:10px"></asp:TextBox>
-                                                </li>
+                                            </ul>
+                                <div class="row">
+                                    <div class="col">
+                                        <asp:MultiView ID="MultiViewunittables" runat="server" ActiveViewIndex="0">
+                                            <asp:View ID="Viewprintunit" runat="server">
+                                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabaseConnectionString %>" SelectCommand="SELECT * FROM [printunitTbl]"></asp:SqlDataSource>
+                                                <div>
 
-                                                 </ul>
-
-                                              
-                                           <div>
-                                                    <asp:GridView ID="GridView1" style=" Width:150px" class="table table-striped table-bordered" runat="server">
-                                                    <Columns>
-                                                <asp:BoundField DataField="date" HeaderText="Date" ReadOnly="True" SortExpression="date" />
-                                                <asp:BoundField DataField="employeeid" HeaderText="Employee ID" SortExpression="employeeid" />
-                                                <asp:BoundField DataField="password" HeaderText="password" SortExpression="password" />
-                                                <asp:BoundField DataField="security_question" HeaderText="security_question" SortExpression="security_question" />
-                                                <asp:BoundField DataField="answer" HeaderText="answer" SortExpression="answer" />
+                                                    <asp:GridView ID="GridViewPrintunit" runat="server" AutoGenerateColumns="False" DataKeyNames="date" DataSourceID="SqlDataSource1">
+                                                        <Columns>
+                                                            <asp:BoundField DataField="date" HeaderText="date" ReadOnly="True" SortExpression="date" />
+                                                            <asp:BoundField DataField="supervisor_id" HeaderText="supervisor_id" SortExpression="supervisor_id" />
+                                                            <asp:BoundField DataField="present_employeea" HeaderText="present_employeea" SortExpression="present_employeea" />
+                                                            <asp:BoundField DataField="absence_employees" HeaderText="absence_employees" SortExpression="absence_employees" />
+                                                            <asp:BoundField DataField="total_production" HeaderText="total_production" SortExpression="total_production" />
+                                                            <asp:BoundField DataField="damage_count" HeaderText="damage_count" SortExpression="damage_count" />
                                                         </Columns>
-                                                        </asp:GridView>
+                                                    </asp:GridView>
+                                                </div>
+                                            </asp:View>
+                                            <asp:View ID="ViewHandleunit" runat="server">
+
+                                            </asp:View>
+                                            <asp:View ID="Viewcuttingunit" runat="server">
+
+                                            </asp:View>
+                                            <asp:View ID="Viewborderingunit" runat="server">
+
+                                            </asp:View>
+                                            <asp:View ID="Viewtailoringunit" runat="server">
+
+                                            </asp:View>
+                                            <asp:View ID="Viewcompleteunit" runat="server">
+
+
+                                            </asp:View>
+
+                                        </asp:MultiView>
+                                    </div>
+
+
+                                </div>
+
                                               
-                                            </div>
+                                          
 
 
 
@@ -263,9 +289,9 @@
                                                                 <asp:ListItem Value="1">Print Unit </asp:ListItem>  
                                                                 <asp:ListItem Value="2">Handle Unit</asp:ListItem>  
                                                                 <asp:ListItem Value="3">Cutting Unit</asp:ListItem> 
-                                                                <asp:ListItem Value="3">Bordering Unit</asp:ListItem>
-                                                                <asp:ListItem Value="3">Tailoring Unit</asp:ListItem>
-                                                                <asp:ListItem Value="3">Complete Unit</asp:ListItem>
+                                                                <asp:ListItem Value="4">Bordering Unit</asp:ListItem>
+                                                                <asp:ListItem Value="5">Tailoring Unit</asp:ListItem>
+                                                                <asp:ListItem Value="6">Complete Unit</asp:ListItem>
                                                                 </asp:DropDownList>
                                                                 </li>
 
