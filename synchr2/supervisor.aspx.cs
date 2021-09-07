@@ -11,18 +11,18 @@ namespace synchr2
 {
     public partial class supervisor : System.Web.UI.Page
     {
-        string connectionstring = "Data Source=localhost;Initial Catalog=HrmsDatabase;Integrated Security=True";
+        string connectionstring = "Data Source=LAPTOP-BSTFBS4U;Initial Catalog=HrmsDatabase;Integrated Security=True";
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack)
             {
                 MultiViewSupervisor.ActiveViewIndex = 0;
             }
+
             if (!IsPostBack)
             {
                 MultiViewunittables.ActiveViewIndex = 0;
             }
-
         }
 
         protected void btnExit_Click(object sender, EventArgs e)
@@ -129,17 +129,23 @@ namespace synchr2
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
+        
+        }
+
+        protected void btnViewGrid_Click(object sender, EventArgs e)
+        {
             if (DropDownList1.SelectedValue == "0")
             {
-                Response.Write("<script>alert('Data Inserted....')</script>");
+                Response.Write("<script>alert('Select Unit....')</script>");
 
 
             }
             else if (DropDownList1.SelectedValue == "1")
             {
                 MultiViewunittables.ActiveViewIndex = 1;
-            
+
             }
+
         }
     }
 }

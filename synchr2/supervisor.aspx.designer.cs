@@ -195,6 +195,15 @@ namespace synchr2
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
 
         /// <summary>
+        /// btnViewGrid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnViewGrid;
+
+        /// <summary>
         /// MultiViewunittables control.
         /// </summary>
         /// <remarks>
@@ -202,6 +211,15 @@ namespace synchr2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.MultiView MultiViewunittables;
+
+        /// <summary>
+        /// supervisorhome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View supervisorhome;
 
         /// <summary>
         /// Viewprintunit control.

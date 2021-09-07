@@ -133,7 +133,7 @@
 
 <li>
                                             
-    <label style="color:#2c3e50; margin-bottom:30px"><b>Date</b></label><asp:TextBox ID="txtdatenew" runat="server" style="margin-left:100px;width:200px;height:25px;margin-bottom:10px" TextMode="Date"></asp:TextBox>
+    <label style="color:#2c3e50; margin-bottom:30px"><b>Date</b></label><asp:TextBox ID="txtdatenew" runat="server" style="float:right;width:200px;height:25px;margin-bottom:10px" TextMode="Date"></asp:TextBox>
  
 </li>
 </ul>
@@ -202,12 +202,18 @@
                                                         <asp:ListItem Value="5">Tailoring Unit</asp:ListItem>
                                                         <asp:ListItem Value="6">Complete Unit</asp:ListItem>
                                                    </asp:DropDownList>
+
                                                </li>
+                                                <li>
+                                                    <asp:Button class="btn btn-primary" style="height:30px; width: 100px; float:right; margin-top: -35px; margin-right: 320px; text-align:center" ID="btnViewGrid" runat="server" Text="View" OnClick="btnViewGrid_Click" />
+                                                </li>
 
                                             </ul>
                                 <div class="row">
                                     <div class="col">
                                         <asp:MultiView ID="MultiViewunittables" runat="server" ActiveViewIndex="0">
+
+                                            <asp:View ID="supervisorhome" runat="server"></asp:View>
                                             <asp:View ID="Viewprintunit" runat="server">
                                                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabaseConnectionString %>" SelectCommand="SELECT * FROM [printunitTbl]"></asp:SqlDataSource>
                                                 <div>
