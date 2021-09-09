@@ -11,10 +11,10 @@ namespace synchr2
 {
     public partial class supervisor : System.Web.UI.Page
     {
-        string connectionstring = "Data Source=LAPTOP-BSTFBS4U;Initial Catalog=HrmsDatabase;Integrated Security=True";
+        string connectionstring = "Data Source=localhost;Initial Catalog=HrmsDatabase;Integrated Security=True";
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
                 MultiViewSupervisor.ActiveViewIndex = 0;
             }
@@ -23,6 +23,9 @@ namespace synchr2
             {
                 MultiViewunittables.ActiveViewIndex = 0;
             }
+
+
+            GridViewPrintunit.DataBind();
         }
 
         protected void btnExit_Click(object sender, EventArgs e)
@@ -68,24 +71,26 @@ namespace synchr2
             {
                 if (txtdatenew.Text == "" || txtEmployeeId.Text == "" || txtPresentEmployees.Text == "" || txtAbsenceEmployees.Text == "" || txtTotalProduction.Text == "" || txtDamageCount.Text == "")
                 {
-                   
+
                     Response.Write("<script>alert('Please Fill All Fields......');</script>");
                 }
                 else
+                {
 
                     try
                     {
-                      
-          
+
+
 
                         SqlConnection con = new SqlConnection(connectionstring);
-                        string query = "insert into printunitTbl values('" +txtdatenew.Text + "','" + txtEmployeeId.Text + "'," + txtPresentEmployees.Text + "," + txtAbsenceEmployees.Text + "," + txtTotalProduction.Text + "," + txtDamageCount.Text + ")";
+                        string query = "insert into printunitTbl values('" + txtdatenew.Text + "','" + txtEmployeeId.Text + "'," + txtPresentEmployees.Text + "," + txtAbsenceEmployees.Text + "," + txtTotalProduction.Text + "," + txtDamageCount.Text + ")";
                         SqlCommand cmd = new SqlCommand(query, con);
 
                         con.Open();
                         cmd.ExecuteNonQuery();
                         con.Close();
                         Response.Write("<script>alert('Data Inserted....')</script>");
+                        GridViewPrintunit.DataBind();
 
 
 
@@ -98,11 +103,233 @@ namespace synchr2
 
 
 
-                
-                  
-                
+
+
+
+
+                }
+
+
+
+
+
+
+
             }
-            //else
+            else if (selectUnit.SelectedValue == "2")
+            {
+                if (txtdatenew.Text == "" || txtEmployeeId.Text == "" || txtPresentEmployees.Text == "" || txtAbsenceEmployees.Text == "" || txtTotalProduction.Text == "" || txtDamageCount.Text == "")
+                {
+                    Response.Write("<script>alert('Please Fill All Fields......');</script>");
+                }
+                else
+                {
+                    try
+                    {
+                        SqlConnection con = new SqlConnection(connectionstring);
+                        string query = "insert into handleunitTbl values('" + txtdatenew.Text + "','" + txtEmployeeId.Text + "'," + txtPresentEmployees.Text + "," + txtAbsenceEmployees.Text + "," + txtTotalProduction.Text + "," + txtDamageCount.Text + ")";
+                        SqlCommand cmd = new SqlCommand(query, con);
+
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        Response.Write("<script>alert('Data Inserted....')</script>");
+                        GridViewPrintunit.DataBind();
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        Response.Write("<script>alert('" + ex.Message + "');</script>");
+                    }
+
+
+
+                }
+
+            }
+            else if (selectUnit.SelectedValue == "3")
+            {
+                if (txtdatenew.Text == "" || txtEmployeeId.Text == "" || txtPresentEmployees.Text == "" || txtAbsenceEmployees.Text == "" || txtTotalProduction.Text == "" || txtDamageCount.Text == "")
+                {
+                    Response.Write("<script>alert('Please Fill All Fields......');</script>");
+
+                }
+                else
+                {
+
+                    try
+                    {
+                        SqlConnection con = new SqlConnection(connectionstring);
+                        string query = "insert into cuttingunitTbl values('" + txtdatenew.Text + "','" + txtEmployeeId.Text + "'," + txtPresentEmployees.Text + "," + txtAbsenceEmployees.Text + "," + txtTotalProduction.Text + "," + txtDamageCount.Text + ")";
+                        SqlCommand cmd = new SqlCommand(query, con);
+
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        Response.Write("<script>alert('Data Inserted....')</script>");
+                        GridViewPrintunit.DataBind();
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        Response.Write("<script>alert('" + ex.Message + "');</script>");
+                    }
+
+
+
+
+
+
+
+
+
+                }
+
+
+
+            }
+            else if (selectUnit.SelectedValue == "4")
+            {
+
+
+
+                if (txtdatenew.Text == "" || txtEmployeeId.Text == "" || txtPresentEmployees.Text == "" || txtAbsenceEmployees.Text == "" || txtTotalProduction.Text == "" || txtDamageCount.Text == "")
+                {
+                    Response.Write("<script>alert('Please Fill All Fields......');</script>");
+
+                }
+                else
+                {
+
+                    try
+                    {
+                        SqlConnection con = new SqlConnection(connectionstring);
+                        string query = "insert into borderingunitTbl values('" + txtdatenew.Text + "','" + txtEmployeeId.Text + "'," + txtPresentEmployees.Text + "," + txtAbsenceEmployees.Text + "," + txtTotalProduction.Text + "," + txtDamageCount.Text + ")";
+                        SqlCommand cmd = new SqlCommand(query, con);
+
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        Response.Write("<script>alert('Data Inserted....')</script>");
+                        GridViewPrintunit.DataBind();
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        Response.Write("<script>alert('" + ex.Message + "');</script>");
+                    }
+
+
+
+
+
+
+
+
+
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            }
+            else if (selectUnit.SelectedValue == "5")
+            {
+                if (txtdatenew.Text == "" || txtEmployeeId.Text == "" || txtPresentEmployees.Text == "" || txtAbsenceEmployees.Text == "" || txtTotalProduction.Text == "" || txtDamageCount.Text == "")
+                {
+                    Response.Write("<script>alert('Please Fill All Fields......');</script>");
+                }
+                else
+                {
+
+                    try
+                    {
+                        SqlConnection con = new SqlConnection(connectionstring);
+                        string query = "insert into tailoringunitTbl values('" + txtdatenew.Text + "','" + txtEmployeeId.Text + "'," + txtPresentEmployees.Text + "," + txtAbsenceEmployees.Text + "," + txtTotalProduction.Text + "," + txtDamageCount.Text + ")";
+                        SqlCommand cmd = new SqlCommand(query, con);
+
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        Response.Write("<script>alert('Data Inserted....')</script>");
+                        GridViewPrintunit.DataBind();
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        Response.Write("<script>alert('" + ex.Message + "');</script>");
+                    }
+
+
+
+
+                }
+
+
+
+
+
+
+
+            }
+            else if (selectUnit.SelectedValue == "6")
+            {
+
+                if (txtdatenew.Text == "" || txtEmployeeId.Text == "" || txtPresentEmployees.Text == "" || txtAbsenceEmployees.Text == "" || txtTotalProduction.Text == "" || txtDamageCount.Text == "")
+                {
+                    Response.Write("<script>alert('Please Fill All Fields......');</script>");
+                }
+                else
+                {
+
+                    try
+                    {
+                        SqlConnection con = new SqlConnection(connectionstring);
+                        string query = "insert into completeunitTbl values('" + txtdatenew.Text + "','" + txtEmployeeId.Text + "'," + txtPresentEmployees.Text + "," + txtAbsenceEmployees.Text + "," + txtTotalProduction.Text + "," + txtDamageCount.Text + ")";
+                        SqlCommand cmd = new SqlCommand(query, con);
+
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        Response.Write("<script>alert('Data Inserted....')</script>");
+                        GridViewPrintunit.DataBind();
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        Response.Write("<script>alert('" + ex.Message + "');</script>");
+                    }
+
+
+
+
+                }
+
+
+
+
+
+
+
+
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -121,15 +348,15 @@ namespace synchr2
 
             }
             catch (Exception ex)
-            { 
-            
-            
+            {
+
+
             }
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-        
+
         }
 
         protected void btnViewGrid_Click(object sender, EventArgs e)
@@ -145,6 +372,265 @@ namespace synchr2
                 MultiViewunittables.ActiveViewIndex = 1;
 
             }
+            else if (DropDownList1.SelectedValue == "2")
+            {
+
+                MultiViewunittables.ActiveViewIndex = 2;
+            }
+        }
+
+        protected void btnUpdateSup_Click(object sender, EventArgs e)
+        {
+            if (selectUnit.SelectedValue == "0")
+            {
+                Response.Write("<script>alert('please Select Unit to Update Data....')</script>");
+
+            }
+            else if (selectUnit.SelectedValue == "1")
+            {
+                if (txtEmployeeId.Text == "" || txtPresentEmployees.Text == "" || txtAbsenceEmployees.Text == "" || txtTotalProduction.Text == "" || txtDamageCount.Text == "")
+                {
+                    Response.Write("<script>alert('Please Fill All Fields....')</script>");
+                }
+                else
+                {
+
+
+                    try
+                    {
+                        //Response.Write("<script>alert(' Data Updated....')</script>");
+
+                        SqlConnection con = new SqlConnection(connectionstring);
+                        string query = "update printunitTbl set Supervisor_Id='" + txtEmployeeId.Text + "',Present_Employees=" + txtPresentEmployees.Text + ",Absence_Employees=" + txtAbsenceEmployees.Text + ",Total_Production=" + txtTotalProduction.Text + ",Damage_Count=" + txtDamageCount.Text + " where Date='" + txtdatenew.Text + "'";
+                        SqlCommand cmd = new SqlCommand(query, con);
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        Response.Write("<script>alert(' Data Updated....')</script>");
+                        GridViewPrintunit.DataBind();
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+                    }
+
+
+
+                }
+
+
+            }
+            else if (selectUnit.SelectedValue == "2")
+            {
+                if (txtEmployeeId.Text == "" || txtPresentEmployees.Text == "" || txtAbsenceEmployees.Text == "" || txtTotalProduction.Text == "" || txtDamageCount.Text == "")
+                {
+                    Response.Write("<script>alert('Please Fill All Fields....')</script>");
+                }
+                else
+                {
+
+
+                    try
+                    {
+                        //Response.Write("<script>alert(' Data Updated....')</script>");
+
+                        SqlConnection con = new SqlConnection(connectionstring);
+                        string query = "update handleunitTbl set Supervisor_Id='" + txtEmployeeId.Text + "',Present_Employees=" + txtPresentEmployees.Text + ",Absence_Employees=" + txtAbsenceEmployees.Text + ",Total_Production=" + txtTotalProduction.Text + ",Damage_Count=" + txtDamageCount.Text + " where Date='" + txtdatenew.Text + "'";
+                        SqlCommand cmd = new SqlCommand(query, con);
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        Response.Write("<script>alert(' Data Updated....')</script>");
+                        GridViewPrintunit.DataBind();
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+                    }
+
+
+
+                }
+
+            }
+            else if (selectUnit.SelectedValue == "3")
+            {
+
+                if (txtEmployeeId.Text == "" || txtPresentEmployees.Text == "" || txtAbsenceEmployees.Text == "" || txtTotalProduction.Text == "" || txtDamageCount.Text == "")
+                {
+                    Response.Write("<script>alert('Please Fill All Fields....')</script>");
+                }
+                else
+                {
+
+
+                    try
+                    {
+                        //Response.Write("<script>alert(' Data Updated....')</script>");
+
+                        SqlConnection con = new SqlConnection(connectionstring);
+                        string query = "update cuttingunitTbl set Supervisor_Id='" + txtEmployeeId.Text + "',Present_Employees=" + txtPresentEmployees.Text + ",Absence_Employees=" + txtAbsenceEmployees.Text + ",Total_Production=" + txtTotalProduction.Text + ",Damage_Count=" + txtDamageCount.Text + " where Date='" + txtdatenew.Text + "'";
+                        SqlCommand cmd = new SqlCommand(query, con);
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        Response.Write("<script>alert(' Data Updated....')</script>");
+                        GridViewPrintunit.DataBind();
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+                    }
+
+
+
+                }
+
+
+
+
+
+            }
+            else if (selectUnit.SelectedValue == "4")
+            {
+                if (txtEmployeeId.Text == "" || txtPresentEmployees.Text == "" || txtAbsenceEmployees.Text == "" || txtTotalProduction.Text == "" || txtDamageCount.Text == "")
+                {
+                    Response.Write("<script>alert('Please Fill All Fields....')</script>");
+                }
+                else
+                {
+
+
+                    try
+                    {
+                        //Response.Write("<script>alert(' Data Updated....')</script>");
+
+                        SqlConnection con = new SqlConnection(connectionstring);
+                        string query = "update borderingunitTbl set Supervisor_Id='" + txtEmployeeId.Text + "',Present_Employees=" + txtPresentEmployees.Text + ",Absence_Employees=" + txtAbsenceEmployees.Text + ",Total_Production=" + txtTotalProduction.Text + ",Damage_Count=" + txtDamageCount.Text + " where Date='" + txtdatenew.Text + "'";
+                        SqlCommand cmd = new SqlCommand(query, con);
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        Response.Write("<script>alert(' Data Updated....')</script>");
+                        GridViewPrintunit.DataBind();
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+                    }
+
+
+
+                }
+
+
+
+
+
+
+
+
+            }
+            else if (selectUnit.SelectedValue == "5")
+            {
+
+
+                if (txtEmployeeId.Text == "" || txtPresentEmployees.Text == "" || txtAbsenceEmployees.Text == "" || txtTotalProduction.Text == "" || txtDamageCount.Text == "")
+                {
+                    Response.Write("<script>alert('Please Fill All Fields....')</script>");
+                }
+                else
+                {
+
+
+                    try
+                    {
+                        //Response.Write("<script>alert(' Data Updated....')</script>");
+
+                        SqlConnection con = new SqlConnection(connectionstring);
+                        string query = "update TailoringunitTbl set Supervisor_Id='" + txtEmployeeId.Text + "',Present_Employees=" + txtPresentEmployees.Text + ",Absence_Employees=" + txtAbsenceEmployees.Text + ",Total_Production=" + txtTotalProduction.Text + ",Damage_Count=" + txtDamageCount.Text + " where Date='" + txtdatenew.Text + "'";
+                        SqlCommand cmd = new SqlCommand(query, con);
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        Response.Write("<script>alert(' Data Updated....')</script>");
+                        GridViewPrintunit.DataBind();
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+                    }
+
+
+
+                }
+
+
+
+
+
+
+
+            }
+            else if (selectUnit.SelectedValue == "6")
+            {
+
+                if (txtEmployeeId.Text == "" || txtPresentEmployees.Text == "" || txtAbsenceEmployees.Text == "" || txtTotalProduction.Text == "" || txtDamageCount.Text == "")
+                {
+                    Response.Write("<script>alert('Please Fill All Fields....')</script>");
+                }
+                else
+                {
+
+
+                    try
+                    {
+                        //Response.Write("<script>alert(' Data Updated....')</script>");
+
+                        SqlConnection con = new SqlConnection(connectionstring);
+                        string query = "update completeunitTbl set Supervisor_Id='" + txtEmployeeId.Text + "',Present_Employees=" + txtPresentEmployees.Text + ",Absence_Employees=" + txtAbsenceEmployees.Text + ",Total_Production=" + txtTotalProduction.Text + ",Damage_Count=" + txtDamageCount.Text + " where Date='" + txtdatenew.Text + "'";
+                        SqlCommand cmd = new SqlCommand(query, con);
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        Response.Write("<script>alert(' Data Updated....')</script>");
+                        GridViewPrintunit.DataBind();
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+                    }
+
+
+
+                }
+
+
+
+
+
+            }
+
+
+
 
         }
     }

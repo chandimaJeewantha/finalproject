@@ -170,7 +170,7 @@
                                                   <ul>
                                                       <li>
                                                   <asp:Button class="btn btn-primary" style="float:left; margin-top: 80px" ID="txtSaveSup" runat="server" Text="Save" OnClick="txtSaveSup_Click" />
-                                                  <asp:Button class="btn btn-primary" style="float:right; margin-top: 50px; margin-right: 50px" ID="btnUpdateSup" runat="server" Text="Update" />
+                                                  <asp:Button class="btn btn-primary" style="float:right; margin-top: 50px; margin-right: 50px" ID="btnUpdateSup" runat="server" Text="Update" OnClick="btnUpdateSup_Click" />
                                                         </li>
                                                             
                                                       </ul>
@@ -213,24 +213,27 @@
                                     <div class="col">
                                         <asp:MultiView ID="MultiViewunittables" runat="server" ActiveViewIndex="0">
 
-                                            <asp:View ID="supervisorhome" runat="server"></asp:View>
+                                            <asp:View ID="supervisorhome" runat="server">
+
+                                            </asp:View>
                                             <asp:View ID="Viewprintunit" runat="server">
                                                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabaseConnectionString %>" SelectCommand="SELECT * FROM [printunitTbl]"></asp:SqlDataSource>
                                                 <div>
 
-                                                    <asp:GridView ID="GridViewPrintunit" runat="server" AutoGenerateColumns="False" DataKeyNames="date" DataSourceID="SqlDataSource1">
+                                                    <asp:GridView ID="GridViewPrintunit" runat="server" AutoGenerateColumns="False" DataKeyNames="Date" DataSourceID="SqlDataSource1">
                                                         <Columns>
-                                                            <asp:BoundField DataField="date" HeaderText="date" ReadOnly="True" SortExpression="date" />
-                                                            <asp:BoundField DataField="supervisor_id" HeaderText="supervisor_id" SortExpression="supervisor_id" />
-                                                            <asp:BoundField DataField="present_employeea" HeaderText="present_employeea" SortExpression="present_employeea" />
-                                                            <asp:BoundField DataField="absence_employees" HeaderText="absence_employees" SortExpression="absence_employees" />
-                                                            <asp:BoundField DataField="total_production" HeaderText="total_production" SortExpression="total_production" />
-                                                            <asp:BoundField DataField="damage_count" HeaderText="damage_count" SortExpression="damage_count" />
+                                                            <asp:BoundField DataField="Date" HeaderText="Date" ReadOnly="True" SortExpression="Date" />
+                                                            <asp:BoundField DataField="Supervisor_Id" HeaderText="Supervisor_Id" SortExpression="Supervisor_Id" />
+                                                            <asp:BoundField DataField="Present_Employees" HeaderText="Present_Employees" SortExpression="Present_Employees" />
+                                                            <asp:BoundField DataField="Absence_Employees" HeaderText="Absence_Employees" SortExpression="Absence_Employees" />
+                                                            <asp:BoundField DataField="Total_Production" HeaderText="Total_Production" SortExpression="Total_Production" />
+                                                            <asp:BoundField DataField="Damage_Count" HeaderText="Damage_Count" SortExpression="Damage_Count" />
                                                         </Columns>
                                                     </asp:GridView>
                                                 </div>
                                             </asp:View>
                                             <asp:View ID="ViewHandleunit" runat="server">
+                                     
 
                                             </asp:View>
                                             <asp:View ID="Viewcuttingunit" runat="server">
