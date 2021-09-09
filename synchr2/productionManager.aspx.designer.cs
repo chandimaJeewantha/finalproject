@@ -96,13 +96,13 @@ namespace synchr2
         protected global::System.Web.UI.WebControls.DropDownList selectUnit;
 
         /// <summary>
-        /// txtDate control.
+        /// txtProductionManagerDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDate;
+        protected global::System.Web.UI.WebControls.TextBox txtProductionManagerDate;
 
         /// <summary>
         /// txtMeal control.
@@ -141,13 +141,13 @@ namespace synchr2
         protected global::System.Web.UI.WebControls.TextBox txtStatus;
 
         /// <summary>
-        /// txtUpdateSup control.
+        /// btnProductionManagerShow control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button txtUpdateSup;
+        protected global::System.Web.UI.WebControls.Button btnProductionManagerShow;
 
         /// <summary>
         /// SqlDataSource1 control.

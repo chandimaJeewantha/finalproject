@@ -73,6 +73,7 @@
 
 
             <asp:View ID="ViewHome" runat="server">
+                <h1>thhh</h1>
 
             </asp:View>
 
@@ -109,7 +110,7 @@
 
 <li>
                                             
-    <label style="color:#2c3e50; margin-bottom:30px"><b>Date</b></label><asp:TextBox ID="txtDate" runat="server" ReadOnly="true" style="margin-left: 50px; width:200px; float: right; margin-bottom:20px"></asp:TextBox>
+    <label style="color:#2c3e50; margin-bottom:30px"><b>Date</b></label><asp:TextBox ID="txtProductionManagerDate" runat="server" style="float:right;width:200px;height:25px;margin-bottom:10px" TextMode="Date"></asp:TextBox>
  
 </li>
 </ul>
@@ -142,7 +143,7 @@
                                                   <ul>
                                                       <li>
                                                
-                                                  <asp:Button class="btn btn-primary" style="width: 300px; height: 50px; float:right; margin-top: 50px; margin-right: 50px" ID="txtUpdateSup" runat="server" Text="Show" />
+                                                  <asp:Button class="btn btn-primary" style="width: 300px; height: 50px; float:right; margin-top: 50px; margin-right: 50px" ID="btnProductionManagerShow" runat="server" Text="Show" OnClick="btnProductionManagerShow_Click" />
                                                         </li>
                                                             
                                                       </ul>
