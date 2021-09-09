@@ -144,7 +144,7 @@
                                           <div class="form-group">
                                             <ul>
                                                 <li>
-                                                  <label style="color:#2c3e50; float: left; margin-top: 5px"><b>Employee Id</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px; margin-bottom: 30px" CssClass="form-control" ID="txtEmployeeId" runat="server"></asp:TextBox>
+                                                  <label style="color:#2c3e50; float: left; margin-top: 5px"><b>Supervisor Id</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px; margin-bottom: 30px" CssClass="form-control" ID="txtEmployeeId" runat="server"></asp:TextBox>
                                                 </li>
                                                
                                                  <li>
@@ -170,7 +170,9 @@
                                                   <ul>
                                                       <li>
                                                   <asp:Button class="btn btn-primary" style="float:left; margin-top: 80px" ID="txtSaveSup" runat="server" Text="Save" OnClick="txtSaveSup_Click" />
-                                                  <asp:Button class="btn btn-primary" style="float:right; margin-top: 50px; margin-right: 50px" ID="btnUpdateSup" runat="server" Text="Update" OnClick="btnUpdateSup_Click" />
+                                                  <asp:Button class="btn btn-primary" style="float:right; margin-top: 50px; margin-right:20px" ID="btnClearSupervisor" runat="server" Text="Clear" OnClick="btnClearSupervisor_Click" />
+                                                  <asp:Button class="btn btn-primary" style="float:right; margin-top: 50px; margin-right: 33px" ID="btnUpdateSup" runat="server" Text="Update" OnClick="btnUpdateSup_Click" />
+                                                  
                                                         </li>
                                                             
                                                       </ul>
@@ -233,20 +235,88 @@
                                                 </div>
                                             </asp:View>
                                             <asp:View ID="ViewHandleunit" runat="server">
-                                     
+                                                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabaseConnectionString %>" SelectCommand="SELECT * FROM [handleunitTbl]"></asp:SqlDataSource>
+                                                <div>
+                                                    <asp:GridView ID="GridVewHandleunit" runat="server" AutoGenerateColumns="False" DataKeyNames="Date" DataSourceID="SqlDataSource2">
+                                                        <Columns>
+                                                            <asp:BoundField DataField="Date" HeaderText="Date" ReadOnly="True" SortExpression="Date" />
+                                                            <asp:BoundField DataField="Supervisor_Id" HeaderText="Supervisor_Id" SortExpression="Supervisor_Id" />
+                                                            <asp:BoundField DataField="Present_Employees" HeaderText="Present_Employees" SortExpression="Present_Employees" />
+                                                            <asp:BoundField DataField="Absence_Employees" HeaderText="Absence_Employees" SortExpression="Absence_Employees" />
+                                                            <asp:BoundField DataField="Total_Production" HeaderText="Total_Production" SortExpression="Total_Production" />
+                                                            <asp:BoundField DataField="damage_count" HeaderText="damage_count" SortExpression="damage_count" />
+                                                        </Columns>
+                                                    </asp:GridView>
+
+
+                                                </div>
 
                                             </asp:View>
                                             <asp:View ID="Viewcuttingunit" runat="server">
+                                                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabaseConnectionString %>" SelectCommand="SELECT * FROM [cuttingunitTbl]"></asp:SqlDataSource>
 
+                                                <div>
+                                                    <asp:GridView ID="GridViewCuttingunit" runat="server" AutoGenerateColumns="False" DataKeyNames="Date" DataSourceID="SqlDataSource3">
+                                                        <Columns>
+                                                            <asp:BoundField DataField="Date" HeaderText="Date" ReadOnly="True" SortExpression="Date" />
+                                                            <asp:BoundField DataField="Supervisor_Id" HeaderText="Supervisor_Id" SortExpression="Supervisor_Id" />
+                                                            <asp:BoundField DataField="Present_Employees" HeaderText="Present_Employees" SortExpression="Present_Employees" />
+                                                            <asp:BoundField DataField="Absence_Employees" HeaderText="Absence_Employees" SortExpression="Absence_Employees" />
+                                                            <asp:BoundField DataField="Total_Production" HeaderText="Total_Production" SortExpression="Total_Production" />
+                                                            <asp:BoundField DataField="Damge_Count" HeaderText="Damge_Count" SortExpression="Damge_Count" />
+                                                        </Columns>
+                                                    </asp:GridView>
+                                                </div>
                                             </asp:View>
+
                                             <asp:View ID="Viewborderingunit" runat="server">
+                                                <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabaseConnectionString %>" SelectCommand="SELECT * FROM [borderingunitTbl]"></asp:SqlDataSource>
+                                                <div>
+                                                    <asp:GridView ID="GridViewborderingunit" runat="server" AutoGenerateColumns="False" DataKeyNames="Date" DataSourceID="SqlDataSource4">
+                                                        <Columns>
+                                                            <asp:BoundField DataField="Date" HeaderText="Date" ReadOnly="True" SortExpression="Date" />
+                                                            <asp:BoundField DataField="Supervisor_Id" HeaderText="Supervisor_Id" SortExpression="Supervisor_Id" />
+                                                            <asp:BoundField DataField="Present_Employees" HeaderText="Present_Employees" SortExpression="Present_Employees" />
+                                                            <asp:BoundField DataField="Absence_Employee" HeaderText="Absence_Employee" SortExpression="Absence_Employee" />
+                                                            <asp:BoundField DataField="Total_Production" HeaderText="Total_Production" SortExpression="Total_Production" />
+                                                            <asp:BoundField DataField="Damage_Count" HeaderText="Damage_Count" SortExpression="Damage_Count" />
+                                                        </Columns>
+                                                    </asp:GridView>
+                                                </div>
 
                                             </asp:View>
+
                                             <asp:View ID="Viewtailoringunit" runat="server">
+                                                <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabaseConnectionString %>" SelectCommand="SELECT * FROM [TailoringunitTbl]"></asp:SqlDataSource>
+                                                <div>
+                                                    <asp:GridView ID="GridViewTailoringunit" runat="server" AutoGenerateColumns="False" DataKeyNames="Date" DataSourceID="SqlDataSource5">
+                                                        <Columns>
+                                                            <asp:BoundField DataField="Date" HeaderText="Date" ReadOnly="True" SortExpression="Date" />
+                                                            <asp:BoundField DataField="Supervisor_Id" HeaderText="Supervisor_Id" SortExpression="Supervisor_Id" />
+                                                            <asp:BoundField DataField="Present_Employees" HeaderText="Present_Employees" SortExpression="Present_Employees" />
+                                                            <asp:BoundField DataField="Absence_Employees" HeaderText="Absence_Employees" SortExpression="Absence_Employees" />
+                                                            <asp:BoundField DataField="Total_Production" HeaderText="Total_Production" SortExpression="Total_Production" />
+                                                            <asp:BoundField DataField="Damage_Count" HeaderText="Damage_Count" SortExpression="Damage_Count" />
+                                                        </Columns>
+                                                    </asp:GridView>
+                                                </div>
 
                                             </asp:View>
-                                            <asp:View ID="Viewcompleteunit" runat="server">
 
+                                            <asp:View ID="Viewcompleteunit" runat="server">
+                                                <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabaseConnectionString %>" SelectCommand="SELECT * FROM [completeunitTbl]"></asp:SqlDataSource>
+                                                <div>
+                                                    <asp:GridView ID="GridViewCompleteunit" runat="server" AutoGenerateColumns="False" DataKeyNames="Date" DataSourceID="SqlDataSource6">
+                                                        <Columns>
+                                                            <asp:BoundField DataField="Date" HeaderText="Date" ReadOnly="True" SortExpression="Date" />
+                                                            <asp:BoundField DataField="Supervisor_Id" HeaderText="Supervisor_Id" SortExpression="Supervisor_Id" />
+                                                            <asp:BoundField DataField="Present_Employees" HeaderText="Present_Employees" SortExpression="Present_Employees" />
+                                                            <asp:BoundField DataField="Absence_Employees" HeaderText="Absence_Employees" SortExpression="Absence_Employees" />
+                                                            <asp:BoundField DataField="Toatal_Production" HeaderText="Toatal_Production" SortExpression="Toatal_Production" />
+                                                            <asp:BoundField DataField="Damage_Count" HeaderText="Damage_Count" SortExpression="Damage_Count" />
+                                                        </Columns>
+                                                    </asp:GridView>
+                                                </div>
 
                                             </asp:View>
 

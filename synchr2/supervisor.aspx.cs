@@ -11,7 +11,7 @@ namespace synchr2
 {
     public partial class supervisor : System.Web.UI.Page
     {
-        string connectionstring = "Data Source=localhost;Initial Catalog=HrmsDatabase;Integrated Security=True";
+        string connectionstring = "Data Source=LAPTOP-PTUSKN3N;Initial Catalog=HrmsDatabase;Integrated Security=True";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -377,6 +377,29 @@ namespace synchr2
 
                 MultiViewunittables.ActiveViewIndex = 2;
             }
+
+            else if (DropDownList1.SelectedValue == "3")
+            {
+
+                MultiViewunittables.ActiveViewIndex = 3;
+            }
+
+            else if (DropDownList1.SelectedValue == "4")
+            {
+
+                MultiViewunittables.ActiveViewIndex = 4;
+            }
+            else if (DropDownList1.SelectedValue == "5")
+            {
+
+                MultiViewunittables.ActiveViewIndex = 5;
+            }
+
+            else if (DropDownList1.SelectedValue == "6")
+            {
+
+                MultiViewunittables.ActiveViewIndex = 6;
+            }
         }
 
         protected void btnUpdateSup_Click(object sender, EventArgs e)
@@ -632,6 +655,17 @@ namespace synchr2
 
 
 
+        }
+
+        protected void btnClearSupervisor_Click(object sender, EventArgs e)
+        {
+            txtdatenew.Text = "";
+            txtEmployeeId.Text = "";
+            txtPresentEmployees.Text = "";
+            txtAbsenceEmployees.Text = "";
+            txtTotalProduction.Text = "";
+            txtDamageCount.Text = "";
+            selectUnit.SelectedValue = "0";
         }
     }
 }

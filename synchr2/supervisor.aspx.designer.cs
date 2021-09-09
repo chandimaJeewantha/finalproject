@@ -177,6 +177,15 @@ namespace synchr2
         protected global::System.Web.UI.WebControls.Button txtSaveSup;
 
         /// <summary>
+        /// btnClearSupervisor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnClearSupervisor;
+
+        /// <summary>
         /// btnUpdateSup control.
         /// </summary>
         /// <remarks>
@@ -258,6 +267,24 @@ namespace synchr2
         protected global::System.Web.UI.WebControls.View ViewHandleunit;
 
         /// <summary>
+        /// SqlDataSource2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
+
+        /// <summary>
+        /// GridVewHandleunit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridVewHandleunit;
+
+        /// <summary>
         /// Viewcuttingunit control.
         /// </summary>
         /// <remarks>
@@ -265,6 +292,24 @@ namespace synchr2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.View Viewcuttingunit;
+
+        /// <summary>
+        /// SqlDataSource3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource3;
+
+        /// <summary>
+        /// GridViewCuttingunit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewCuttingunit;
 
         /// <summary>
         /// Viewborderingunit control.
@@ -276,6 +321,24 @@ namespace synchr2
         protected global::System.Web.UI.WebControls.View Viewborderingunit;
 
         /// <summary>
+        /// SqlDataSource4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource4;
+
+        /// <summary>
+        /// GridViewborderingunit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewborderingunit;
+
+        /// <summary>
         /// Viewtailoringunit control.
         /// </summary>
         /// <remarks>
@@ -285,6 +348,24 @@ namespace synchr2
         protected global::System.Web.UI.WebControls.View Viewtailoringunit;
 
         /// <summary>
+        /// SqlDataSource5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource5;
+
+        /// <summary>
+        /// GridViewTailoringunit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewTailoringunit;
+
+        /// <summary>
         /// Viewcompleteunit control.
         /// </summary>
         /// <remarks>
@@ -292,6 +373,24 @@ namespace synchr2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.View Viewcompleteunit;
+
+        /// <summary>
+        /// SqlDataSource6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource6;
+
+        /// <summary>
+        /// GridViewCompleteunit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewCompleteunit;
 
         /// <summary>
         /// ViewTraining control.
