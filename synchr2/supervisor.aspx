@@ -360,12 +360,30 @@
                                             
                                                         
 
-                                                               <ul>
-                                                                  <li>
-                                                                    <label style="margin-bottom: 40px; margin-top: 40px; float:left; font-size: 17px; color:#2c3e50"><b>Date</b></label>&nbsp<asp:TextBox ID="txttrainingNeedDate" Style="float: right; height:30px; width:200px; margin-left: 20px; margin-top: 30px" CssClass="form-control" runat="server" TextMode="Date"></asp:TextBox>
-                                                                  </li>
-                                                               <li>
-                                                                <label style="color:#2c3e50; font-size: 17px; margin-top:70px; margin-left:20px"><b>Unit</b></label>&nbsp<asp:DropDownList ID="DropDownListTrainingNeeds" runat="server" style="float:right; margin-top:70px; width: 200px; height: 25px">
+                                                               <div class="row">
+                                                                   <div class="col-6">
+                                                                 
+                                                                    <label style="margin-top:30px;font-size: 17px; color:#2c3e50"><b>Date</b></label>
+                                                               </div>
+
+                                                                   <div class="col-6">
+                                                                     
+                                                                       <asp:TextBox ID="txttrainingNeedDate" Style=" margin-left:-30px;margin-top:30px;height:30px; width:200px; " CssClass="form-control" runat="server" TextMode="Date"></asp:TextBox>
+                                                                   
+                                                                           </div>
+
+                                                            </div>
+                                                               
+                                                                    <br />
+
+                                                            <div class="row">
+                                                                   <div class="col-6">
+
+                                                                <label style="margin-top:30px;color:#2c3e50; font-size: 17px"><b>Unit</b></label>
+                                                                   </div>
+
+                                                                    <div class="col-6">
+                                                                      <asp:DropDownList ID="DropDownListTrainingNeeds" runat="server" style="margin-left:-30px; margin-top:30px;width: 200px; height: 25px">
                                                                 <asp:ListItem Value="0">Please Select</asp:ListItem>  
                                                     
                                                                 <asp:ListItem Value="1">Print Unit </asp:ListItem>  
@@ -375,19 +393,43 @@
                                                                 <asp:ListItem Value="5">Tailoring Unit</asp:ListItem>
                                                                 <asp:ListItem Value="6">Complete Unit</asp:ListItem>
                                                                 </asp:DropDownList>
-                                                                </li>
+                                                                      </div>
 
-                                                                <li>
-                                                                <label style=" font-size: 17px; color:#2c3e50; margin-top: 30px""><b>Employee Id</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px; margin-left: 20px; margin-top: 30px" CssClass="form-control" ID="txttrainnigNeedId" runat="server"></asp:TextBox>
-                                                                </li>
-                                                                <li>
-                                                                <label style="margin-bottom: 40px; margin-top: 40px; float:left; font-size: 17px; color:#2c3e50"><b>Employee Name</b></label>&nbsp<asp:TextBox ID="txtEmployeeTraininNeedName" runat="server" ></asp:TextBox>
-                                                                </li>
-                                              
-                                                                <li>
-                                                                <asp:Button class="btn btn-primary" style="float:right; margin-right: -50px" ID="btnSubmitTrain" runat="server" Text="Submit" OnClick="btnSubmitTrain_Click" />
-                                                                </li>
-                                                                </ul>
+                                                             </div>
+                                                           
+                                                               <br />
+                                               
+                                                    <div class="row">
+                                                                 <div class="col-6">
+                                                                <label style=" margin-top:30px;font-size: 17px; color:#2c3e50"><b>Employee Id</b></label>
+                                                                 </div>
+                                                                
+                                                                <div class="col-6">
+                                                                    <asp:TextBox style=" margin-left:-30px;margin-top:30px;height:30px; width:200px" CssClass="form-control" ID="txttrainnigNeedId" runat="server"></asp:TextBox>
+                                                                </div>
+                                                            </div>       
+                                                             
+                                                                 <br />
+                                                        <div class="row">
+                                                                <div class="col-6">
+                                                                <label style="margin-top:30px;font-size: 17px; color:#2c3e50"><b>Employee Name</b></label>
+                                                                </div>
+
+                                                                <div class="col-6">
+                                                                    <asp:TextBox ID="txtEmployeeTraininNeedName" runat="server" style="margin-left:-30px;margin-top:30px;height:30px; width:200px"></asp:TextBox>
+                                                                </div>
+                                                            </div>  
+                                                                
+                                                                 <br />
+                                                                <br />
+                                                        <div class="row">
+                                                                   <div class="col">
+                                                                     
+                                                                <asp:Button class="btn btn-primary" style="margin-top:20px; margin-left:100px;width:200px" ID="btnSubmitTrain" runat="server" Text="Submit" OnClick="btnSubmitTrain_Click" />
+                                                                        
+                                                                   </div>
+                                                            </div>       
+                                                             
                                                
                                            </div>
                                            </div>
