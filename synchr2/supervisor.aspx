@@ -361,8 +361,11 @@
                                                         
 
                                                                <ul>
+                                                                  <li>
+                                                                    <label style="margin-bottom: 40px; margin-top: 40px; float:left; font-size: 17px; color:#2c3e50"><b>Date</b></label>&nbsp<asp:TextBox ID="txttrainingNeedDate" Style="float: right; height:30px; width:200px; margin-left: 20px; margin-top: 30px" CssClass="form-control" runat="server" TextMode="Date"></asp:TextBox>
+                                                                  </li>
                                                                <li>
-                                                                <label style="color:#2c3e50; font-size: 17px; margin-top:70px; margin-left:20px"><b>Unit</b></label>&nbsp<asp:DropDownList ID="DropDownList2" runat="server" style="float:right; margin-top:70px; width: 200px; height: 25px">
+                                                                <label style="color:#2c3e50; font-size: 17px; margin-top:70px; margin-left:20px"><b>Unit</b></label>&nbsp<asp:DropDownList ID="DropDownListTrainingNeeds" runat="server" style="float:right; margin-top:70px; width: 200px; height: 25px">
                                                                 <asp:ListItem Value="0">Please Select</asp:ListItem>  
                                                     
                                                                 <asp:ListItem Value="1">Print Unit </asp:ListItem>  
@@ -375,16 +378,17 @@
                                                                 </li>
 
                                                                 <li>
-                                                                <label style=" font-size: 17px; color:#2c3e50; margin-top: 30px""><b>Employee Id</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px; margin-left: 20px; margin-top: 30px" CssClass="form-control" ID="TextBox3" runat="server"></asp:TextBox>
+                                                                <label style=" font-size: 17px; color:#2c3e50; margin-top: 30px""><b>Employee Id</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px; margin-left: 20px; margin-top: 30px" CssClass="form-control" ID="txttrainnigNeedId" runat="server"></asp:TextBox>
                                                                 </li>
                                                                 <li>
-                                                                <label style="margin-bottom: 40px; margin-top: 40px; float:left; font-size: 17px; color:#2c3e50"><b>Date</b></label>&nbsp<asp:TextBox ID="trainDate" runat="server" ReadOnly="true" style="width:200px;height: 25px; float:right; margin-top: 25px; margin-bottom: 40px"></asp:TextBox>
+                                                                <label style="margin-bottom: 40px; margin-top: 40px; float:left; font-size: 17px; color:#2c3e50"><b>Employee Name</b></label>&nbsp<asp:TextBox ID="txtEmployeeTraininNeedName" runat="server" ></asp:TextBox>
                                                                 </li>
+                                              
                                                                 <li>
-                                                                <asp:Button class="btn btn-primary" style="float:right; margin-top: 130px; margin-right: -50px" ID="btnSubmitTrain" runat="server" Text="Submit" />
+                                                                <asp:Button class="btn btn-primary" style="float:right; margin-right: -50px" ID="btnSubmitTrain" runat="server" Text="Submit" OnClick="btnSubmitTrain_Click" />
                                                                 </li>
                                                                 </ul>
-
+                                               
                                            </div>
                                            </div>
             </div>

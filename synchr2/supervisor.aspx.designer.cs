@@ -402,31 +402,40 @@ namespace synchr2
         protected global::System.Web.UI.WebControls.View ViewTraining;
 
         /// <summary>
-        /// DropDownList2 control.
+        /// txttrainingNeedDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.TextBox txttrainingNeedDate;
 
         /// <summary>
-        /// TextBox3 control.
+        /// DropDownListTrainingNeeds control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListTrainingNeeds;
 
         /// <summary>
-        /// trainDate control.
+        /// txttrainnigNeedId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox trainDate;
+        protected global::System.Web.UI.WebControls.TextBox txttrainnigNeedId;
+
+        /// <summary>
+        /// txtEmployeeTraininNeedName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEmployeeTraininNeedName;
 
         /// <summary>
         /// btnSubmitTrain control.

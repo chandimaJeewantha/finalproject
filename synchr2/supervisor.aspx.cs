@@ -667,5 +667,49 @@ namespace synchr2
             txtDamageCount.Text = "";
             selectUnit.SelectedValue = "0";
         }
+
+        protected void btnSubmitTrain_Click(object sender, EventArgs e)
+        {
+            if (txttrainingNeedDate.Text == "" || DropDownListTrainingNeeds.SelectedValue == "0" || txttrainnigNeedId.Text == "" || txtEmployeeTraininNeedName.Text == "")
+            {
+
+
+                Response.Write("<script>alert(' Enter The Relevant Data ....')</script>");
+
+
+            }
+            else
+            {
+                try
+                {
+
+                    SqlConnection con = new SqlConnection(connectionstring);
+                    string query = "insert into TraningNeedsTbl values('" + txttrainingNeedDate.Text + "','" +DropDownListTrainingNeeds.Text + "','"+txttrainnigNeedId.Text+"','" + txtEmployeeTraininNeedName.Text + "')";
+                    SqlCommand cmd = new SqlCommand(query, con);
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    Response.Write("<script>alert('Data Inserted....')</script>");
+                    GridViewPrintunit.DataBind();
+
+
+                }
+                catch (Exception ex)
+                {
+
+
+                    Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+
+                }
+
+
+
+
+
+
+            }
+        }
     }
 }

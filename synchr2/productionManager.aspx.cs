@@ -142,8 +142,437 @@ namespace synchr2
             else if (selectUnit.SelectedValue == "2")
             {
 
+                try
+                {
+                    SqlConnection con = new SqlConnection(connectionString);
+                    string quary = "select * from handleunitTbl where Date='" + txtProductionManagerDate.Text + "'";
+                    SqlCommand cmd = new SqlCommand(quary, con);
+                    con.Open();
+                    SqlDataReader rdr = cmd.ExecuteReader();
+                    if (rdr.Read() == true)
+                    {
+
+                        int presentEmployees = Convert.ToInt32(rdr.GetValue(2));
+                        int absenceEmployees = Convert.ToInt32(rdr.GetValue(3));
+                        double totalProduction = Convert.ToInt32(rdr.GetValue(4));
+                        double damageProduction = Convert.ToInt32(rdr.GetValue(5));
 
 
+
+
+                        double mealExpenses;
+                        mealExpenses = (presentEmployees * 75) + (presentEmployees * 100) + (presentEmployees * 30 * 2);
+                        txtMeal.Text = "Rs" + " " + mealExpenses.ToString() + ".00";
+
+                        double productionefficiency;
+                        productionefficiency = Convert.ToDouble((totalProduction * 100) / 1000);
+                        double roundproductionefficiency = Math.Round(productionefficiency, 2);
+                        txtEfficiency.Text = roundproductionefficiency.ToString() + " %";
+
+                        double damagePrecentage;
+                        damagePrecentage = Convert.ToDouble((damageProduction * 100) / totalProduction);
+                        double newdamgeprecentage = Math.Round(damagePrecentage, 2);
+                        txtDamage.Text = newdamgeprecentage.ToString() + " %";
+
+
+                        if (productionefficiency >= 85 && damagePrecentage <= 20)
+                        {
+
+                            txtStatus.Text = "Greate";
+
+
+                        }
+                        else if (productionefficiency >= 75 && productionefficiency < 85 && damagePrecentage < 30 && damagePrecentage > 20)
+                        {
+
+                            txtStatus.Text = "Good";
+
+
+
+
+                        }
+                        else if (productionefficiency > 50 && productionefficiency < 75 && damagePrecentage > 30 && damagePrecentage < 35)
+                        {
+
+
+                            txtStatus.Text = "Poor";
+
+                        }
+                        else
+                        {
+                            txtStatus.Text = "Warning!!";
+                            Response.Write("<script>alert('Indicate High Risk For Company Financial Health......');</script>");
+
+
+                        }
+
+
+
+                    }
+
+
+                }
+                catch (Exception ex)
+                {
+
+                    Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+
+
+                }
+
+
+
+
+
+
+
+
+            }
+            else if (selectUnit.SelectedValue == "3")
+            {
+
+
+                try
+                {
+                    SqlConnection con = new SqlConnection(connectionString);
+                    string quary = "select * from cuttingunitTbl where Date='" + txtProductionManagerDate.Text + "'";
+                    SqlCommand cmd = new SqlCommand(quary, con);
+                    con.Open();
+                    SqlDataReader rdr = cmd.ExecuteReader();
+                    if (rdr.Read() == true)
+                    {
+
+                        int presentEmployees = Convert.ToInt32(rdr.GetValue(2));
+                        int absenceEmployees = Convert.ToInt32(rdr.GetValue(3));
+                        double totalProduction = Convert.ToInt32(rdr.GetValue(4));
+                        double damageProduction = Convert.ToInt32(rdr.GetValue(5));
+
+
+
+
+                        double mealExpenses;
+                        mealExpenses = (presentEmployees * 75) + (presentEmployees * 100) + (presentEmployees * 30 * 2);
+                        txtMeal.Text = "Rs" + " " + mealExpenses.ToString() + ".00";
+
+                        double productionefficiency;
+                        productionefficiency = Convert.ToDouble((totalProduction * 100) / 1500);
+                        double roundproductionefficiency = Math.Round(productionefficiency, 2);
+                        txtEfficiency.Text = roundproductionefficiency.ToString() + " %";
+
+                        double damagePrecentage;
+                        damagePrecentage = Convert.ToDouble((damageProduction * 100) / totalProduction);
+                        double newdamgeprecentage = Math.Round(damagePrecentage, 2);
+                        txtDamage.Text = newdamgeprecentage.ToString() + " %";
+
+
+                        if (productionefficiency >= 85 && damagePrecentage <= 20)
+                        {
+
+                            txtStatus.Text = "Greate";
+
+
+                        }
+                        else if (productionefficiency >= 75 && productionefficiency < 85 && damagePrecentage < 30 && damagePrecentage > 20)
+                        {
+
+                            txtStatus.Text = "Good";
+
+
+
+
+                        }
+                        else if (productionefficiency > 50 && productionefficiency < 75 && damagePrecentage > 30 && damagePrecentage < 35)
+                        {
+
+
+                            txtStatus.Text = "Poor";
+
+                        }
+                        else
+                        {
+                            txtStatus.Text = "Warning!!";
+                            Response.Write("<script>alert('Indicate High Risk For Company Financial Health......');</script>");
+
+
+                        }
+
+
+
+                    }
+
+
+                }
+                catch (Exception ex)
+                {
+
+                    Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+
+
+                }
+
+
+
+
+
+
+
+
+
+
+            }
+            else if (selectUnit.SelectedValue == "4")
+            {
+
+                try
+                {
+                    SqlConnection con = new SqlConnection(connectionString);
+                    string quary = "select * from borderingunitTbl where Date='" + txtProductionManagerDate.Text + "'";
+                    SqlCommand cmd = new SqlCommand(quary, con);
+                    con.Open();
+                    SqlDataReader rdr = cmd.ExecuteReader();
+                    if (rdr.Read() == true)
+                    {
+
+                        int presentEmployees = Convert.ToInt32(rdr.GetValue(2));
+                        int absenceEmployees = Convert.ToInt32(rdr.GetValue(3));
+                        double totalProduction = Convert.ToInt32(rdr.GetValue(4));
+                        double damageProduction = Convert.ToInt32(rdr.GetValue(5));
+
+
+
+
+                        double mealExpenses;
+                        mealExpenses = (presentEmployees * 75) + (presentEmployees * 100) + (presentEmployees * 30 * 2);
+                        txtMeal.Text = "Rs" + " " + mealExpenses.ToString() + ".00";
+
+                        double productionefficiency;
+                        productionefficiency = Convert.ToDouble((totalProduction * 100) / 1200);
+                        double roundproductionefficiency = Math.Round(productionefficiency, 2);
+                        txtEfficiency.Text = roundproductionefficiency.ToString() + " %";
+
+                        double damagePrecentage;
+                        damagePrecentage = Convert.ToDouble((damageProduction * 100) / totalProduction);
+                        double newdamgeprecentage = Math.Round(damagePrecentage, 2);
+                        txtDamage.Text = newdamgeprecentage.ToString() + " %";
+
+
+                        if (productionefficiency >= 85 && damagePrecentage <= 20)
+                        {
+
+                            txtStatus.Text = "Greate";
+
+
+                        }
+                        else if (productionefficiency >= 75 && productionefficiency < 85 && damagePrecentage < 30 && damagePrecentage > 20)
+                        {
+
+                            txtStatus.Text = "Good";
+
+
+
+
+                        }
+                        else if (productionefficiency > 50 && productionefficiency < 75 && damagePrecentage > 30 && damagePrecentage < 35)
+                        {
+
+
+                            txtStatus.Text = "Poor";
+
+                        }
+                        else
+                        {
+                            txtStatus.Text = "Warning!!";
+                            Response.Write("<script>alert('Indicate High Risk For Company Financial Health......');</script>");
+
+
+                        }
+
+
+
+                    }
+
+
+                }
+                catch (Exception ex)
+                {
+
+                    Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+
+
+                }
+
+
+            }
+            else if (selectUnit.SelectedValue == "5")
+            {
+                try
+                {
+                    SqlConnection con = new SqlConnection(connectionString);
+                    string quary = "select * from TailoringunitTbl where Date='" + txtProductionManagerDate.Text + "'";
+                    SqlCommand cmd = new SqlCommand(quary, con);
+                    con.Open();
+                    SqlDataReader rdr = cmd.ExecuteReader();
+                    if (rdr.Read() == true)
+                    {
+
+                        int presentEmployees = Convert.ToInt32(rdr.GetValue(2));
+                        int absenceEmployees = Convert.ToInt32(rdr.GetValue(3));
+                        double totalProduction = Convert.ToInt32(rdr.GetValue(4));
+                        double damageProduction = Convert.ToInt32(rdr.GetValue(5));
+
+
+
+
+                        double mealExpenses;
+                        mealExpenses = (presentEmployees * 75) + (presentEmployees * 100) + (presentEmployees * 30 * 2);
+                        txtMeal.Text = "Rs" + " " + mealExpenses.ToString() + ".00";
+
+                        double productionefficiency;
+                        productionefficiency = Convert.ToDouble((totalProduction * 100) / 1200);
+                        double roundproductionefficiency = Math.Round(productionefficiency, 2);
+                        txtEfficiency.Text = roundproductionefficiency.ToString() + " %";
+
+                        double damagePrecentage;
+                        damagePrecentage = Convert.ToDouble((damageProduction * 100) / totalProduction);
+                        double newdamgeprecentage = Math.Round(damagePrecentage, 2);
+                        txtDamage.Text = newdamgeprecentage.ToString() + " %";
+
+
+                        if (productionefficiency >= 85 && damagePrecentage <= 20)
+                        {
+
+                            txtStatus.Text = "Greate";
+
+
+                        }
+                        else if (productionefficiency >= 75 && productionefficiency < 85 && damagePrecentage < 30 && damagePrecentage > 20)
+                        {
+
+                            txtStatus.Text = "Good";
+
+
+
+
+                        }
+                        else if (productionefficiency > 50 && productionefficiency < 75 && damagePrecentage > 30 && damagePrecentage < 35)
+                        {
+
+
+                            txtStatus.Text = "Poor";
+
+                        }
+                        else
+                        {
+                            txtStatus.Text = "Warning!!";
+                            Response.Write("<script>alert('Indicate High Risk For Company Financial Health......');</script>");
+
+
+                        }
+
+
+
+                    }
+
+
+                }
+                catch (Exception ex)
+                {
+
+                    Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+
+
+                }
+
+
+
+
+
+
+            }
+            else if (selectUnit.SelectedValue == "6")
+            {
+                try
+                {
+                    SqlConnection con = new SqlConnection(connectionString);
+                    string quary = "select * from completeunitTbl where Date='" + txtProductionManagerDate.Text + "'";
+                    SqlCommand cmd = new SqlCommand(quary, con);
+                    con.Open();
+                    SqlDataReader rdr = cmd.ExecuteReader();
+                    if (rdr.Read() == true)
+                    {
+
+                        int presentEmployees = Convert.ToInt32(rdr.GetValue(2));
+                        int absenceEmployees = Convert.ToInt32(rdr.GetValue(3));
+                        double totalProduction = Convert.ToInt32(rdr.GetValue(4));
+                        double damageProduction = Convert.ToInt32(rdr.GetValue(5));
+
+
+
+
+                        double mealExpenses;
+                        mealExpenses = (presentEmployees * 75) + (presentEmployees * 100) + (presentEmployees * 30 * 2);
+                        txtMeal.Text = "Rs" + " " + mealExpenses.ToString() + ".00";
+
+                        double productionefficiency;
+                        productionefficiency = Convert.ToDouble((totalProduction * 100) / 1200);
+                        double roundproductionefficiency = Math.Round(productionefficiency, 2);
+                        txtEfficiency.Text = roundproductionefficiency.ToString() + " %";
+
+                        double damagePrecentage;
+                        damagePrecentage = Convert.ToDouble((damageProduction * 100) / totalProduction);
+                        double newdamgeprecentage = Math.Round(damagePrecentage, 2);
+                        txtDamage.Text = newdamgeprecentage.ToString() + " %";
+
+
+                        if (productionefficiency >= 85 && damagePrecentage <= 20)
+                        {
+
+                            txtStatus.Text = "Greate";
+
+
+                        }
+                        else if (productionefficiency >= 75 && productionefficiency < 85 && damagePrecentage < 30 && damagePrecentage > 20)
+                        {
+
+                            txtStatus.Text = "Good";
+
+
+
+
+                        }
+                        else if (productionefficiency > 50 && productionefficiency < 75 && damagePrecentage > 30 && damagePrecentage < 35)
+                        {
+
+
+                            txtStatus.Text = "Poor";
+
+                        }
+                        else
+                        {
+                            txtStatus.Text = "Warning!!";
+                            Response.Write("<script>alert('Indicate High Risk For Company Financial Health......');</script>");
+
+
+                        }
+
+
+
+                    }
+
+
+                }
+                catch (Exception ex)
+                {
+
+                    Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+
+
+                }
 
 
 
