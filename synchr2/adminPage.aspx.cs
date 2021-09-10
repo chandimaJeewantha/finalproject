@@ -11,7 +11,7 @@ namespace synchr2
 {
     public partial class adminPage : System.Web.UI.Page
     {
-        string connectionstring = "Data Source=LAPTOP-PTUSKN3N;Initial Catalog=HrmsDatabase;Integrated Security=True";
+        string connectionstring = "Data Source=localhost;Initial Catalog=HrmsDatabase;Integrated Security=True";
         protected void Page_Load(object sender, EventArgs e)
         {
             GridViewHrDepartment.DataBind();
@@ -360,6 +360,31 @@ namespace synchr2
             DropDownListSecurityQuestion.SelectedValue = "0";
             
 
+        }
+
+        protected void txtViewTable_Click(object sender, EventArgs e)
+        {
+            if (DropDownListViewDataTable.SelectedValue == "0")
+            {
+                Response.Write("<script>alert('Select Unit....')</script>");
+
+
+            }
+            else if (DropDownListViewDataTable.SelectedValue == "1")
+            {
+                MultiViewTables.ActiveViewIndex = 1;
+
+            }
+            else if (DropDownListViewDataTable.SelectedValue == "2")
+            {
+
+                MultiViewTables.ActiveViewIndex = 2;
+            }
+            else if (DropDownListViewDataTable.SelectedValue == "3")
+            {
+
+                MultiViewTables.ActiveViewIndex = 3;
+            }
         }
     }
 }

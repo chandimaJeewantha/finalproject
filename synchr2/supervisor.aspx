@@ -402,6 +402,64 @@
             
             <asp:View ID="ViewLeaves" runat="server">
 
+                            <div class="container">
+                            <div class="row justify-content-start">
+                            <div class="col-4">
+                            <div class="card" style="border-radius:25px; width: 45rem;background-color:#50DBB4; margin-left:-60px;margin-right:5px; margin-top:60px; margin-bottom:20px">
+                            <div class="card-body">
+                            <h2 class="card-title" id="cardLeave" style="color:black;text-align:center;font-family:Segoe UI;color:#303952" >Leave unit</h2>
+                                      
+                                            <ul>
+                                                <li>
+                                                    <label style="float:left; margin-top:30px; margin-left:30px; color:#2c3e50"><b>Unit</b></label>&nbsp<asp:DropDownList ID="DropDownListUnit" runat="server" style="float:right; margin-top:30px; margin-right:40px;width: 180px">
+                                                        <asp:ListItem Value="0">Please Select</asp:ListItem>  
+                                                    
+                                                        <asp:ListItem Value="1">Print Unit </asp:ListItem>  
+                                                        <asp:ListItem Value="2">Handle Unit</asp:ListItem>  
+                                                        <asp:ListItem Value="3">Cutting Unit</asp:ListItem> 
+                                                        <asp:ListItem Value="4">Bordering Unit</asp:ListItem>
+                                                        <asp:ListItem Value="5">Tailoring Unit</asp:ListItem>
+                                                        <asp:ListItem Value="6">Complete Unit</asp:ListItem>
+                                                  </asp:DropDownList>
+                                               </li>
+
+                                                 <li>
+                                                  <label style="float:left;margin-top:80px;margin-left:-28px; color:#2c3e50"><b>Employee id</b></label>&nbsp<asp:TextBox style="float:right;margin-right:40px;margin-top:40px;width:180px;height:30px" CssClass="form-control" ID="txtLeaveEmployeeid" runat="server"></asp:TextBox>
+                                                </li>
+
+                                                <li>
+                                                   <label style="float:left;margin-top:120px;margin-left:-80px; color:#2c3e50"><b>Date</b></label><asp:TextBox ID="txtLeaveDate" runat="server" style="float:right;margin-top:40px;margin-right:40px;width:180px" TextMode="Date"></asp:TextBox>
+                                                 </li>
+
+                                                <li>
+                                                     <label style="float:left;margin-top:110px;margin-left:-80px; color:#2c3e50"><b>Leave Type</b></label>&nbsp<asp:DropDownList ID="DropDownListLeaveType" runat="server" style="float: right;margin-top:40px;margin-right:40px;width:180px">
+                                                        <asp:ListItem Value="0">Please Select</asp:ListItem>  
+                                                    
+                                                        <asp:ListItem Value="1"> Annual </asp:ListItem>  
+                                                        <asp:ListItem Value="2">Casual</asp:ListItem>  
+                                                     
+                                                       </asp:DropDownList>
+                                                 </li>
+
+                                                <li>
+                                                     <asp:Button ID="btnLeave" runat="server" Text="Request Leave" style="float:right;margin-top:140px;margin-right:-60px; width:130px" type="button" class="btn btn-danger" />
+                                                 </li>
+                                            </ul>
+                                               
+                                               
+                                                
+                             
+
+
+
+
+
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+
 
             </asp:View>
 

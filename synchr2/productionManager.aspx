@@ -99,9 +99,9 @@
                                                         <asp:ListItem Value="1">Print Unit </asp:ListItem>  
                                                         <asp:ListItem Value="2">Handle Unit</asp:ListItem>  
                                                         <asp:ListItem Value="3">Cutting Unit</asp:ListItem> 
-                                                        <asp:ListItem Value="3">Bordering Unit</asp:ListItem>
-                                                        <asp:ListItem Value="3">Tailoring Unit</asp:ListItem>
-                                                        <asp:ListItem Value="3">Complete Unit</asp:ListItem>
+                                                        <asp:ListItem Value="4">Bordering Unit</asp:ListItem>
+                                                        <asp:ListItem Value="5">Tailoring Unit</asp:ListItem>
+                                                        <asp:ListItem Value="6">Complete Unit</asp:ListItem>
                                                   </asp:DropDownList>
                                                </li>
                                              </ul>

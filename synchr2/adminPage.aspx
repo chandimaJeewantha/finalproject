@@ -23,8 +23,8 @@
         <div>
             <%-- Nav Bar--%>
             <nav class="navbar navbar-expand-lg navbar-light" id="demoNav">
-                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                   
+                 <div class="collapse navbar-collapse" id="navbarSupportedContent" style="color: #FFD700;font-family: 'Trocchi', serif;font-size: 45px;font-weight: normal;line-height: 48px;margin-left:500px">
+                  <h1>ADMIN PLATFORM</h1>
                 </div>
             </nav>
 
@@ -137,15 +137,44 @@
                                      </div>
                             </div>
 
-                        
-                        
 
-                            <div class="col-sm">
-                               <div class="row" style="margin-top:20px">
+             <div class="col-sm">
+                                <div class="row" style="margin-top:20px">
                                    <div class="col">
-                                       <center>
-                                       <h3 style="color:black">Hr Department</h3>
-                                       </center>
+                                       
+                                       
+                                        <div id="viewTables">
+                                       
+                                           <div class="card" style="width: 25rem; margin-left:5%; background-color:#50DBB4; margin-top:20px; border-radius:15px">
+                                            <div class="card-body">
+                                                <h5 class="card-title" style="margin-top:-10px;text-align:center;color:black">View Table</h5>
+                                                
+                                                 <left>
+                                                  <asp:DropDownList ID="DropDownListViewDataTable" runat="server" style="margin-top:10px">
+                                                  <asp:ListItem Value="0">Please Select</asp:ListItem>  
+                                                    
+                                                  <asp:ListItem Value="1">HR Department </asp:ListItem>  
+                                                  <asp:ListItem Value="2">Supervisor</asp:ListItem>  
+                                                  <asp:ListItem Value="3">Production Manager</asp:ListItem>  
+                                                 </asp:DropDownList>
+                                               </left>
+                                                <br />
+                                                
+                                                <right>
+                                                 <asp:Button ID="txtViewTable" runat="server" Text="View" style="background-color:lightskyblue;border-radius:10px;float:right;width:130px; margin-top:-30px; width:150px" type="button" OnClick="txtViewTable_Click"/>
+                                              
+                                                </right>
+                                         </div>
+                                      </div>
+                             
+
+                                     </div>
+
+
+
+
+
+
                                    </div>
                                </div>
                                 <div class="row">
@@ -154,10 +183,19 @@
                                     </div>
                                  </div>
 
-                                <div class="row" style="width:150px">
+
+                        
+                      <asp:MultiView ID="MultiViewTables" runat="server" ActiveViewIndex="0">
+                                
+                               <asp:View ID="ViewNull" runat="server">
+
+                               </asp:View>
+                               <asp:View ID="ViewHrTable" runat="server">
+
+                                   <div class="row" style="width:150px">
                                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabaseConnectionString %>" SelectCommand="SELECT * FROM [hrDepartmentTbl]"></asp:SqlDataSource>
                                     <div class="col">
-                                        <asp:GridView ID="GridViewHrDepartment" style="margin-left:-90px" Width="150px" class="table table-striped table-bordered" runat="server" AutoGenerateColumns="False" DataKeyNames="employeeid" DataSourceID="SqlDataSource1">
+                                        <asp:GridView ID="GridViewHrDepartment" style="margin-left:27px" Width="150px" class="table table-striped table-bordered" runat="server" AutoGenerateColumns="False" DataKeyNames="employeeid" DataSourceID="SqlDataSource1">
                                             <Columns>
                                                 <asp:BoundField DataField="employeeid" HeaderText="employeeid" ReadOnly="True" SortExpression="employeeid" />
                                                 <asp:BoundField DataField="username" HeaderText="username" SortExpression="username" />
@@ -168,24 +206,17 @@
                                         </asp:GridView>
                                     </div>
                                </div>
-                                <br/>
-                                 <div class="row">
-                                   <div class="col">
-                                       <center>
-                                       <h3 style="color:black">Supervisor</h3>
-                                       </center>
-                                   </div>
-                               </div>
-                               <div class="row">
-                                  <div class="col">
-                                    <hr/>
-                                  </div>
-                               </div>
 
-                                <div class="row" style="width:150px"> 
+                               </asp:View>
+
+
+
+                               <asp:View ID="ViewSupervisorTable" runat="server">
+                                    
+                                   <div class="row" style="width:150px"> 
                                     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabaseConnectionString2 %>" SelectCommand="SELECT * FROM [supervisorTbl]"></asp:SqlDataSource>
                                     <div class="col">
-                                        <asp:GridView ID="GridViewSupervisor" style="margin-left:-90px" Width="150px" class="table table-striped table-bordered" runat="server" AutoGenerateColumns="False" DataKeyNames="employeeid" DataSourceID="SqlDataSource2">
+                                        <asp:GridView ID="GridViewSupervisor" style="margin-left:27px" Width="150px" class="table table-striped table-bordered" runat="server" AutoGenerateColumns="False" DataKeyNames="employeeid" DataSourceID="SqlDataSource2">
                                             <Columns>
                                                 <asp:BoundField DataField="employeeid" HeaderText="employeeid" ReadOnly="True" SortExpression="employeeid" />
                                                 <asp:BoundField DataField="username" HeaderText="username" SortExpression="username" />
@@ -195,26 +226,19 @@
                                             </Columns>
                                         </asp:GridView>
                                     </div>
-                               </div>
-                                <br/>
 
-                                 <div class="row">
-                                   <div class="col">
-                                       <center>
-                                       <h3 style="color:black">Production Manager</h3>
-                                       </center>
-                                   </div>
-                               </div>
-                               <div class="row">
-                                  <div class="col">
-                                    <hr/>
-                                  </div>
                                </div>
 
-                                <div class="row" style="width:150px">
+                               </asp:View>
+
+
+                               <asp:View ID="ViewProductionTable" runat="server">
+
+                                    
+                                   <div class="row" style="width:150px">
                                     <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabaseConnectionString2 %>" SelectCommand="SELECT * FROM [productionManagerTbl]"></asp:SqlDataSource>
                                     <div class="col">
-                                        <asp:GridView ID="GridViewProductionMan" style="margin-left:-90px" Width="150px" class="table table-striped table-bordered" runat="server" AutoGenerateColumns="False" DataKeyNames="employeeid" DataSourceID="SqlDataSource3">
+                                        <asp:GridView ID="GridViewProductionMan" style="margin-left:27px" Width="150px" class="table table-striped table-bordered" runat="server" AutoGenerateColumns="False" DataKeyNames="employeeid" DataSourceID="SqlDataSource3">
                                             <Columns>
                                                 <asp:BoundField DataField="employeeid" HeaderText="employeeid" ReadOnly="True" SortExpression="employeeid" />
                                                 <asp:BoundField DataField="username" HeaderText="username" SortExpression="username" />
@@ -225,17 +249,13 @@
                                         </asp:GridView>
                                     </div>
                                 </div>
-                                <div style="align-content:center">
-                                    <center>
-                                      
-                                         <asp:Button ID="btnRefresh" runat="server" Text="Refresh" class="btn btn-secondary" OnClick="btnRefresh_Click" />
 
-                                    </center>
-                                   
-                                </div>
+                               </asp:View>
+                         </asp:MultiView>
 
-                            </div>
-                        </div>
+</div>
+                            
+            </div>        
 
 
 
