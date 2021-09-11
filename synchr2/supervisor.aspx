@@ -32,47 +32,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"
     type="text/javascript"></script>
     <!-- Bootstrap DatePicker -->
-    <script type="text/javascript">
-        $(function () {
-            $('[id*=txtDate]').datepicker({
-                changeMonth: true,
-                changeYear: true,
-                format: "dd/mm/yyyy",
-                language: "tr"
-            });
-        });
-    </script>
 
-    <script type="text/javascript">
-        $(function () {
-            $('[id*=txtDate2]').datepicker({
-                changeMonth: true,
-                changeYear: true,
-                format: "dd/mm/yyyy",
-                language: "tr"
-            });
-        });
-    </script>
+    
 
-    <script type="text/javascript">
-        $(function () {
-            $('[id*=trainDate]').datepicker({
-                changeMonth: true,
-                changeYear: true,
-                format: "dd/mm/yyyy",
-                language: "tr"
-            });
-        });
-    </script>
 
 
 
 
 </head>
+    
 <body>
     <form id="form1" runat="server">
-        <div class="wrapper">
-    <div class="sidebar">
+        <div class="wrapper" >
+    <div class="sidebar" style="width:280px">
         
             <img src="imgs/MicrosoftTeams-image%20(11).png" style="margin-left:20px" />
         
@@ -88,15 +60,19 @@
         </ul> 
        
     </div>
-    <div class="main_content">
+    <div class="main_content" style="margin-left:400px">
         
         
         <asp:MultiView ID="MultiViewSupervisor" runat="server" ActiveViewIndex="0">
 
 
             <asp:View ID="ViewHome" runat="server">
-
-                
+               <div style="font-family:'Segoe UI';font-size:3rem; color:black; margin-left:20%; margin-top:10%">
+                <asp:Label ID="lblGreetings" runat="server" Text="Label" ></asp:Label>
+               </div>
+                <div >
+                    <img src="Animation/business-investor-gaining-profit.gif" style="width:100rem" />
+                </div>
             </asp:View>
 
 
@@ -185,13 +161,13 @@
 
 
                <div class="col-4">
-                    
+                  
 
                             <div class="card" style="height:60rem; width: 80rem; background-color:#194C43; margin-left:-20px; margin-right:40px; margin-top:60px; margin-bottom:20px">
                             <div class="card-body">
                                 <div class="input-group">
                             <h3 class="card-title" id="viewDataSup" style="text-align:center; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa" ><b>View Data</b></h3>
-                                <img src="imgs/Supervisor-icon.png" style="margin-top:-40px; margin-bottom:-30px; width:90px" />
+                                <img src="Animation/search.png" style="margin-top:-40px; margin-bottom:-30px; width:90px" />
                                     </div>
                                 
 
@@ -446,7 +422,13 @@
 
 
                 <div class="col-4">
-                         One of two columns
+                    <div >
+                        <img src="Animation/“Change%20is%20the%20end%20result%20of%20all%20true%20learning.”%20―%20Leo%20Buscaglia.gif" style="margin-top:-70px;width:60rem" />
+                    </div>
+                    <div>
+                    <img src="Animation/animation_640_ktg0nlmp.gif" style="width:40rem; margin-top:-80px; margin-left:40px"/>
+                     </div>
+                    
                 </div>
                 </div>
                 </div>
@@ -741,4 +723,20 @@
 </div>
     </form>
 </body>
+    <script>
+        var myDate = new Date();
+        var hrs = myDate.getHours();
+
+        var greet;
+
+        if (hrs < 12)
+            greet = 'Good Morning';
+        else if (hrs >= 12 && hrs <= 17)
+            greet = 'Good Afternoon';
+        else if (hrs >= 17 && hrs <= 24)
+            greet = 'Good Evening';
+
+        document.getElementById('lblGreetings').innerHTML =
+            '<b>' + greet + '</b> and welcome to Sync!';
+    </script>
 </html>

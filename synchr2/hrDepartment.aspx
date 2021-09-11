@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
                             <div class="wrapper">
-    <div class="sidebar">
+    <div class="sidebar" style="width:300px">
         
             <img src="imgs/MicrosoftTeams-image%20(11).png" />
         

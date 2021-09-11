@@ -68,6 +68,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="adminPage.aspx" />
+    <Content Include="Animation\animation_640_ktg0nlmp.gif" />
+    <Content Include="Animation\background-015 %282%29.png" />
+    <Content Include="Animation\business-investor-gaining-profit.gif" />
+    <Content Include="Animation\Productionmngerr.gif" />
+    <Content Include="Animation\search.png" />
+    <Content Include="Animation\“Change is the end result of all true learning.” ― Leo Buscaglia.gif" />
     <Content Include="boostrap\css\bootstrap.min.css" />
     <Content Include="boostrap\js\bootstrap.min.js" />
     <Content Include="boostrap\js\jquery-3.3.1.slim.min.js" />

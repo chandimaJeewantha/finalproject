@@ -46,7 +46,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="wrapper">
-    <div class="sidebar">
+    <div class="sidebar" style="width:300px">
         
             <img src="imgs/MicrosoftTeams-image%20(11).png" />
         
@@ -73,7 +73,15 @@
 
 
             <asp:View ID="ViewHome" runat="server">
-                
+                <div style="font-family:'Segoe UI';font-size:3rem; color:black; margin-left:30%; margin-top:3%">
+                <asp:Label ID="lblGreetings" runat="server" Text="Label" ></asp:Label>
+               </div>
+                <br />
+                <br />
+                    <center>
+                    <img src="Animation/Productionmngerr.gif" style="width:80rem"/> 
+                     </center>
+               
 
             </asp:View>
 
@@ -190,4 +198,20 @@
 </div>
     </form>
 </body>
+    <script>
+        var myDate = new Date();
+        var hrs = myDate.getHours();
+
+        var greet;
+
+        if (hrs < 12)
+            greet = 'Good Morning';
+        else if (hrs >= 12 && hrs <= 17)
+            greet = 'Good Afternoon';
+        else if (hrs >= 17 && hrs <= 24)
+            greet = 'Good Evening';
+
+        document.getElementById('lblGreetings').innerHTML =
+            '<b>' + greet + '</b> and welcome to Sync!';
+    </script>
 </html>

@@ -26,6 +26,17 @@ namespace synchr2
 
 
             GridViewPrintunit.DataBind();
+
+            int hour = DateTime.Now.Hour;
+
+            if (hour < 12)
+            {
+                Response.Write("<script>alert('Good Morning');</script>");
+            }
+            else
+            {
+                Response.Write("<script>alert('Good Evening');</script>");
+            }
         }
 
         protected void btnExit_Click(object sender, EventArgs e)
