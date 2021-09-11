@@ -17,9 +17,13 @@ body{
   display: flex;
   position: relative;
 }
+.wrapper .sidebar ul
+{
+    margin-top:50px;
+}
 
     .wrapper .sidebar {
-        width: 200px;
+        width: 250px;
         height: 100%;
         background: #0a3d62;
         padding: 30px 0px;
@@ -105,3 +109,9 @@ body{
     display: none !important;
   }
 }
+
+
+
+
+
+

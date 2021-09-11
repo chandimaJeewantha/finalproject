@@ -1725,6 +1725,8 @@
     <Content Include="imgs\MicrosoftTeams-image %2811%29.png" />
     <Content Include="imgs\MicrosoftTeams-image %287%29.png" />
     <Content Include="imgs\MicrosoftTeams-image %289%29.png" />
+    <Content Include="imgs\Supervisor-icon.png" />
+    <Content Include="imgs\supervisor.png" />
     <Content Include="imgs\syncHR2.png" />
     <Content Include="login.aspx" />
     <Content Include="productionManager.aspx" />
