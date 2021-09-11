@@ -150,24 +150,6 @@ namespace synchr2
         protected global::System.Web.UI.WebControls.Button btnProductionManagerShow;
 
         /// <summary>
-        /// SqlDataSource1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
-
-        /// <summary>
-        /// GridViewHrDepartment control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewHrDepartment;
-
-        /// <summary>
         /// ViewExpenses control.
         /// </summary>
         /// <remarks>

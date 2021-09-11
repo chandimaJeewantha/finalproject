@@ -81,7 +81,7 @@
             <li><asp:LinkButton ID="btnProduction" runat="server" class="fas fa-umbrella" OnClick="btnProduction_Click"> Daily Production</asp:LinkButton></li>
             <li><asp:LinkButton ID="btnTrain" runat="server" class="fas fa-child" OnClick="btnTrain_Click"> Training Needs</asp:LinkButton></li>
             <li><asp:LinkButton ID="btnLeaves" runat="server" class="fas fa-mug-hot" OnClick="btnLeaves_Click"> Enter Leaves</asp:LinkButton></li>
-            <li><asp:LinkButton ID="btnEmployee" runat="server" class="fas fa-address-card" OnClick="btnEmployee_Click"> Employee Profiles</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnEmployee" runat="server" class="fas fa-dolly" OnClick="btnEmployee_Click"> Out Sourse Order Details</asp:LinkButton></li>
             <li><asp:LinkButton ID="btnExit" runat="server" class="fas fa-hand-point-left" OnClick="btnExit_Click"> Exit</asp:LinkButton></li>
                      
             
@@ -426,6 +426,8 @@
                                                                    <div class="col">
                                                                      
                                                                 <asp:Button class="btn btn-primary" style="margin-top:20px; margin-left:100px;width:200px" ID="btnSubmitTrain" runat="server" Text="Submit" OnClick="btnSubmitTrain_Click" />
+                                                                       
+                                                                       
                                                                         
                                                                    </div>
                                                             </div>       
@@ -512,6 +514,7 @@
 
 
             <asp:View ID="ViewEmployee" runat="server">
+                <h1>out source</h1>
 
             </asp:View>
 

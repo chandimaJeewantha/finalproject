@@ -158,18 +158,10 @@
 
                <div class="col-4">
                     
-                   <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
-                    `   `<div class="col">
+                   
+                    <div class="col">
 
-                                        <asp:GridView ID="GridViewHrDepartment" style="margin-left:-90px" Width="150px" class="table table-striped table-bordered" runat="server" AutoGenerateColumns="False" DataKeyNames="employeeid" DataSourceID="SqlDataSource1">
-                                            <Columns>
-                                                <asp:BoundField DataField="employeeid" HeaderText="employeeid" ReadOnly="True" SortExpression="employeeid" />
-                                                <asp:BoundField DataField="username" HeaderText="username" SortExpression="username" />
-                                                <asp:BoundField DataField="password" HeaderText="password" SortExpression="password" />
-                                                <asp:BoundField DataField="security_question" HeaderText="security_question" SortExpression="security_question" />
-                                                <asp:BoundField DataField="answer" HeaderText="answer" SortExpression="answer" />
-                                            </Columns>
-                                        </asp:GridView>
+                        <h1>ttttttt</h1>       
                           </div>
                            
                </div>

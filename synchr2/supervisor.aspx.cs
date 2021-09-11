@@ -680,18 +680,20 @@ namespace synchr2
             }
             else
             {
+                //Response.Write("<script>alert('" +DropDownListTrainingNeeds.SelectedItem.Text + "');</script>");
                 try
                 {
 
                     SqlConnection con = new SqlConnection(connectionstring);
-                    string query = "insert into TraningNeedsTbl values('" + txttrainingNeedDate.Text + "','" +DropDownListTrainingNeeds.Text + "','"+txttrainnigNeedId.Text+"','" + txtEmployeeTraininNeedName.Text + "')";
+                    string query = "insert into TraninigNeedsTbl values('"+txttrainingNeedDate.Text+"','"+DropDownListTrainingNeeds.SelectedItem.Text+"','"+txttrainnigNeedId.Text+"','"+txtEmployeeTraininNeedName.Text+"')";
                     SqlCommand cmd = new SqlCommand(query, con);
 
                     con.Open();
                     cmd.ExecuteNonQuery();
                     con.Close();
                     Response.Write("<script>alert('Data Inserted....')</script>");
-                    GridViewPrintunit.DataBind();
+                    //GridViewPrintunit.DataBind();
+                    btnclear();
 
 
                 }
@@ -710,6 +712,21 @@ namespace synchr2
 
 
             }
+        }
+        void btnclear()
+        {
+            txtEmployeeTraininNeedName.Text = "";
+            DropDownListTrainingNeeds.SelectedValue="0";
+            txttrainingNeedDate.Text = "";
+            txttrainnigNeedId.Text = "";
+
+
+        
+        }
+
+        protected void btnTrainingNeedClear_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
