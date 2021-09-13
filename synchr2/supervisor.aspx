@@ -443,7 +443,7 @@
                             <div class="col-4">
                             <div class="card" style="border-radius:25px; width: 38rem; background-color:#194C43; margin-left:-60px;margin-right:5px; margin-top:90px; margin-bottom:20px">
                             <div class="card-body">
-                            <h2 class="card-title" id="cardLeave" style="color:black;text-align:center;font-family::'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color:#f5f6fa" ><b>Leave unit</b></h2>
+                            <h2 class="card-title" id="cardLeave" style="color:black;text-align:center;font-family:':Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color:#f5f6fa" ><b>Leave unit</b></h2>
                                       
                                             <ul>
                                                 <li>
@@ -522,8 +522,8 @@
                                                                 <asp:ListItem Value="0">Please Select</asp:ListItem>  
                                                     
                                                                 <asp:ListItem Value="1">Outside worker </asp:ListItem>  
-                                                                <asp:ListItem Value="2">Cluster Head out side </asp:ListItem>  
-                                                                <asp:ListItem Value="3">Worker</asp:ListItem>
+                                                                <asp:ListItem Value="2">Cluster Head out side Worker </asp:ListItem>  
+                                                                
                                                                 </asp:DropDownList>
                                                             </div>
 
@@ -644,11 +644,11 @@
 
                                                                 
                                                                 <br />
+                                                                <asp:Button ID="btnOutSourceSubmit" runat="server" class="btn btn-primary" Height="46px" OnClick="btnOutSourceSubmit_Click" style="margin-top:20px; margin-left:100px;" Text="Submit" Width="147px" />
                                                                 <br />
 
                                                    <div class="row">
                                                             <div class="col">
-                                                               <asp:Button class="btn btn-primary" style="margin-top:20px; margin-left:100px;width:200px" ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmitTrain_Click" />
                                                             </div>
                                                    </div>   
                            

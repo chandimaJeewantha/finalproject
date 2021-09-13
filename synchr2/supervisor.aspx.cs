@@ -11,9 +11,12 @@ namespace synchr2
 {
     public partial class supervisor : System.Web.UI.Page
     {
+
         string connectionstring = "Data Source=localhost;Initial Catalog=HrmsDatabase;Integrated Security=True";
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+
             if (!IsPostBack)
             {
                 MultiViewSupervisor.ActiveViewIndex = 0;
@@ -62,6 +65,8 @@ namespace synchr2
         protected void btnEmployee_Click(object sender, EventArgs e)
         {
             MultiViewSupervisor.ActiveViewIndex = 4;
+
+            
         }
 
         protected void btnHome_Click(object sender, EventArgs e)
@@ -735,9 +740,62 @@ namespace synchr2
         
         }
 
-        protected void btnTrainingNeedClear_Click(object sender, EventArgs e)
+        void outsideworkerclear()
         {
+            DropDownListType.SelectedValue = "0";
+            txtWorkerName.Text = "";
+            txtWorkerId.Text = "";
+            DropDownListSelectMonth.SelectedValue = "0";
+            txtUmbrellaCode.Text = "";
+            txtCoverAmount.Text = "";
+            txtFrameAmount.Text = "";
+            txtThreadAmount.Text = "";
+            txtExpected.Text = "";
+            txtRejected.Text = "";
 
+
+
+
+        }
+
+        //protected void btnTrainingNeedClear_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
+        protected void btnOutSourceSubmit_Click(object sender, EventArgs e)
+        {
+            if (DropDownListType.SelectedValue == "0" || txtWorkerName.Text == "" || txtWorkerId.Text == "" || DropDownListSelectMonth.SelectedValue == "0" || txtUmbrellaCode.Text == "" || txtCoverAmount.Text == "" || txtFrameAmount.Text == "" || txtThreadAmount.Text == "" || txtExpected.Text == "" || txtRejected.Text == "")
+            {
+                Response.Write("<script>alert('Please Fill All Fields....')</script>");
+            }
+            else
+            {
+                try
+                {
+                  
+
+                    SqlConnection con = new SqlConnection(connectionstring);
+                    string query = "insert into OutSourceOrderTbl values('" + DropDownListType.SelectedItem.Text + "','"+txtWorkerName.Text+"','"+txtWorkerId.Text+"','"+DropDownListSelectMonth.SelectedItem.Text+"','"+txtUmbrellaCode.Text+"',"+txtCoverAmount.Text+","+txtFrameAmount.Text+","+txtThreadAmount.Text+","+txtExpected.Text+","+txtRejected.Text+")";
+                    SqlCommand cmd = new SqlCommand(query, con);
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    Response.Write("<script>alert('Data Inserted....')</script>");
+                    outsideworkerclear();
+
+                }
+                catch (Exception ex)
+                {
+                    Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+                }
+            
+            
+            
+            
+            }
         }
     }
 }
