@@ -6,6 +6,25 @@
 <head runat="server">
     <title></title>
     <link href="css/supervisorcss.css" rel="stylesheet" />
+    <link href="boostrap/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <link href="fontawesome/css/all.css" rel="stylesheet" />
+    <link href="table/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+    <script src="boostrap/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="boostrap/js/popper.min.js"></script>
+    <script src="boostrap/js/bootstrap.min.js"></script>
+    <link href="css/supervisorcss.css" rel="stylesheet" />
+
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+    <!-- Bootstrap -->
+    <script type="text/javascript" src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js'></script>
+    <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js'></script>
+    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css'
+    media="screen" />
+    <!-- Bootstrap -->
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -34,7 +53,7 @@
       </div>
     </div>
     <div class="main_content">
-        <div class="header">Welcome!! Have a nice day.</div>  
+        
 
         <asp:MultiView ID="MultiViewSupervisor" runat="server">
 
@@ -77,6 +96,121 @@
 
 
             <asp:View ID="ViewOutsideworkers" runat="server">
+                            
+
+
+                <div class="container">
+                            <div class="row justify-content-start">
+                            <div class="col-4">
+
+                            <div class="card" style="border-radius:25px; width: 45rem;background-color:#50DBB4; margin-left:60px;margin-right:5px; margin-top:10px; margin-bottom:20px">
+                            <div class="card-body">
+                            <h2 class="card-title" id="cardOutSideWorkers" style="color:black;text-align:center;font-family:Segoe UI;color:#303952" >Out Side Workers</h2>
+                                                
+                                                   <div class="row">
+                                                           <div class="col-6">
+
+                                                                <label style="margin-top:10px;color:#2c3e50; font-size: 15px"><b>Month</b></label>
+                                                           </div>
+
+                                                           <div class="col-6">
+                                                                <asp:DropDownList ID="DropDownListMonth" runat="server" style="margin-left:-30px; margin-top:10px;width: 200px; height: 25px">
+                                                                <asp:ListItem Value="0">Please Select</asp:ListItem>  
+                                                    
+                                                                <asp:ListItem Value="1">January</asp:ListItem>  
+                                                                <asp:ListItem Value="2">February </asp:ListItem>  
+                                                                <asp:ListItem Value="3">March</asp:ListItem>
+                                                                <asp:ListItem Value="1">April </asp:ListItem>  
+                                                                <asp:ListItem Value="2">May</asp:ListItem>  
+                                                                <asp:ListItem Value="3">June</asp:ListItem>
+                                                                <asp:ListItem Value="1">July </asp:ListItem>  
+                                                                <asp:ListItem Value="2">August </asp:ListItem>  
+                                                                <asp:ListItem Value="3">Seeptember</asp:ListItem>
+                                                                <asp:ListItem Value="1">October </asp:ListItem>  
+                                                                <asp:ListItem Value="2">November </asp:ListItem>  
+                                                                <asp:ListItem Value="3">December</asp:ListItem>
+                                                                </asp:DropDownList>
+                                                            </div>
+
+                                                   </div>
+                                                           
+                                                            <br />
+
+                                                   <div class="row">
+                                                            <div class="col-6">
+                                                                <label style=" margin-top:10px;font-size: 15px; color:#2c3e50"><b>Worker ID</b></label>
+                                                            </div>
+                                                                
+                                                            <div class="col-6">
+                                                                <asp:TextBox style=" margin-left:-30px;margin-top:10px;height:30px; width:200px" CssClass="form-control" ID="txtWorkerID" runat="server"></asp:TextBox>
+                                                            </div>
+                                                   </div>       
+                                                             
+                                                             <br />
+
+                                                   <div class="row">
+                                                            <div class="col-6">
+                                                                <label style="margin-top:10px;font-size: 15px; color:#2c3e50"><b>Status</b></label>
+                                                            </div>
+
+                                                            <div class="col-6">
+                                                                    <asp:TextBox ID="txtStatus" runat="server" style="margin-left:-30px;margin-top:10px;height:30px; width:200px" ReadOnly="True"></asp:TextBox>
+                                                            </div>
+                                                   </div>  
+                                                                
+                                                              <br />    
+
+                                       
+                                                   <div class="row">
+                                                            <div class="col-6">
+                                                                <label style=" margin-top:10px;font-size: 15px; color:#2c3e50"><b>Ex1</b></label>
+                                                            </div>
+                                                                
+                                                            <div class="col-6">
+                                                                <asp:TextBox style=" margin-left:-30px;margin-top:10px;height:30px; width:200px" CssClass="form-control" ID="txtEx1" runat="server"></asp:TextBox>
+                                                            </div>
+                                                   </div>
+                                <br />
+                                                   <div class="row">
+                                                            <div class="col-6">
+                                                                <label style=" margin-top:10px;font-size: 15px; color:#2c3e50"><b>Ex2</b></label>
+                                                            </div>
+                                                                
+                                                            <div class="col-6">
+                                                                <asp:TextBox style=" margin-left:-30px;margin-top:10px;height:30px; width:200px" CssClass="form-control" ID="txtEx2" runat="server"></asp:TextBox>
+                                                            </div>
+                                                   </div>
+                                <br />
+                                                   <div class="row">
+                                                            <div class="col-6">
+                                                                <label style=" margin-top:10px;font-size: 15px; color:#2c3e50"><b>Ex3</b></label>
+                                                            </div>
+                                                                
+                                                            <div class="col-6">
+                                                                <asp:TextBox style=" margin-left:-30px;margin-top:10px;height:30px; width:200px" CssClass="form-control" ID="txtEx3" runat="server"></asp:TextBox>
+                                                            </div>
+                                                   </div>
+                                <br />
+                                                   
+
+                                                                
+                                                                <br />
+                                                                <asp:Button ID="btnEvaluate" runat="server" class="btn btn-primary" Height="46px" style="margin-top:20px; margin-left:130px;" Text="Evaluate" Width="147px" />
+                                                                <br />
+
+                                                   <div class="row">
+                                                            <div class="col">
+                                                            </div>
+                                                   </div>   
+                           
+                                
+                            </div>
+                            </div>
+                            </div>
+    </div>
+    </div>
+
+
 
             </asp:View>
 
