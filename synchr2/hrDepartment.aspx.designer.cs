@@ -186,40 +186,40 @@ namespace synchr2
         protected global::System.Web.UI.WebControls.TextBox txtWorkerID;
 
         /// <summary>
-        /// txtStatus control.
+        /// txtProfitPrecentage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStatus;
+        protected global::System.Web.UI.WebControls.TextBox txtProfitPrecentage;
 
         /// <summary>
-        /// txtEx1 control.
+        /// txtReject control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEx1;
+        protected global::System.Web.UI.WebControls.TextBox txtReject;
 
         /// <summary>
-        /// txtEx2 control.
+        /// txtFinalStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEx2;
+        protected global::System.Web.UI.WebControls.TextBox txtFinalStatus;
 
         /// <summary>
-        /// txtEx3 control.
+        /// txtGrossProfit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEx3;
+        protected global::System.Web.UI.WebControls.TextBox txtGrossProfit;
 
         /// <summary>
         /// btnEvaluate control.

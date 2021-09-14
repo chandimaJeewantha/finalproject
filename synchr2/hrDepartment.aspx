@@ -105,7 +105,7 @@
 
                             <div class="card" style="border-radius:25px; width: 45rem;background-color:#50DBB4; margin-left:60px;margin-right:5px; margin-top:10px; margin-bottom:20px">
                             <div class="card-body">
-                            <h2 class="card-title" id="cardOutSideWorkers" style="color:black;text-align:center;font-family:Segoe UI;color:#303952" >Out Side Workers</h2>
+                            <h2 class="card-title" id="cardOutSideWorkers" style="color:black;text-align:center;font-family:Segoe UI;color:#303952" >Preformance Evaluation of Out Side Workers</h2>
                                                 
                                                    <div class="row">
                                                            <div class="col-6">
@@ -150,11 +150,11 @@
 
                                                    <div class="row">
                                                             <div class="col-6">
-                                                                <label style="margin-top:10px;font-size: 15px; color:#2c3e50"><b>Status</b></label>
+                                                                <label style="margin-top:10px;font-size: 15px; color:#2c3e50"><b>Profit Precentage</b></label>
                                                             </div>
 
                                                             <div class="col-6">
-                                                                    <asp:TextBox ID="txtStatus" runat="server" style="margin-left:-30px;margin-top:10px;height:30px; width:200px" ReadOnly="True"></asp:TextBox>
+                                                                    <asp:TextBox ID="txtProfitPrecentage" runat="server" style="margin-left:-30px;margin-top:10px;height:30px; width:200px" CssClass="form-control" placeholder="Profit Precentage" ReadOnly="True"></asp:TextBox>
                                                             </div>
                                                    </div>  
                                                                 
@@ -163,31 +163,31 @@
                                        
                                                    <div class="row">
                                                             <div class="col-6">
-                                                                <label style=" margin-top:10px;font-size: 15px; color:#2c3e50"><b>Ex1</b></label>
+                                                                <label style=" margin-top:10px;font-size: 15px; color:#2c3e50"><b>Reject Precentage</b></label>
                                                             </div>
                                                                 
                                                             <div class="col-6">
-                                                                <asp:TextBox style=" margin-left:-30px;margin-top:10px;height:30px; width:200px" CssClass="form-control" ID="txtEx1" runat="server"></asp:TextBox>
+                                                                <asp:TextBox style=" margin-left:-30px;margin-top:10px;height:30px; width:200px" CssClass="form-control" ID="txtReject" runat="server" placeholder="Reject Precentage" ReadOnly="True"></asp:TextBox>
                                                             </div>
                                                    </div>
                                 <br />
                                                    <div class="row">
                                                             <div class="col-6">
-                                                                <label style=" margin-top:10px;font-size: 15px; color:#2c3e50"><b>Ex2</b></label>
+                                                                <label style=" margin-top:10px;font-size: 15px; color:#2c3e50"><b>Final Status</b></label>
                                                             </div>
                                                                 
                                                             <div class="col-6">
-                                                                <asp:TextBox style=" margin-left:-30px;margin-top:10px;height:30px; width:200px" CssClass="form-control" ID="txtEx2" runat="server"></asp:TextBox>
+                                                                <asp:TextBox style=" margin-left:-30px;margin-top:10px;height:30px; width:200px" CssClass="form-control" ID="txtFinalStatus" runat="server" placeholder="Final Status" ReadOnly="True"></asp:TextBox>
                                                             </div>
                                                    </div>
                                 <br />
                                                    <div class="row">
                                                             <div class="col-6">
-                                                                <label style=" margin-top:10px;font-size: 15px; color:#2c3e50"><b>Ex3</b></label>
+                                                                <label style=" margin-top:10px;font-size: 15px; color:#2c3e50"><b>Gross Profit Amount</b></label>
                                                             </div>
                                                                 
                                                             <div class="col-6">
-                                                                <asp:TextBox style=" margin-left:-30px;margin-top:10px;height:30px; width:200px" CssClass="form-control" ID="txtEx3" runat="server"></asp:TextBox>
+                                                                <asp:TextBox style=" margin-left:-30px;margin-top:10px;height:30px; width:200px" CssClass="form-control" ID="txtGrossProfit" runat="server" placeholder="Gross Profit" ReadOnly="True"></asp:TextBox>
                                                             </div>
                                                    </div>
                                 <br />
@@ -195,7 +195,7 @@
 
                                                                 
                                                                 <br />
-                                                                <asp:Button ID="btnEvaluate" runat="server" class="btn btn-primary" Height="46px" style="margin-top:20px; margin-left:130px;" Text="Evaluate" Width="147px" />
+                                                                <asp:Button ID="btnEvaluate" runat="server" class="btn btn-primary" Height="46px" style="margin-top:20px; margin-left:130px;" Text="Evaluate" Width="147px" OnClick="btnEvaluate_Click" />
                                                                 <br />
 
                                                    <div class="row">
