@@ -11,7 +11,7 @@ namespace synchr2
 {
     public partial class hrDepartment : System.Web.UI.Page
     {
-        string connectionString = "Data Source=localhost;Initial Catalog=HrmsDatabase;Integrated Security=True";
+        string connectionString = "Data Source=DESKTOP-M9R4O4O;Initial Catalog=HrmsDatabase;Integrated Security=True";
         protected void Page_Load(object sender, EventArgs e)
         {
             MultiViewSupervisor.ActiveViewIndex = 0;
@@ -25,6 +25,7 @@ namespace synchr2
         protected void btnAddemp_Click(object sender, EventArgs e)
         {
             MultiViewSupervisor.ActiveViewIndex = 1;
+         
         }
 
         protected void btnProfiles_Click(object sender, EventArgs e)
@@ -326,5 +327,123 @@ namespace synchr2
             
             }
         }
+
+        protected void btnPersonClear_Click(object sender, EventArgs e)
+        {
+            txtInitials.Text = "";
+            txtFirstName.Text = "";
+            txtSurname.Text = "";
+            txtFullName.Text = "";
+            txtMiddleName.Text = "";
+            DropDownListGender.SelectedValue = "0";
+            DropDownListTitle.SelectedValue = "0";
+            DropDownListMeritalStatus.SelectedValue = "0";
+            DropDownListBloodGroup.SelectedValue = "0";
+            txtDOB.Text = "";
+
+            txtNICNumber.Text = "";
+            txtDrivingLicenseNumber.Text = "";
+            txtPassportNumber.Text = "";
+            txtPassportExpryDate.Text = "";
+
+            DropDownListReligonNumber.SelectedValue = "0";
+            DropDownListRace.SelectedValue = "0";
+            DropDownListNationality.SelectedValue = "0";
+
+            DropDownListLivingStatus.SelectedValue = "0";
+            txtNumberOfDepartment.Text = "0";
+            txtNumberOfChildren.Text = "0";
+
+
+
+
+        }
+
+        protected void btnWorkClear_Click(object sender, EventArgs e)
+        {
+            txtEmployeeNumber.Text = "";
+            txtNicsNumber.Text = "";
+            txtEPFNumber.Text = "";
+            txtPreviousEpfNumber.Text = "";
+
+            DropDownListGroup.SelectedValue = "0";
+            DropDownListCompany.SelectedValue = "0";
+            DropDownListDeprtment.SelectedValue = "0";
+            DropDownListDivision.SelectedValue = "0";
+            DropDownListSecondedDepartment.SelectedValue = "0";
+
+            DropDownListJobCategory.SelectedValue = "0";
+            DropDownListCurrentDesignation.SelectedValue = "0";
+            DropDownListJoinedDesignation.SelectedValue = "0";
+            DropDownListReportingDesignation.SelectedValue = "0";
+            DropDownListReportingPersion.SelectedValue = "0";
+            DropDownListLocationBranch.SelectedValue = "0";
+
+            txtBasicSalary.Text = " .00";
+            DropDownListLKR.SelectedValue = "0";
+            txtBudgetaryReliefAllowance02.Text = " .00";
+            txtBudgetaryReliefAllowance01.Text = " .00";
+            DropDownListEmployeementPlan.SelectedValue = "0";
+            txtAnnualLeave.Text = "";
+            txtCasualLeave.Text = "";
+            RadioButtonYes.Checked = false;
+            RadioButtonNo.Checked = false;
+        }
+
+        protected void btnNew_Click(object sender, EventArgs e)
+        {
+            if(txtInitials.Text == "" || txtFirstName.Text == "" || txtSurname.Text == "" || txtFullName.Text == "" || txtMiddleName.Text == "" || DropDownListGender.SelectedValue == "0" || DropDownListTitle.SelectedValue == "" || DropDownListMeritalStatus.SelectedValue == "" || DropDownListBloodGroup.SelectedValue == "0" || txtDOB.Text == "" || txtNICNumber.Text == "" || txtDrivingLicenseNumber.Text == "" || txtPassportNumber.Text == "" || txtPassportExpryDate.Text == "" || DropDownListReligonNumber.SelectedValue == "0" || DropDownListRace.SelectedValue == "0" || DropDownListNationality.SelectedValue == "0" || DropDownListLivingStatus.SelectedValue == "0" || txtNumberOfDepartment.Text == "" || txtNumberOfChildren.Text == "")
+            {
+                Response.Write("<script>alert('All fields are requireds......');</script>");
+            }
+            else
+            {
+                try
+                {
+                    SqlConnection con = new SqlConnection(connectionString);
+                    string queary = "insert into personTbl values('" + txtNICNumber.Text + "','" + txtInitials.Text + "','" + txtFirstName.Text + "','" + txtSurname.Text + "','" + txtFullName.Text + "','" + txtMiddleName.Text + "','" + DropDownListGender.SelectedValue + "','" + DropDownListTitle.SelectedValue + "','" + DropDownListMeritalStatus.SelectedValue + "','" + DropDownListBloodGroup.SelectedValue + "','" + txtDOB.Text + "' ,'" + txtDrivingLicenseNumber.Text + "','" + txtPassportNumber.Text + "','" + txtPassportExpryDate.Text + "','" + DropDownListReligonNumber.SelectedValue + "','" + DropDownListRace.SelectedValue + "','" + DropDownListNationality.SelectedValue + "','" + DropDownListLivingStatus.SelectedValue + "','" + txtNumberOfDepartment.Text + "','" + txtNumberOfChildren.Text + "')";
+                    SqlCommand cmd = new SqlCommand(queary, con);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    Response.Write("<script>alert('Data Inserted....')</script>");
+                }
+                catch(Exception ex)
+                {
+                    Response.Write("<script>alert('" + ex.Message + "');</script>");
+                }
+            }
+        }
+
+        protected void btnSaveWork_Click(object sender, EventArgs e)
+        {
+            if (txtEmployeeNumber.Text == "" || txtNicsNumber.Text == "" || txtEPFNumber.Text == "" || txtPreviousEpfNumber.Text == "" || DropDownListGroup.SelectedValue == "0" || DropDownListCompany.SelectedValue == "0" || DropDownListDeprtment.SelectedValue == "0" || DropDownListDivision.SelectedValue == "0" || DropDownListSecondedDepartment.SelectedValue == "0" || DropDownListJobCategory.SelectedValue == "0" || DropDownListCurrentDesignation.SelectedValue == "0" || DropDownListJoinedDesignation.SelectedValue == "0" || DropDownListReportingDesignation.SelectedValue == "0" || DropDownListReportingPersion.SelectedValue == "0" || DropDownListLocationBranch.SelectedValue == "0" || txtBasicSalary.Text == "" || txtBudgetaryReliefAllowance02.Text == "" || txtBudgetaryReliefAllowance01.Text == "" || DropDownListEmployeementPlan.SelectedValue == "0" || txtAnnualLeave.Text == "" || txtCasualLeave.Text == "")
+            {
+                Response.Write("<script>alert('All fields are requireds......');</script>");
+            }
+            else
+            {
+                try
+                {
+                    SqlConnection con = new SqlConnection(connectionString);
+                    string queary = "insert into workTbl values('"+txtEmployeeNumber.Text+"','"+txtNicsNumber.Text+"','"+txtEPFNumber.Text+"','"+txtPreviousEpfNumber.Text+"','"+DropDownListGroup.SelectedValue+"','"+DropDownListCompany.SelectedValue+"','"+DropDownListDeprtment.SelectedValue+"','"+DropDownListDivision.SelectedValue+"','"+DropDownListSecondedDepartment.SelectedValue+"','"+DropDownListJobCategory.SelectedValue+"','"+DropDownListCurrentDesignation.SelectedValue+"','"+DropDownListJoinedDesignation.SelectedValue+"','"+DropDownListReportingDesignation.SelectedValue+"','"+DropDownListReportingPersion.SelectedValue+"','"+DropDownListLocationBranch.SelectedValue+"','"+txtBasicSalary.Text+"','"+txtBudgetaryReliefAllowance02.Text+"','"+txtBudgetaryReliefAllowance01.Text+"','"+DropDownListEmployeementPlan.SelectedValue+"','"+txtAnnualLeave.Text+"','"+txtCasualLeave.Text+"')";
+                    SqlCommand cmd = new SqlCommand(queary,con);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    Response.Write("<script>alert('Data Inserted....')</script>");
+                }
+                catch(Exception ex)
+                {
+                    Response.Write("<script>alert('" + ex.Message + "');</script>");
+                }
+            }
+        }
     }
 }
+
+
+
+
+
+
