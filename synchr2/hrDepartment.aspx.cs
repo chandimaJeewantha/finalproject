@@ -43,14 +43,9 @@ namespace synchr2
             MultiViewSupervisor.ActiveViewIndex = 4;
         }
 
-        protected void btnPayroll_Click(object sender, EventArgs e)
-        {
-            MultiViewSupervisor.ActiveViewIndex = 5;
-        }
-
         protected void btnOutsideworkers_Click(object sender, EventArgs e)
         {
-            MultiViewSupervisor.ActiveViewIndex = 6;
+            MultiViewSupervisor.ActiveViewIndex = 5;
         }
 
         protected void btnExit_Click(object sender, EventArgs e)
@@ -386,8 +381,7 @@ namespace synchr2
             DropDownListEmployeementPlan.SelectedValue = "0";
             txtAnnualLeave.Text = "";
             txtCasualLeave.Text = "";
-            RadioButtonYes.Checked = false;
-            RadioButtonNo.Checked = false;
+           
         }
 
         protected void btnNew_Click(object sender, EventArgs e)
@@ -438,6 +432,11 @@ namespace synchr2
                     Response.Write("<script>alert('" + ex.Message + "');</script>");
                 }
             }
+        }
+
+        protected void btnViewProfile_Click(object sender, EventArgs e)
+        {
+            MultiViewSupervisor.ActiveViewIndex = 2;
         }
     }
 }

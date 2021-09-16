@@ -25,23 +25,36 @@
     media="screen" />
     <!-- Bootstrap -->
 
+    <style>
+        body
+        {
+            background-color:gainsboro;
+        }
+    </style>
+    
+
 </head>
 <body>
     <form id="form1" runat="server">
                             <div class="wrapper">
     <div class="sidebar" style="width:300px">
         
-            <img src="imgs/MicrosoftTeams-image%20(11).png" />
+            <img src="imgs/MicrosoftTeams-image%20(11).png" style="margin-left:40px" />
         
         <ul>
             <li><asp:LinkButton ID="btnHome" runat="server" class="fas fa-home" OnClick="btnHome_Click"> Home</asp:LinkButton></li>
-            <li><asp:LinkButton ID="btnAddemp" runat="server" class="fas fa-umbrella" OnClick="btnAddemp_Click"> Add New Employee</asp:LinkButton></li>
-            <li><asp:LinkButton ID="btnProfiles" runat="server" class="fas fa-child" OnClick="btnProfiles_Click"> Active/Inactive Profiles</asp:LinkButton></li>
-            <li><asp:LinkButton ID="btnLabourrep" runat="server" class="fas fa-mug-hot" OnClick="btnLabourrep_Click"> Generate labour turn over reports</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnAddemp" runat="server" class="fas fa-ad" OnClick="btnAddemp_Click"> Add New Employee</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnViewProfile" runat="server" class="fas fa-eye" OnClick="btnViewProfile_Click">View Profile</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnProfiles" runat="server" class="fas fa-user-shield" OnClick="btnProfiles_Click"> Active/Inactive Profiles</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnLabourrep" runat="server" class="fas fa-cogs" OnClick="btnLabourrep_Click"> Generate labour turn over reports</asp:LinkButton></li>
             <li><asp:LinkButton ID="btnMonthlyrep" runat="server" class="fas fa-address-card" OnClick="btnMonthlyrep_Click"> Monthly Recruitment report</asp:LinkButton></li>
-            <li><asp:LinkButton ID="btnPayroll" runat="server" class="fas fa-hand-point-left" OnClick="btnPayroll_Click"> Payroll</asp:LinkButton></li>
-            <li><asp:LinkButton ID="btnOutsideworkers" runat="server" class="fas fa-hand-point-left" OnClick="btnOutsideworkers_Click"> Performance Evaluation of outside workers</asp:LinkButton></li>
+            
+            <li><asp:LinkButton ID="btnOutsideworkers" runat="server" class="fas fa-tasks" OnClick="btnOutsideworkers_Click"> Performance Evaluation of outside workers</asp:LinkButton></li>
             <li><asp:LinkButton ID="btnExit" runat="server" class="fas fa-hand-point-left" OnClick="btnExit_Click"> Exit</asp:LinkButton></li>
+
+
+
+            
 
 
             
@@ -71,7 +84,7 @@
                             <div class="row justify-content-start">
 
                                 <div class="col-6">
-                                  <h3 style="margin-left:300px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-bottom:-20px"><b>Person</b></h3>
+                                  <h3 style="margin-left:300px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-bottom:-20px; font-size:30px"><i class="fas fa-street-view"></i><b>Person</b></h3>
                                      <div class="card" style="margin-left:100px; background-color:#194C43; width:500px; margin-top:30px">
                                       
                                         <div class="card-body">
@@ -127,8 +140,8 @@
                                                  <div class="col">
                                                      <asp:DropDownList ID="DropDownListGender" style=" width:150px;  text-align:center; height:26px; margin-left:-150px" runat="server">
                                                           <asp:ListItem Value="0">--select--</asp:ListItem>
-                                                          <asp:ListItem Value="1">Male</asp:ListItem>
-                                                          <asp:ListItem Value="2">Female</asp:ListItem> 
+                                                          <asp:ListItem Value="Male">Male</asp:ListItem>
+                                                          <asp:ListItem Value="Female">Female</asp:ListItem> 
                                                      </asp:DropDownList>
                                                 </div>
                                              </div>
@@ -139,8 +152,8 @@
                                                  <div class="col">
                                                      <asp:DropDownList ID="DropDownListTitle" style=" width:150px; text-align:center;  height:26px; margin-left:-150px" runat="server">
                                                           <asp:ListItem Value="0">--select--</asp:ListItem>
-                                                          <asp:ListItem Value="1">Male</asp:ListItem>
-                                                          <asp:ListItem Value="2">Female</asp:ListItem> 
+                                                          <asp:ListItem Value="Male">Male</asp:ListItem>
+                                                          <asp:ListItem Value="Female">Female</asp:ListItem> 
                                                      </asp:DropDownList>
                                                 </div>
                                              </div>
@@ -151,8 +164,8 @@
                                                  <div class="col">
                                                      <asp:DropDownList ID="DropDownListMeritalStatus" style=" width:150px; text-align:center;  height:26px; margin-left:-150px" runat="server">
                                                           <asp:ListItem Value="0">--select--</asp:ListItem>
-                                                          <asp:ListItem Value="1">Male</asp:ListItem>
-                                                          <asp:ListItem Value="2">Female</asp:ListItem> 
+                                                          <asp:ListItem Value="Male">Male</asp:ListItem>
+                                                          <asp:ListItem Value="Female">Female</asp:ListItem> 
                                                      </asp:DropDownList>
                                                 </div>
                                              </div>
@@ -163,8 +176,8 @@
                                                  <div class="col">
                                                      <asp:DropDownList ID="DropDownListBloodGroup" style=" width:150px; text-align:center;  height:26px; margin-left:-150px" runat="server">
                                                           <asp:ListItem Value="0">--select--</asp:ListItem>
-                                                          <asp:ListItem Value="1">Male</asp:ListItem>
-                                                          <asp:ListItem Value="2">Female</asp:ListItem> 
+                                                          <asp:ListItem Value="Male">Male</asp:ListItem>
+                                                          <asp:ListItem Value="Female">Female</asp:ListItem> 
                                                      </asp:DropDownList>
                                                 </div>
                                              </div>
@@ -184,7 +197,7 @@
                                     </div>
                                         
                                      
-                                     <div class="card" style="margin-left:100px; background-color:#194C43; width:500px; margin-top:10px">
+                                     <div class="card" style="margin-left:100px; background-color:#194C43; width:500px; margin-top:5px">
                                 
                                         <div class="card-body">
                                         <div class="personalInfo">
@@ -235,7 +248,7 @@
                                     </div>
 
 
-                                     <div class="card" style="margin-left:100px; background-color:#194C43; width:500px; margin-top:10px">
+                                     <div class="card" style="margin-left:100px; background-color:#194C43; width:500px; margin-top:5px">
                                 
                                         <div class="card-body">
                                         <div class="personalInfo">
@@ -249,8 +262,8 @@
                                                  <div class="col">
                                                      <asp:DropDownList ID="DropDownListReligonNumber" style=" width:150px;  text-align:center; height:26px; margin-left:-100px" runat="server">
                                                           <asp:ListItem Value="0">--select one--</asp:ListItem>
-                                                          <asp:ListItem Value="1">Male</asp:ListItem>
-                                                          <asp:ListItem Value="2">Female</asp:ListItem> 
+                                                          <asp:ListItem Value="Male">Male</asp:ListItem>
+                                                          <asp:ListItem Value="Female">Female</asp:ListItem> 
                                                      </asp:DropDownList>
                                                 </div>
                                             </div>
@@ -261,8 +274,8 @@
                                                  <div class="col">
                                                      <asp:DropDownList ID="DropDownListRace" style=" width:150px;  text-align:center; height:26px; margin-left:-100px" runat="server">
                                                           <asp:ListItem Value="0">--select one--</asp:ListItem>
-                                                          <asp:ListItem Value="1">Male</asp:ListItem>
-                                                          <asp:ListItem Value="2">Female</asp:ListItem> 
+                                                          <asp:ListItem Value="Male">Male</asp:ListItem>
+                                                          <asp:ListItem Value="Female">Female</asp:ListItem> 
                                                      </asp:DropDownList>
                                                 </div>
                                             </div>
@@ -273,8 +286,8 @@
                                                  <div class="col">
                                                      <asp:DropDownList ID="DropDownListNationality" style=" width:150px;  text-align:center; height:26px; margin-left:-100px" runat="server">
                                                           <asp:ListItem Value="0">--select one--</asp:ListItem>
-                                                          <asp:ListItem Value="1">Male</asp:ListItem>
-                                                          <asp:ListItem Value="2">Female</asp:ListItem> 
+                                                          <asp:ListItem Value="Male">Male</asp:ListItem>
+                                                          <asp:ListItem Value="Female">Female</asp:ListItem> 
                                                      </asp:DropDownList>
                                                 </div>
                                             </div>
@@ -285,7 +298,7 @@
                                     </div> 
 
                                      
-                                     <div class="card" style="margin-left:100px; background-color:#194C43; width:500px; margin-top:10px">
+                                     <div class="card" style="margin-left:100px; background-color:#194C43; width:500px; margin-top:5px">
                                 
                                         <div class="card-body">
                                         <div class="personalInfo">
@@ -299,8 +312,8 @@
                                                  <div class="col">
                                                      <asp:DropDownList ID="DropDownListLivingStatus" style=" width:150px;text-align:center; height:26px; margin-left:-80px" runat="server">
                                                           <asp:ListItem Value="0">--select one--</asp:ListItem>
-                                                          <asp:ListItem Value="1">Male</asp:ListItem>
-                                                          <asp:ListItem Value="2">Female</asp:ListItem> 
+                                                          <asp:ListItem Value="Male">Male</asp:ListItem>
+                                                          <asp:ListItem Value="Female">Female</asp:ListItem> 
                                                      </asp:DropDownList>
                                                 </div>
                                             </div>
@@ -330,7 +343,7 @@
                                     </div> 
 
                                         
-                                      <div class="card" style="margin-left:100px; background-color:aliceblue; width:500px; margin-top:10px">
+                                      <div class="card" style="margin-left:100px; background-color:gainsboro; width:500px; margin-top:5px">
                                 
                                         <div class="card-body">
                                         <div class="personalInfo">
@@ -343,7 +356,7 @@
                                                 </div>
                                                 
                                                 <div class="col-6">
-                                                     <asp:Button ID="btnPersonClear" class="btn btn-success btn-block" runat="server" Text="Clear" OnClick="btnPersonClear_Click" />
+                                                     <asp:Button ID="btnPersonClear" class="btn btn-primary btn-block" runat="server" Text="Clear" OnClick="btnPersonClear_Click" />
                                                 </div>
                                             </div>
                                             
@@ -356,7 +369,7 @@
                               </div>
 
                                 <div class="col-6" style="margin-left:-43px">
-                                  <h3 style="margin-left:300px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-bottom:-20px"><b>Work</b></h3>
+                                  <h3 style="margin-left:300px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-bottom:-20px; font-size:30px; text-decoration-style:solid"><i class="fas fa-users-cog"></i><b>Worker</b></h3>
                                      <div class="card" style="margin-left:100px; background-color:#194C43; width:500px; margin-top:30px">
                                       
                                         <div class="card-body">
@@ -405,7 +418,7 @@
                                     </div>
                                         
                                      
-                                     <div class="card" style="margin-left:100px; background-color:#194C43; width:500px; margin-top:10px">
+                                     <div class="card" style="margin-left:100px; background-color:#194C43; width:500px; margin-top:5px">
                                 
                                         <div class="card-body">
                                         <div class="personalInfo">
@@ -419,8 +432,8 @@
                                                  <div class="col">
                                                       <asp:DropDownList ID="DropDownListGroup" style=" width:150px; text-align:center;  height:26px; margin-left:-80px" runat="server">
                                                           <asp:ListItem Value="0">--select--</asp:ListItem>
-                                                          <asp:ListItem Value="1">Male</asp:ListItem>
-                                                          <asp:ListItem Value="2">Female</asp:ListItem> 
+                                                          <asp:ListItem Value="Male">Male</asp:ListItem>
+                                                          <asp:ListItem Value="Female">Female</asp:ListItem> 
                                                      </asp:DropDownList>
                                                 </div>
                                             </div>
@@ -431,8 +444,8 @@
                                                  <div class="col">
                                                       <asp:DropDownList ID="DropDownListCompany" style=" width:150px; text-align:center;  height:26px; margin-left:-80px" runat="server">
                                                           <asp:ListItem Value="0">--select--</asp:ListItem>
-                                                          <asp:ListItem Value="1">Male</asp:ListItem>
-                                                          <asp:ListItem Value="2">Female</asp:ListItem> 
+                                                          <asp:ListItem Value="Male">Male</asp:ListItem>
+                                                          <asp:ListItem Value="Female">Female</asp:ListItem> 
                                                      </asp:DropDownList>
                                                 </div>
                                             </div>
@@ -443,8 +456,8 @@
                                                  <div class="col">
                                                      <asp:DropDownList ID="DropDownListDeprtment" style=" width:150px; text-align:center;  height:26px; margin-left:-80px" runat="server">
                                                           <asp:ListItem Value="0">--select--</asp:ListItem>
-                                                          <asp:ListItem Value="1">Male</asp:ListItem>
-                                                          <asp:ListItem Value="2">Female</asp:ListItem> 
+                                                          <asp:ListItem Value="Male">Male</asp:ListItem>
+                                                          <asp:ListItem Value="Female">Female</asp:ListItem> 
                                                      </asp:DropDownList>
                                                 </div>
                                             </div>
@@ -455,8 +468,8 @@
                                                  <div class="col">
                                                      <asp:DropDownList ID="DropDownListDivision" style=" width:150px; text-align:center;  height:26px; margin-left:-80px" runat="server">
                                                           <asp:ListItem Value="0">--select--</asp:ListItem>
-                                                          <asp:ListItem Value="1">Male</asp:ListItem>
-                                                          <asp:ListItem Value="2">Female</asp:ListItem> 
+                                                          <asp:ListItem Value="Male">Male</asp:ListItem>
+                                                          <asp:ListItem Value="Female">Female</asp:ListItem> 
                                                      </asp:DropDownList>
                                                 </div>
                                             </div>
@@ -467,8 +480,8 @@
                                                  <div class="col">
                                                      <asp:DropDownList ID="DropDownListSecondedDepartment" style=" width:150px; text-align:center;  height:26px; margin-left:-80px" runat="server">
                                                           <asp:ListItem Value="0">--select--</asp:ListItem>
-                                                          <asp:ListItem Value="1">Male</asp:ListItem>
-                                                          <asp:ListItem Value="2">Female</asp:ListItem> 
+                                                          <asp:ListItem Value="Male">Male</asp:ListItem>
+                                                          <asp:ListItem Value="Female">Female</asp:ListItem> 
                                                      </asp:DropDownList>
                                                 </div>
                                             </div>
@@ -481,7 +494,7 @@
                                     </div>
 
 
-                                     <div class="card" style="margin-left:100px; background-color:#194C43; width:500px; margin-top:10px">
+                                     <div class="card" style="margin-left:100px; background-color:#194C43; width:500px; margin-top:5px">
                                 
                                         <div class="card-body">
                                         <div class="personalInfo">
@@ -495,8 +508,8 @@
                                                  <div class="col">
                                                      <asp:DropDownList ID="DropDownListJobCategory" style=" width:150px;  text-align:center; height:26px; margin-left:-100px" runat="server">
                                                           <asp:ListItem Value="0">--select one--</asp:ListItem>
-                                                          <asp:ListItem Value="1">Male</asp:ListItem>
-                                                          <asp:ListItem Value="2">Female</asp:ListItem> 
+                                                          <asp:ListItem Value="Male">Male</asp:ListItem>
+                                                          <asp:ListItem Value="Female">Female</asp:ListItem> 
                                                      </asp:DropDownList>
                                                 </div>
                                             </div>
@@ -507,8 +520,8 @@
                                                  <div class="col">
                                                      <asp:DropDownList ID="DropDownListCurrentDesignation" style=" width:300px; height:26px; margin-left:-100px" runat="server">
                                                           <asp:ListItem style="font-style:italic" Value="0" Selected="True">select designation</asp:ListItem>
-                                                          <asp:ListItem Value="1">Male</asp:ListItem>
-                                                          <asp:ListItem Value="2">Female</asp:ListItem> 
+                                                          <asp:ListItem Value="Male">Male</asp:ListItem>
+                                                          <asp:ListItem Value="Female">Female</asp:ListItem> 
                                                      </asp:DropDownList>
                                                 </div>
                                             </div>
@@ -519,8 +532,8 @@
                                                  <div class="col">
                                                      <asp:DropDownList ID="DropDownListJoinedDesignation" style=" width:300px; text-align:left; height:26px; margin-left:-100px" runat="server">
                                                           <asp:ListItem style="font-style:italic" Value="0">select joined designation</asp:ListItem>
-                                                          <asp:ListItem Value="1">Male</asp:ListItem>
-                                                          <asp:ListItem Value="2">Female</asp:ListItem> 
+                                                          <asp:ListItem Value="Male">Male</asp:ListItem>
+                                                          <asp:ListItem Value="Female">Female</asp:ListItem> 
                                                      </asp:DropDownList>
                                                 </div>
                                             </div>
@@ -531,8 +544,8 @@
                                                  <div class="col">
                                                      <asp:DropDownList ID="DropDownListReportingDesignation" style=" width:300px; text-align:left; height:26px; margin-left:-100px" runat="server">
                                                           <asp:ListItem style="font-style:italic" Value="0">select reporting designation</asp:ListItem>
-                                                          <asp:ListItem Value="1">Male</asp:ListItem>
-                                                          <asp:ListItem Value="2">Female</asp:ListItem> 
+                                                          <asp:ListItem Value="Male">Male</asp:ListItem>
+                                                          <asp:ListItem Value="Female">Female</asp:ListItem> 
                                                      </asp:DropDownList>
                                                 </div>
                                             </div>
@@ -543,8 +556,8 @@
                                                  <div class="col">
                                                      <asp:DropDownList ID="DropDownListReportingPersion" style=" width:300px;  text-align:left; height:26px; margin-left:-100px" runat="server">
                                                           <asp:ListItem style="font-style:italic" Value="0">select reporting persion</asp:ListItem>
-                                                          <asp:ListItem Value="1">Male</asp:ListItem>
-                                                          <asp:ListItem Value="2">Female</asp:ListItem> 
+                                                          <asp:ListItem Value="Male">Male</asp:ListItem>
+                                                          <asp:ListItem Value="Female">Female</asp:ListItem> 
                                                      </asp:DropDownList>
                                                 </div>
                                             </div>
@@ -555,8 +568,8 @@
                                                  <div class="col">
                                                      <asp:DropDownList ID="DropDownListLocationBranch" style=" width:150px;  text-align:center; height:26px; margin-left:-100px" runat="server">
                                                           <asp:ListItem Value="0">--select one--</asp:ListItem>
-                                                          <asp:ListItem Value="1">Male</asp:ListItem>
-                                                          <asp:ListItem Value="2">Female</asp:ListItem> 
+                                                          <asp:ListItem Value="Male">Male</asp:ListItem>
+                                                          <asp:ListItem Value="Female">Female</asp:ListItem> 
                                                      </asp:DropDownList>
                                                 </div>
                                             </div>
@@ -574,7 +587,7 @@
                                     </div> 
 
                                      
-                                     <div class="card" style="margin-left:100px; background-color:#194C43; width:500px; margin-top:10px">
+                                     <div class="card" style="margin-left:100px; background-color:#194C43; width:500px; margin-top:5px">
                                 
                                         <div class="card-body">
                                         <div class="personalInfo">
@@ -590,8 +603,8 @@
                                                      <asp:TextBox ID="txtBasicSalary" style="margin-left:-40px; text-align:right" runat="server"> .00</asp:TextBox>
                                                      <asp:DropDownList ID="DropDownListLKR" style=" width:80px;text-align:center; height:24px; margin-left:5px" runat="server">
                                                           <asp:ListItem Value="0">LKR</asp:ListItem>
-                                                          <asp:ListItem Value="1">Male</asp:ListItem>
-                                                          <asp:ListItem Value="2">Female</asp:ListItem> 
+                                                          <asp:ListItem Value="Male">Male</asp:ListItem>
+                                                          <asp:ListItem Value="Female">Female</asp:ListItem> 
                                                      </asp:DropDownList>
                                                      </div>
                                                 </div>
@@ -624,8 +637,8 @@
                                                      <div class="input-group">                                                   
                                                      <asp:DropDownList ID="DropDownListEmployeementPlan" style=" width:330px;text-align:left; height:24px; margin-left:-100px" runat="server">
                                                           <asp:ListItem Value="0">--select one--</asp:ListItem>
-                                                          <asp:ListItem Value="1">Male</asp:ListItem>
-                                                          <asp:ListItem Value="2">Female</asp:ListItem> 
+                                                          <asp:ListItem Value="Male">Male</asp:ListItem>
+                                                          <asp:ListItem Value="Female">Female</asp:ListItem> 
                                                      </asp:DropDownList>
                                                      </div>
                                                 </div>
@@ -660,7 +673,7 @@
                                     </div> 
 
                                         
-                                     <div class="card" style="margin-left:100px; background-color:aliceblue; width:500px; margin-top:10px">
+                                     <div class="card" style="margin-left:100px; background-color:gainsboro; width:500px; margin-top:5px">
                                 
                                         <div class="card-body">
                                         <div class="personalInfo">
@@ -669,10 +682,10 @@
                                            
                                              <div class="row" style="margin-bottom:10px;" >
                                                  <div class="col-6">
-                                                     <asp:Button ID="btnSaveWork" class="btn btn-warning btn-block" runat="server" Text="Save" OnClick="btnSaveWork_Click" />
+                                                     <asp:Button ID="btnSaveWork" class="btn btn-danger btn-block" runat="server" Text="Save" OnClick="btnSaveWork_Click" />
                                                 </div>
                                                 <div class="col-6">
-                                                     <asp:Button ID="btnWorkClear" class="btn btn-success btn-block" runat="server" Text="Clear" OnClick="btnWorkClear_Click" />
+                                                     <asp:Button ID="btnWorkClear" class="btn btn-primary btn-block" runat="server" Text="Clear" OnClick="btnWorkClear_Click" />
                                                 </div>
                                             </div>
                                             
@@ -710,9 +723,7 @@
             </asp:View>
 
 
-            <asp:View ID="ViewPayroll" runat="server">
-
-            </asp:View>
+           
 
 
             <asp:View ID="ViewOutsideworkers" runat="server">

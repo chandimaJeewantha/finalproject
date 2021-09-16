@@ -42,6 +42,15 @@ namespace synchr2
         protected global::System.Web.UI.WebControls.LinkButton btnAddemp;
 
         /// <summary>
+        /// btnViewProfile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnViewProfile;
+
+        /// <summary>
         /// btnProfiles control.
         /// </summary>
         /// <remarks>
@@ -67,15 +76,6 @@ namespace synchr2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnMonthlyrep;
-
-        /// <summary>
-        /// btnPayroll control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnPayroll;
 
         /// <summary>
         /// btnOutsideworkers control.
@@ -940,15 +940,6 @@ namespace synchr2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.View ViewMonthlyrep;
-
-        /// <summary>
-        /// ViewPayroll control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewPayroll;
 
         /// <summary>
         /// ViewOutsideworkers control.
