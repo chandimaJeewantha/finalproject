@@ -706,6 +706,63 @@
 
 
             <asp:View ID="ViewProfiles" runat="server">
+                            <div class="container">
+                <div class="row justify-content-start">
+                <div class="col-4">
+                                            
+
+
+                                           <div class="card" style="height:25rem; width: 40rem;  background-color:#194C43; margin-left:10px;margin-right:5px; margin-top:60px; margin-bottom:20px">
+                                           <div class="card-body">
+                                           <h3 class="card-title" id="viewprofileCard1"  style="text-align:center; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa; margin-bottom:10px"><b>Find</b></h3>
+                                            
+                                                        
+
+                                                               <div class="row">
+                                                                   <div class="col-6">
+                                                                 
+                                                                    <label style="margin-top:30px; margin-left:10px; font-size:medium; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa""><b>Employee Id</b></label><asp:TextBox ID="txtEmployeeId" runat="server"></asp:TextBox>
+                                                               </div>
+
+                                                                   <div class="col-6">
+                                                                     
+                                                                       <label style="margin-top:30px; margin-left:10px; font-size:medium; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa""><b>NIC No</b></label><asp:TextBox ID="txtNic" runat="server"></asp:TextBox>
+                                                                   
+                                                                           </div>
+
+                                                            </div>
+                                                            <br />
+                                                            <br />
+
+                                                            <div class="row">
+                                                                <asp:Button class="btn btn-danger" style="margin-top:10px; margin-left:120px;width:150px" ID="btnSearch" runat="server" Text="Search" />
+
+                                                            </div>
+                                                               
+                                                                    
+                                                             
+                                               
+                                           </div>
+                                           </div>
+            </div>
+
+
+
+                <div class="col-4">
+                    
+
+                    
+                </div>
+
+
+                <div class="col-4">
+                    
+
+                    
+                </div>
+
+         </div>
+         </div>
 
             </asp:View>
 
