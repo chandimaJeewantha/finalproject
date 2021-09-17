@@ -11,11 +11,11 @@ namespace synchr2
 {
     public partial class hrDepartment : System.Web.UI.Page
     {
-        string connectionString = "Data Source=DESKTOP-M9R4O4O;Initial Catalog=HrmsDatabase;Integrated Security=True";
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            MultiViewSupervisor.ActiveViewIndex = 0;
-        }
+        string connectionString = "Data Source=localhost;Initial Catalog=HrmsDatabase;Integrated Security=True";
+       // protected void Page_Load(object sender, EventArgs e)
+        //{
+            //MultiViewSupervisor.ActiveViewIndex = 0;
+        //}
 
         protected void btnHome_Click(object sender, EventArgs e)
         {
@@ -437,6 +437,101 @@ namespace synchr2
         protected void btnViewProfile_Click(object sender, EventArgs e)
         {
             MultiViewSupervisor.ActiveViewIndex = 2;
+        }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+
+            if (txtEmployeeIdsearch.Text == "" && txtNicsearch.Text == "")
+            {
+
+                Response.Write("<script>alert('Enter Nic Or EmployeeId....')</script>");
+
+            }
+            else {
+
+                if (txtNicsearch.Text == "")
+                {
+                    try
+                    {
+                        SqlConnection con = new SqlConnection(connectionString);
+
+
+                        string quary = "select * from workTbl where employee_number='" + txtEmployeeIdsearch.Text + "'";
+                        SqlCommand cmd = new SqlCommand(quary, con);
+                        con.Open();
+                        SqlDataReader rdr = cmd.ExecuteReader();
+
+                        if (rdr.Read() == true)
+                        {
+                            String nicNumber = rdr.GetString(1);
+                            txtNicsearch.Text = nicNumber.ToString();
+                            //Response.Write("<script>alert('" +nicNumber+ "');</script>");
+
+
+                        }
+                        else
+                        {
+
+                            Response.Write("<script>alert('No Nic Relevant To This Employee Id Please Check Again  ....')</script>");
+                        }
+
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+
+                    }
+
+
+                }
+                else {
+
+                    try
+                    {
+                        SqlConnection con = new SqlConnection(connectionString);
+
+
+                        string quary = "select * from workTbl where NIC_no='" + txtNicsearch.Text + "'";
+                        SqlCommand cmd = new SqlCommand(quary, con);
+                        con.Open();
+                        SqlDataReader rdr = cmd.ExecuteReader();
+
+                        if (rdr.Read() == true)
+                        {
+                            String employeeid = rdr.GetString(0);
+                            txtEmployeeIdsearch.Text = employeeid.ToString();
+                            
+
+
+                        }
+                        else
+                        {
+
+                            Response.Write("<script>alert('No Nic Relevant To This Employee Id Please Check Again  ....')</script>");
+                        }
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+                    }
+                
+                
+                
+                }
+            
+            
+            
+            
+            }
+           
+
         }
     }
 }

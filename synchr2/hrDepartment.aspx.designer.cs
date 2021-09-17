@@ -924,22 +924,22 @@ namespace synchr2
         protected global::System.Web.UI.WebControls.View ViewProfiles;
 
         /// <summary>
-        /// txtEmployeeId control.
+        /// txtEmployeeIdsearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmployeeId;
+        protected global::System.Web.UI.WebControls.TextBox txtEmployeeIdsearch;
 
         /// <summary>
-        /// txtNic control.
+        /// txtNicsearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNic;
+        protected global::System.Web.UI.WebControls.TextBox txtNicsearch;
 
         /// <summary>
         /// btnSearch control.
