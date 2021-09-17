@@ -24,7 +24,7 @@
             <%-- Nav Bar--%>
             <nav class="navbar navbar-expand-lg navbar-light" id="demoNav">
                  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="color: #FFD700;font-family: 'Trocchi', serif;font-size: 45px;font-weight: normal;line-height: 48px;margin-left:500px">
-                  <h1>ADMIN PLATFORM</h1>
+                  <h1>Admin Platform</h1>
                 </div>
             </nav>
 
@@ -48,7 +48,7 @@
                                                <div class="form-group">
                                                   <label style="color:#2c3e50"><b>Employee Id</b></label>&nbsp<asp:TextBox style="height:30px" CssClass="form-control" ID="txtEmployeeId" runat="server"></asp:TextBox>
                                                    <br />
-                                                   <label style="color:#2c3e50"><b>User Name</b></label>&nbsp<asp:TextBox style="height:30px;" CssClass="form-control" ID="txtUserName" runat="server"></asp:TextBox>
+                                                   <label style="color:#2c3e50"><b>Username</b></label>&nbsp<asp:TextBox style="height:30px;" CssClass="form-control" ID="txtUserName" runat="server"></asp:TextBox>
                                                    <br />
                                                    <label style="color:#2c3e50"><b>Password</b></label>&nbsp<asp:TextBox style="height:30px;" CssClass="form-control" ID="txtPassword" runat="server"></asp:TextBox>
                                                    <br />
@@ -266,7 +266,7 @@
             <footer style="width:1550px;margin-left:-199px">
                 <div id="footer1" class="container-fluid">
                     <div align="center">
-                        <h5>&copy All right #####.<a class="footerlinks" href="#" target="_blank">E Rats</a></h5>
+                        <h5>&copy All Right Reserved.<a class="footerlinks" href="#" target="_blank">E Rats</a></h5>
                     </div>
                 
                 </div>

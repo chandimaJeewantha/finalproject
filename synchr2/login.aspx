@@ -55,7 +55,7 @@
 
                                 <div class="row">
                                     <div class="col">
-                                        <hr class="hori">
+                                        <hr class="hori"/>
                                     </div>
                                 </div>
 
@@ -64,7 +64,7 @@
                      <div class="col">
                         <label>User Name</label>
                         <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="txtUserName" runat="server" placeholder="User Name"></asp:TextBox>
+                           <asp:TextBox CssClass="form-control" ID="txtUserName" runat="server" placeholder="Username"></asp:TextBox>
                         </div>
                         <label>Password</label>
                         <div class="form-group">
@@ -84,14 +84,14 @@
                     </div>
                 </div>
             </div>
-            <br>
+            <br/>
            
 
            <!-- Footer -->
             <footer>
                 <div id="footer1" class="container-fluid">
                     <div align="center">
-                        <h5>&copy All right #####.<a class="footerlinks" href="#" target="_blank">E Rats</a></h5>
+                        <h5>&copy All Right Reserved<a class="footerlinks" href="#" target="_blank">E Rats</a></h5>
                     </div>
                 
                 </div>
