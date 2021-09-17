@@ -81,8 +81,8 @@
                             <div class="row justify-content-start">
 
                                 <div class="col-6">
-                                  <h3 style="margin-left:300px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-bottom:-20px; font-size:30px"><i style="margin-left:-90px; margin-top:20px" class="fas fa-street-view"></i><b>Personal Details</b></h3>
-                                     <div class="card" style="margin-left:200px; background-color:#194C43; width:500px; margin-top:30px">
+                                  <h3 style="margin-left:300px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-bottom:-20px; font-size:30px"><i style="margin-left:-130px; margin-top:20px" class="fas fa-street-view"></i><b>Personal Details</b></h3>
+                                     <div class="card" style="margin-left:150px; background-color:#194C43; width:500px; margin-top:30px">
                                       
                                         <div class="card-body">
                                         <div class="personalInfo">
@@ -203,7 +203,7 @@
                                     </div>
                                         
                                      
-                                     <div class="card" style="margin-left:200px; background-color:#194C43; width:500px; margin-top:5px">
+                                     <div class="card" style="margin-left:150px; background-color:#194C43; width:500px; margin-top:5px">
                                 
                                         <div class="card-body">
                                         <div class="personalInfo">
@@ -254,7 +254,7 @@
                                     </div>
 
 
-                                     <div class="card" style="margin-left:200px; background-color:#194C43; width:500px; margin-top:5px">
+                                     <div class="card" style="margin-left:150px; background-color:#194C43; width:500px; margin-top:5px">
                                 
                                         <div class="card-body">
                                         <div class="personalInfo">
@@ -309,7 +309,7 @@
                                     </div> 
 
                                      
-                                     <div class="card" style="margin-left:200px; background-color:#194C43; width:500px; margin-top:5px">
+                                     <div class="card" style="margin-left:150px; background-color:#194C43; width:500px; margin-top:5px">
                                 
                                         <div class="card-body">
                                         <div class="personalInfo">
@@ -355,7 +355,7 @@
                                     </div> 
 
                                         
-                                      <div class="card" style="margin-left:200px; background-color:gainsboro; width:500px; margin-top:5px">
+                                      <div class="card" style="margin-left:150px; background-color:gainsboro; width:500px; margin-top:5px">
                                 
                                         <div class="card-body">
                                         <div class="personalInfo">
@@ -381,8 +381,8 @@
                               </div>
 
                                 <div class="col-6" style="margin-left:-43px">
-                                  <h3 style="margin-left:130px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-bottom:-20px; font-size:30px; text-decoration-style:solid"><i style="margin-left:-160px; margin-top:20px" class="fas fa-users-cog"></i><b>Employeement Details</b></h3>
-                                     <div class="card" style="margin-left:-40px; background-color:#194C43; width:500px; margin-top:30px">
+                                  <h3 style="margin-left:130px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-bottom:-20px; font-size:30px; text-decoration-style:solid"><i style="margin-left:-40px; margin-top:20px" class="fas fa-users-cog"></i><b>Employeement Details</b></h3>
+                                     <div class="card" style="margin-left:70px; background-color:#194C43; width:500px; margin-top:30px">
                                       
                                         <div class="card-body">
                                         <div class="personalInfo">
@@ -430,7 +430,7 @@
                                     </div>
                                         
                                      
-                                     <div class="card" style="margin-left:-40px; background-color:#194C43; width:500px; margin-top:5px">
+                                     <div class="card" style="margin-left:70px; background-color:#194C43; width:500px; margin-top:5px">
                                 
                                         <div class="card-body">
                                         <div class="personalInfo">
@@ -517,7 +517,7 @@
                                     </div>
 
 
-                                     <div class="card" style="margin-left:-40px; background-color:#194C43; width:500px; margin-top:5px">
+                                     <div class="card" style="margin-left:70px; background-color:#194C43; width:500px; margin-top:5px">
                                 
                                         <div class="card-body">
                                         <div class="personalInfo">
@@ -647,7 +647,7 @@
                                     </div> 
 
                                      
-                                     <div class="card" style="margin-left:-40px; background-color:#194C43; width:500px; margin-top:5px">
+                                     <div class="card" style="margin-left:70px; background-color:#194C43; width:500px; margin-top:5px">
                                 
                                         <div class="card-body">
                                         <div class="personalInfo">
@@ -660,11 +660,15 @@
                                                 </div>
                                                  <div class="col">
                                                      <div class="input-group">
-                                                     <asp:TextBox ID="txtBasicSalary" style="margin-left:-40px; text-align:right" runat="server"> .00</asp:TextBox>
-                                                     <asp:DropDownList ID="DropDownListLKR" style=" width:80px;text-align:center; height:24px; margin-left:5px" runat="server">
+                                                         
+                                                            
+                                                     <asp:TextBox ID="txtBasicSalary" style="margin-left:-45px; text-align:right" runat="server"> .00</asp:TextBox>
+                                                     <asp:DropDownList ID="DropDownListLKR" style=" width:80px;text-align:center; height:24px; margin-left:5px; margin-right:-5px" runat="server">
                                                           <asp:ListItem Value="0">LKR</asp:ListItem>
                                                          
                                                      </asp:DropDownList>
+                                                                 
+                                                        
                                                      </div>
                                                 </div>
                                             </div>
@@ -732,7 +736,7 @@
                                     </div> 
 
                                         
-                                     <div class="card" style="margin-left:-40px; background-color:gainsboro; width:500px; margin-top:5px">
+                                     <div class="card" style="margin-left:70px; background-color:gainsboro; width:500px; margin-top:5px">
                                 
                                         <div class="card-body">
                                         <div class="personalInfo">
@@ -767,9 +771,9 @@
                     <div class="row justify-content-start">
 
                         <div class="col-4">
-                            <div class="card" style="height:25rem; width: 40rem;  background-color:#194C43; margin-left:-130px;margin-right:5px; margin-top:130px; margin-bottom:20px">
+                            <div class="card" style="border-radius:35px;height:25rem; width: 40rem;  background-color:#194C43; margin-left:400px;margin-right:-180px; margin-top:30px; margin-bottom:20px">
                                            <div class="card-body">
-                                           <h3 class="card-title" id="viewprofileCard1"  style="text-align:center; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa; margin-bottom:10px"><b>Find</b></h3>
+                                           <h3 class="card-title" id="viewprofileCard1"  style=" text-align:center; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa; margin-bottom:10px;"><b>Find</b></h3>
                                             
                                                         
 
@@ -804,7 +808,7 @@
 
 
                         <div class="col-4">                    
-                            <div class="card" style="margin-left:-90px; background-color:#194C43; width:500px; margin-top:130px">
+                            <div class="card" style="margin-left:-350px; background-color:#194C43; width:500px; margin-top:300px">
                                       
                                         <div class="card-body">
                                         <div class="personalInfo">
@@ -921,7 +925,7 @@
 
                         <div class="col-4">
                     
-                             <div class="card" style="margin-left:50px; background-color:#194C43; width:500px; margin-top:130px">
+                             <div class="card" style="margin-left:-150px; background-color:#194C43; width:500px; margin-top:300px">
                                       
                                         <div class="card-body">
                                         <div class="personalInfo">

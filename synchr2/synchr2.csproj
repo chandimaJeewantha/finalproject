@@ -78,6 +78,8 @@
     <Content Include="boostrap\js\bootstrap.min.js" />
     <Content Include="boostrap\js\jquery-3.3.1.slim.min.js" />
     <Content Include="boostrap\js\popper.min.js" />
+    <Content Include="Content\Chart.css" />
+    <Content Include="Content\Chart.min.css" />
     <Content Include="css\CustmCss.css" />
     <Content Include="css\supervisorcss.css" />
     <Content Include="fontawesome\attribution.js" />
@@ -1736,6 +1738,8 @@
     <Content Include="imgs\syncHR2.png" />
     <Content Include="login.aspx" />
     <Content Include="productionManager.aspx" />
+    <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\Chart.min.js" />
     <Content Include="supervisor.aspx" />
     <Content Include="table\css\jquery.dataTables.min.css" />
     <Content Include="table\js\jquery.dataTables.min.js" />
