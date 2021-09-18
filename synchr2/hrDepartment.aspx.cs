@@ -11,7 +11,7 @@ namespace synchr2
 {
     public partial class hrDepartment : System.Web.UI.Page
     {
-        string connectionString = "Data Source=localhost;Initial Catalog=HrmsDatabase;Integrated Security=True";
+        string connectionString = "Data Source=localhost;Initial Catalog=HrmsDatabase1;Integrated Security=True";
        // protected void Page_Load(object sender, EventArgs e)
         //{
             //MultiViewSupervisor.ActiveViewIndex = 0;
@@ -467,6 +467,8 @@ namespace synchr2
                             String nicNumber = rdr.GetString(1);
                             txtNicsearch.Text = nicNumber.ToString();
                             //Response.Write("<script>alert('" +nicNumber+ "');</script>");
+                            txtPersonDetailNicNo.Text = nicNumber;
+                            txtEmpId.Text = txtEmployeeIdsearch.Text;
 
 
                         }
@@ -531,6 +533,141 @@ namespace synchr2
             
             }
            
+
+        }
+
+        protected void btnEmpDetailsView_Click(object sender, EventArgs e)
+        {//employeement details
+            if (txtEmpId.Text == "")
+            {
+                Response.Write("<script>alert('Please give EmployeeId  To Find Employeement Details of An Employee  ....')</script>");
+            }
+            else
+            {
+                try
+                {
+                    SqlConnection con = new SqlConnection(connectionString);
+                    string quary = "Select * from workTbl where employee_number='" + txtEmpId.Text + "'";
+                    SqlCommand cmd = new SqlCommand(quary, con);
+                    con.Open();
+                    SqlDataReader rdr = cmd.ExecuteReader();
+
+                    if (rdr.Read()==true)
+                    {
+                        String epfnumber = rdr.GetString(2);
+                        String previousEpfNum = rdr.GetString(3);
+                        String group = rdr.GetString(4);
+                        String company = rdr.GetString(5);
+                        String department = rdr.GetString(6);
+                        String division = rdr.GetString(7);
+                        String jobcat = rdr.GetString(9);
+                        String currentDesignation = rdr.GetString(10);
+                        String annualLeave = rdr.GetString(19);
+                        String casulLeave = rdr.GetString(20);
+                        //Response.Write("<script>alert('" + epfnumber + "');</script>");
+
+                        txtEmpDetailsEPFNo.Text = epfnumber;
+                        txtEmpDetailsPreviousEPFNo.Text = previousEpfNum;
+                        txtEmpDetailsGroup.Text = group;
+                        txtEmpDetailsCompany.Text = company;
+                        txtEmpDetailsDepartment.Text = department;
+                        txtEmpDetailsDivision.Text = division;
+                        txtEmpDetailsJobCategory.Text = jobcat;
+                        txtEmpDetailsCurrentDesignation.Text = currentDesignation;
+                        txtEmpDetailsAnnualLeave.Text = annualLeave;
+                        txtEmpDetailsCasulaLeave.Text = casulLeave;
+
+                    }
+                    else {
+
+
+                        Response.Write("<script>alert('Check Again There Are No Details Relevant To This Id ....')</script>");
+                    }
+
+                }
+                catch(Exception ex)
+                {
+
+                    Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+
+
+                }
+
+
+            }
+
+        }
+
+        protected void btnPersonalDataView_Click(object sender, EventArgs e)
+        {
+            if (txtPersonDetailNicNo.Text == "")
+            {
+
+
+                Response.Write("<script>alert('Please Enter Nic Number To Find Personal Details of An Employee  ....')</script>");
+
+            }
+            else {
+
+                try
+                {
+
+                    SqlConnection con = new SqlConnection(connectionString);
+
+
+                    string quary = "Select * from personTbl where NIC_number='"+txtPersonDetailNicNo.Text+"'";
+                    SqlCommand cmd = new SqlCommand(quary, con);
+                    con.Open();
+                    SqlDataReader rdr = cmd.ExecuteReader();
+
+                    if (rdr.Read() == true)
+                    {
+
+                        String fullName = rdr.GetString(4);
+                        String gender = rdr.GetString(6);
+                        String meritalStatus = rdr.GetString(8);
+                        String bloodGroup = rdr.GetString(9);
+                        //String dateOfBirth = Convert.ToString(rdr.GetValue(10));
+                        String newdate = rdr.GetString(10);
+                        String nationality = rdr.GetString(16);
+                        String race = rdr.GetString(15);
+                        String childrens = rdr.GetString(18);
+                        String livingStatus = rdr.GetString(17);
+                        String religon = rdr.GetString(14);
+
+
+                        txtFullNames.Text = fullName;
+                        txtGenders.Text = gender;
+                        txtMaritalStatus.Text = meritalStatus;
+                        txtBloodGroup.Text = bloodGroup;
+                        txtDoBs.Text = newdate;
+                        txtNationalitys.Text = nationality;
+                        txtRace.Text = race;
+                        txtNoOfChildrens.Text = childrens;
+                        txtLivingStatuss.Text = livingStatus;
+                        txtReligones.Text = religon;
+
+
+
+                    }
+                    else
+                    {
+
+                        Response.Write("<script>alert('Check Again There Are No Details Relevant To This Nic ....')</script>");
+                    }
+
+                }
+                catch (Exception ex)
+                {
+
+                    Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+                }
+            
+            
+            
+            }
 
         }
     }

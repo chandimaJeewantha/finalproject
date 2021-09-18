@@ -531,14 +531,9 @@
                                                  <div class="col">
                                                      <asp:DropDownList ID="DropDownListJobCategory" style=" width:150px;  text-align:center; height:26px; margin-left:-100px" runat="server">
                                                           <asp:ListItem Value="0">--select one--</asp:ListItem>
-                                                          <asp:ListItem Value="Coo">Coo</asp:ListItem>
-                                                          <asp:ListItem Value="Genaral Manager">Genaral Manager</asp:ListItem>
-                                                         <asp:ListItem Value="Manager"> Manager</asp:ListItem>
-                                                         <asp:ListItem Value="Assistant Manager">Assistant Manager</asp:ListItem>
-                                                         <asp:ListItem Value="Executive">Executive</asp:ListItem>
-                                                         <asp:ListItem Value="Assitant">Assistant</asp:ListItem>
-                                                         <asp:ListItem Value="Supervisor">Supervisor</asp:ListItem>
-                                                         <asp:ListItem Value="Worker">Worker</asp:ListItem>
+                                                          <asp:ListItem Value="Minor">Minor</asp:ListItem>
+                                                          <asp:ListItem Value="Staff">Staff</asp:ListItem>
+                                                       
                                                      </asp:DropDownList>
                                                 </div>
                                             </div>
@@ -771,7 +766,7 @@
                     <div class="row justify-content-start">
 
                         <div class="col-4">
-                            <div class="card" style="border-radius:35px;height:25rem; width: 40rem;  background-color:#194C43; margin-left:400px;margin-right:-180px; margin-top:30px; margin-bottom:20px">
+                            <div class="card" style="height:25rem; width: 40rem;  background-color:#194C43; margin-top:30px; margin-bottom:20px">
                                            <div class="card-body">
                                            <h3 class="card-title" id="viewprofileCard1"  style=" text-align:center; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa; margin-bottom:10px;"><b>Find</b></h3>
                                             
@@ -794,6 +789,7 @@
                                                                 <br />
 
                                                                 <div class="row">
+                                                                 
                                                                 <asp:Button class="btn btn-danger" style="margin-top:10px; margin-left:120px;width:150px" ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
                                                                 </div>
 
@@ -822,10 +818,10 @@
                                                     <asp:Label ID="Label53" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa; margin-left:10px" runat="server" Text="NIC No"></asp:Label>
                                                 </div>
                                                 <div class="col-4">
-                                                     <asp:TextBox ID="txtPersonDetailNicNo" style=" width:210px; margin-left:-80px" runat="server" ReadOnly="True"></asp:TextBox>
+                                                     <asp:TextBox ID="txtPersonDetailNicNo" style=" width:210px; margin-left:-80px" runat="server" ReadOnly="false"></asp:TextBox>
                                                 </div>
                                                 <div class="col-4">
-                                                    <asp:Button ID="btnView" style="width:100px; height:30px; margin-left:-30px" class="btn btn-danger" runat="server" Text="View" />
+                                                    <asp:Button ID="btnPersonalDataView" style="width:100px; height:30px; margin-left:-30px" class="btn btn-danger" runat="server" Text="View" OnClick="btnPersonalDataView_Click" />
                                                 </div>
                                             </div>
                                                 
@@ -911,7 +907,7 @@
                                                     <asp:Label ID="Label52" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Religon"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:TextBox ID="txtReligones" style=" width:210px; text-align:center;  margin-left:-100px" runat="server" ReadOnly="True"></asp:TextBox>
+                                                     <asp:TextBox ID="txtReligones" style=" width:210px;margin-left:-100px" runat="server" ReadOnly="True"></asp:TextBox>
                                                 </div>
                                             </div> 
 
@@ -929,20 +925,20 @@
                                       
                                         <div class="card-body">
                                         <div class="personalInfo">
-                                            <h4 style="text-align:left; margin-top:-5px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa; margin-bottom:-10px">Worker Details</h4>
+                                            <h4 style="text-align:left; margin-top:-5px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa; margin-bottom:-10px">Employeement Details</h4>
                                             <br/>
                                             <br/>
                                             <br/>
                                                 
                                              <div class="row" style="margin-bottom:10px;" >
                                                 <div class="col-4">
-                                                    <asp:Label ID="Label54" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa; margin-left:10px" runat="server" Text="Employee No"></asp:Label>
+                                                    <asp:Label ID="Label54" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa; margin-left:10px" runat="server" Text="Employee Id"></asp:Label>
                                                 </div>
                                                 <div class="col-4">
-                                                     <asp:TextBox ID="txtEmpId" style=" width:210px; margin-left:-40px" runat="server" ReadOnly="True"></asp:TextBox>
+                                                     <asp:TextBox ID="txtEmpId" style=" width:210px; margin-left:-40px" runat="server" ></asp:TextBox>
                                                 </div>
                                                 <div class="col-4">
-                                                    <asp:Button ID="btnEmpDetailsView" style="width:100px; height:30px; margin-left:10px" class="btn btn-danger" runat="server" Text="View" />
+                                                    <asp:Button ID="btnEmpDetailsView" style="width:100px; height:30px; margin-left:10px" class="btn btn-danger" runat="server" Text="View" OnClick="btnEmpDetailsView_Click" />
                                                 </div>
                                             </div>
                                                 
@@ -1028,7 +1024,7 @@
                                                     <asp:Label ID="Label64" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Casual Leave"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:TextBox ID="txtEmpDetailsCasulaLeave" style=" width:210px; text-align:center;  margin-left:-100px" runat="server" ReadOnly="True"></asp:TextBox>
+                                                     <asp:TextBox ID="txtEmpDetailsCasulaLeave" style=" width:210px;  margin-left:-100px" runat="server" ReadOnly="True"></asp:TextBox>
                                                 </div>
                                             </div> 
 
