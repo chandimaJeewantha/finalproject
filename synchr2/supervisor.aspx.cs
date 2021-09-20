@@ -12,7 +12,7 @@ namespace synchr2
     public partial class supervisor : System.Web.UI.Page
     {
 
-        string connectionstring = "Data Source=localhost;Initial Catalog=HrmsDatabase;Integrated Security=True";
+        string connectionstring = "Data Source=DESKTOP-M9R4O4O;Initial Catalog=HrmsDatabase1;Integrated Security=True";
         protected void Page_Load(object sender, EventArgs e)
         {
             

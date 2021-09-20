@@ -47,7 +47,7 @@
             <li><asp:LinkButton ID="btnHome" runat="server" class="fas fa-home" OnClick="btnHome_Click"> Home</asp:LinkButton></li>
             <li><asp:LinkButton ID="btnAddemp" runat="server" class="fas fa-ad" OnClick="btnAddemp_Click"> Add New Employee</asp:LinkButton></li>
             <li><asp:LinkButton ID="btnViewProfile" runat="server" class="fas fa-eye" OnClick="btnViewProfile_Click">View Profile</asp:LinkButton></li>
-            <li><asp:LinkButton ID="btnProfiles" runat="server" class="fas fa-user-shield" OnClick="btnProfiles_Click"> Active/Inactive Profiles</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnActiveInactive" runat="server" class="fas fa-user-shield" OnClick="btnActiveInactive_Click"> Active/Inactive Profiles</asp:LinkButton></li>
             <li><asp:LinkButton ID="btnLabourrep" runat="server" class="fas fa-cogs" OnClick="btnLabourrep_Click"> Generate labour turn over reports</asp:LinkButton></li>
             <li><asp:LinkButton ID="btnMonthlyrep" runat="server" class="fas fa-address-card" OnClick="btnMonthlyrep_Click"> Monthly Recruitment report</asp:LinkButton></li>
             
@@ -57,7 +57,7 @@
 
 
             
-
+            <%--  --%>
 
             
         </ul> 
@@ -80,7 +80,7 @@
                   <div class="container-fluid">
                             <div class="row justify-content-start">
 
-                                <div class="col-6">
+                                <div class="col-md-6">
                                   <h3 style="margin-left:300px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-bottom:-20px; font-size:30px"><i style="margin-left:-130px; margin-top:20px" class="fas fa-street-view"></i><b>Personal Details</b></h3>
                                      <div class="card" style="margin-left:150px; background-color:#194C43; width:500px; margin-top:30px">
                                       
@@ -380,7 +380,7 @@
 
                               </div>
 
-                                <div class="col-6" style="margin-left:-43px">
+                                <div class="col-md-6" style="margin-left:-43px">
                                   <h3 style="margin-left:130px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-bottom:-20px; font-size:30px; text-decoration-style:solid"><i style="margin-left:-40px; margin-top:20px" class="fas fa-users-cog"></i><b>Employeement Details</b></h3>
                                      <div class="card" style="margin-left:70px; background-color:#194C43; width:500px; margin-top:30px">
                                       
@@ -657,7 +657,7 @@
                                                      <div class="input-group">
                                                          
                                                             
-                                                     <asp:TextBox ID="txtBasicSalary" style="margin-left:-45px; text-align:right" runat="server"> .00</asp:TextBox>
+                                                     <asp:TextBox ID="txtBasicSalary" style="margin-left:-40px; text-align:right" runat="server"> .00</asp:TextBox>
                                                      <asp:DropDownList ID="DropDownListLKR" style=" width:80px;text-align:center; height:24px; margin-left:5px; margin-right:-5px" runat="server">
                                                           <asp:ListItem Value="0">LKR</asp:ListItem>
                                                          
@@ -766,7 +766,7 @@
                     <div class="row justify-content-start">
 
                         <div class="col-4">
-                            <div class="card" style="height:25rem; width: 40rem;  background-color:#194C43; margin-top:30px; margin-bottom:20px">
+                            <div class="card" style="height:25rem; width: 40rem;  background-color:#194C43; margin-left:30px; margin-top:30px; margin-bottom:20px">
                                            <div class="card-body">
                                            <h3 class="card-title" id="viewprofileCard1"  style=" text-align:center; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa; margin-bottom:10px;"><b>Find</b></h3>
                                             
@@ -1071,18 +1071,18 @@
                             <div class="row justify-content-start">
                             <div class="col-4">
 
-                            <div class="card" style="border-radius:25px; width: 45rem;background-color:#50DBB4; margin-left:60px;margin-right:5px; margin-top:10px; margin-bottom:20px">
+                            <div class="card" style="border-radius:25px; width: 45rem;background-color:#194C43; margin-left:60px;margin-right:5px; margin-top:10px; margin-bottom:20px">
                             <div class="card-body">
-                            <h2 class="card-title" id="cardOutSideWorkers" style="color:black;text-align:center;font-family:Segoe UI;color:#303952" >Preformance Evaluation of Out Side Workers</h2>
+                            <h2 class="card-title" id="cardOutSideWorkers" style="text-align:center;font-family:Segoe UI;color:#f5f6fa" >Preformance Evaluation of Out Side Workers</h2>
                                                 
                                                    <div class="row">
                                                            <div class="col-6">
 
-                                                                <label style="margin-top:10px;color:#2c3e50; font-size: 15px"><b>Month</b></label>
+                                                                <label style="margin-top:10px;color:#f5f6fa; font-size: 15px"><b>Month</b></label>
                                                            </div>
 
                                                            <div class="col-6">
-                                                                <asp:DropDownList ID="DropDownListMonth" runat="server" style="margin-left:-30px; margin-top:10px;width: 200px; height: 25px">
+                                                                <asp:DropDownList ID="DropDownListMonth" runat="server" style="margin-left:-30px; color:black; margin-top:10px;width: 200px; height: 25px">
                                                                 <asp:ListItem Value="0">Please Select</asp:ListItem>  
                                                     
                                                                 <asp:ListItem Value="1">January</asp:ListItem>  
@@ -1106,11 +1106,11 @@
 
                                                    <div class="row">
                                                             <div class="col-6">
-                                                                <label style=" margin-top:10px;font-size: 15px; color:#2c3e50"><b>Worker ID</b></label>
+                                                                <label style=" margin-top:10px;font-size: 15px; color:#f5f6fa;"><b>Worker ID</b></label>
                                                             </div>
                                                                 
                                                             <div class="col-6">
-                                                                <asp:TextBox style=" margin-left:-30px;margin-top:10px;height:30px; width:200px" CssClass="form-control" ID="txtWorkerID" runat="server"></asp:TextBox>
+                                                                <asp:TextBox style=" margin-left:-30px;margin-top:10px;height:30px; color:#f5f6fa; width:200px" CssClass="form-control" ID="txtWorkerID" runat="server"></asp:TextBox>
                                                             </div>
                                                    </div>       
                                                              
@@ -1118,7 +1118,7 @@
 
                                                    <div class="row">
                                                             <div class="col-6">
-                                                                <label style="margin-top:10px;font-size: 15px; color:#2c3e50"><b>Profit Precentage</b></label>
+                                                                <label style="margin-top:10px;font-size: 15px; color:#f5f6fa;"><b>Profit Precentage</b></label>
                                                             </div>
 
                                                             <div class="col-6">
@@ -1131,7 +1131,7 @@
                                        
                                                    <div class="row">
                                                             <div class="col-6">
-                                                                <label style=" margin-top:10px;font-size: 15px; color:#2c3e50"><b>Reject Precentage</b></label>
+                                                                <label style=" margin-top:10px;font-size: 15px; color:#f5f6fa;"><b>Reject Precentage</b></label>
                                                             </div>
                                                                 
                                                             <div class="col-6">
@@ -1141,7 +1141,7 @@
                                 <br />
                                                    <div class="row">
                                                             <div class="col-6">
-                                                                <label style=" margin-top:10px;font-size: 15px; color:#2c3e50"><b>Final Status</b></label>
+                                                                <label style=" margin-top:10px;font-size: 15px; color:#f5f6fa;"><b>Final Status</b></label>
                                                             </div>
                                                                 
                                                             <div class="col-6">
@@ -1151,7 +1151,7 @@
                                 <br />
                                                    <div class="row">
                                                             <div class="col-6">
-                                                                <label style=" margin-top:10px;font-size: 15px; color:#2c3e50"><b>Gross Profit Amount</b></label>
+                                                                <label style=" margin-top:10px;font-size: 15px; color:#f5f6fa;"><b>Gross Profit Amount</b></label>
                                                             </div>
                                                                 
                                                             <div class="col-6">
@@ -1163,7 +1163,7 @@
 
                                                                 
                                                                 <br />
-                                                                <asp:Button ID="btnEvaluate" runat="server" class="btn btn-primary" Height="46px" style="margin-top:20px; margin-left:130px;" Text="Evaluate" Width="147px" OnClick="btnEvaluate_Click" />
+                                                                <asp:Button ID="btnEvaluate" runat="server" class="btn btn-danger btn-block" Height="40px" style="margin-top:20px; margin-left:130px;" Text="Evaluate" Width="147px" OnClick="btnEvaluate_Click" />
                                                                 <br />
 
                                                    <div class="row">

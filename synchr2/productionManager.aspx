@@ -42,6 +42,13 @@
         });
     </script>
 
+    <style>
+        #ConViewStatus
+        {
+             background-color:gainsboro;
+        }
+    </style>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -91,7 +98,7 @@
 
 
 
-                <div class="container">
+                <div class="container" id="ConViewStatus">
                 <div class="row justify-content-start">
                 <div class="col-4">
                           <div class="card" style="height:60rem; width: 40rem;background-color:#50DBB4; margin-left:-60px;margin-right:5px; margin-top:60px; margin-bottom:20px">
@@ -175,6 +182,8 @@
                </div>
                       
 </div>
+    </div>
+                    
 
 
 

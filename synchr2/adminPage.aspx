@@ -17,6 +17,14 @@
     <script src="boostrap/js/popper.min.js"></script>
     <script src="boostrap/js/bootstrap.min.js"></script>
 
+
+    <style>
+        body
+        {
+            background-color:gainsboro;
+        }
+    </style>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -24,7 +32,7 @@
             <%-- Nav Bar--%>
             <nav class="navbar navbar-expand-lg navbar-light" id="demoNav">
                  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="color: #FFD700;font-family: 'Trocchi', serif;font-size: 45px;font-weight: normal;line-height: 48px;margin-left:500px">
-                  <h1>Admin Platform</h1>
+                  <h1 style="margin-top:15px; text-align:center">Admin Platform</h1>
                 </div>
             </nav>
 
@@ -32,9 +40,9 @@
                            <div class="row">
                               <div class="col-sm" id="1stcol">
                                     <%--card add operator --%>
-                                      <div class="card" style="width: 22rem;background-color:#50DBB4; margin-left:-30%; margin-top:20px; margin-bottom:20px">
+                                      <div class="card" style="width: 22rem;background-color:#194C43; margin-left:-30%; margin-top:20px; margin-bottom:20px">
                                            <div class="card-body">
-                                             <h3 class="card-title" id="cardtitle" style="color:black;text-align:center;font-family:Segoe UI;color:#303952" >Add Operator</h3>
+                                             <h3 class="card-title" id="cardtitle" style="color:black;text-align:center;font-family:Segoe UI;color:white; margin-bottom:25px" >Add Operator</h3>
                                                <center>
                                                   <asp:DropDownList ID="selectDepartment" runat="server">
                                                   <asp:ListItem Value="0">Please Select</asp:ListItem>  
@@ -46,13 +54,13 @@
                                                </center>
                                                <br />
                                                <div class="form-group">
-                                                  <label style="color:#2c3e50"><b>Employee Id</b></label>&nbsp<asp:TextBox style="height:30px" CssClass="form-control" ID="txtEmployeeId" runat="server"></asp:TextBox>
+                                                  <label style="color:white"><b>Employee Id</b></label>&nbsp<asp:TextBox style="height:30px" CssClass="form-control" ID="txtEmployeeId" runat="server"></asp:TextBox>
                                                    <br />
-                                                   <label style="color:#2c3e50"><b>Username</b></label>&nbsp<asp:TextBox style="height:30px;" CssClass="form-control" ID="txtUserName" runat="server"></asp:TextBox>
+                                                   <label style="color:white"><b>Username</b></label>&nbsp<asp:TextBox style="height:30px;" CssClass="form-control" ID="txtUserName" runat="server"></asp:TextBox>
                                                    <br />
-                                                   <label style="color:#2c3e50"><b>Password</b></label>&nbsp<asp:TextBox style="height:30px;" CssClass="form-control" ID="txtPassword" runat="server"></asp:TextBox>
+                                                   <label style="color:white"><b>Password</b></label>&nbsp<asp:TextBox style="height:30px;" CssClass="form-control" ID="txtPassword" runat="server"></asp:TextBox>
                                                    <br />
-                                                   <label style="color:#2c3e50"><b>Security Question</b></label>&nbsp<asp:DropDownList ID="DropDownListSecurityQuestion" CssClass="form-control" runat="server">
+                                                   <label style="color:white"><b>Security Question</b></label>&nbsp<asp:DropDownList ID="DropDownListSecurityQuestion" CssClass="form-control" runat="server">
                                                   <asp:ListItem Value="0">Please Select</asp:ListItem>  
                                                   <asp:ListItem Value="1">In what city were you born?</asp:ListItem>  
                                                   <asp:ListItem Value="2">What is the name of your favorite pet?</asp:ListItem>  
@@ -61,7 +69,7 @@
                                                   <asp:ListItem Value="5">What is your favorite car?</asp:ListItem> 
                                                  </asp:DropDownList>
                                                    <br />
-                                                   <label style="color:#2c3e50"><b>Answer</b></label>&nbsp<asp:TextBox style="height:30px;" CssClass="form-control" ID="txtAnswer" runat="server"></asp:TextBox>
+                                                   <label style="color:white"><b>Answer</b></label>&nbsp<asp:TextBox style="height:30px;" CssClass="form-control" ID="txtAnswer" runat="server"></asp:TextBox>
                                                   <br />
                                                     <center>
                                                         <div class="btn-group btn-group-lg" role="group" aria-label="Basic example" style="margin-left:-200px">
@@ -82,16 +90,16 @@
 
                               </div>
                              <div class="col-sm">
-                                 <div id="calendar" style="margin-top:50px; margin-left:-49px"> 
+                                 <div id="calendar" style="margin-top:50px; margin-left:-49px; color:black"> 
                                      <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
                                  </div>
                                   <br />
 
                                      <div id="deleteOperator">
                                        
-                                           <div class="card" style="width: 18rem; margin-left:-16%; background-color:#50DBB4; margin-top:20px">
+                                           <div class="card" style="width: 18rem; margin-left:-16%; background-color:#194C43; margin-top:20px">
                                             <div class="card-body">
-                                                <h5 class="card-title" style="color:black">Delete Operator</h5>
+                                                <h5 class="card-title" style="color:white">Delete Operator</h5>
                                                 
                                                  <left>
                                                   <asp:DropDownList ID="deleteDropdown" runat="server">
@@ -107,7 +115,7 @@
                                                 <table>
                                                     <tr>
                                                         <td>
-                                                            <label style="width:100px; color:#2c3e50"><b>Employee ID</b></label>
+                                                            <label style="width:100px; color:white"><b>Employee ID</b></label>
                                                         </td>
                                                             
                                                         <td>
@@ -145,9 +153,9 @@
                                        
                                         <div id="viewTables">
                                        
-                                           <div class="card" style="width: 25rem; margin-left:5%; background-color:#50DBB4; margin-top:20px; border-radius:15px">
+                                           <div class="card" style="width: 25rem; margin-left:5%; background-color:#194C43; margin-top:20px; border-radius:15px">
                                             <div class="card-body">
-                                                <h5 class="card-title" style="margin-top:-10px;text-align:center;color:black">View Table</h5>
+                                                <h5 class="card-title" style="margin-top:-10px;text-align:center;color:white">View Table</h5>
                                                 
                                                  <left>
                                                   <asp:DropDownList ID="DropDownListViewDataTable" runat="server" style="margin-top:10px">
@@ -179,7 +187,7 @@
                                </div>
                                 <div class="row">
                                     <div class="col">
-                                      <hr/>
+                                      <hr style="margin-left:39px"/>
                                     </div>
                                  </div>
 
@@ -193,9 +201,9 @@
                                <asp:View ID="ViewHrTable" runat="server">
 
                                    <div class="row" style="width:150px">
-                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabaseConnectionString %>" SelectCommand="SELECT * FROM [hrDepartmentTbl]"></asp:SqlDataSource>
+                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString7 %>" SelectCommand="SELECT * FROM [hrDepartmentTbl]"></asp:SqlDataSource>
                                     <div class="col">
-                                        <asp:GridView ID="GridViewHrDepartment" style="margin-left:27px" Width="150px" class="table table-striped table-bordered" runat="server" AutoGenerateColumns="False" DataKeyNames="employeeid" DataSourceID="SqlDataSource1">
+                                        <asp:GridView ID="GridViewHrDepartment" style="margin-left:-35px; background-color:#2f3640; color:#f5f6fa" class="table table-hover table-white" runat="server" AutoGenerateColumns="False" DataKeyNames="employeeid" DataSourceID="SqlDataSource1">
                                             <Columns>
                                                 <asp:BoundField DataField="employeeid" HeaderText="employeeid" ReadOnly="True" SortExpression="employeeid" />
                                                 <asp:BoundField DataField="username" HeaderText="username" SortExpression="username" />
@@ -214,9 +222,9 @@
                                <asp:View ID="ViewSupervisorTable" runat="server">
                                     
                                    <div class="row" style="width:150px"> 
-                                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabaseConnectionString2 %>" SelectCommand="SELECT * FROM [supervisorTbl]"></asp:SqlDataSource>
+                                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString8 %>" SelectCommand="SELECT * FROM [supervisorTbl]"></asp:SqlDataSource>
                                     <div class="col">
-                                        <asp:GridView ID="GridViewSupervisor" style="margin-left:27px" Width="150px" class="table table-striped table-bordered" runat="server" AutoGenerateColumns="False" DataKeyNames="employeeid" DataSourceID="SqlDataSource2">
+                                        <asp:GridView ID="GridViewSupervisor" style="margin-left:-35px;background-color:#2f3640; color:#f5f6fa" class="table table-hover table-white" runat="server" AutoGenerateColumns="False" DataKeyNames="employeeid" DataSourceID="SqlDataSource2">
                                             <Columns>
                                                 <asp:BoundField DataField="employeeid" HeaderText="employeeid" ReadOnly="True" SortExpression="employeeid" />
                                                 <asp:BoundField DataField="username" HeaderText="username" SortExpression="username" />
@@ -236,9 +244,9 @@
 
                                     
                                    <div class="row" style="width:150px">
-                                    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabaseConnectionString2 %>" SelectCommand="SELECT * FROM [productionManagerTbl]"></asp:SqlDataSource>
+                                    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString9 %>" SelectCommand="SELECT * FROM [productionManagerTbl]"></asp:SqlDataSource>
                                     <div class="col">
-                                        <asp:GridView ID="GridViewProductionMan" style="margin-left:27px" Width="150px" class="table table-striped table-bordered" runat="server" AutoGenerateColumns="False" DataKeyNames="employeeid" DataSourceID="SqlDataSource3">
+                                        <asp:GridView ID="GridViewProductionMan" style="margin-left:-35px; background-color:#2f3640; color:#f5f6fa" class="table table-hover table-white" runat="server" AutoGenerateColumns="False" DataKeyNames="employeeid" DataSourceID="SqlDataSource3">
                                             <Columns>
                                                 <asp:BoundField DataField="employeeid" HeaderText="employeeid" ReadOnly="True" SortExpression="employeeid" />
                                                 <asp:BoundField DataField="username" HeaderText="username" SortExpression="username" />

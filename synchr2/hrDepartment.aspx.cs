@@ -11,7 +11,7 @@ namespace synchr2
 {
     public partial class hrDepartment : System.Web.UI.Page
     {
-        string connectionString = "Data Source=localhost;Initial Catalog=HrmsDatabase1;Integrated Security=True";
+        string connectionString = "Data Source=DESKTOP-M9R4O4O;Initial Catalog=HrmsDatabase1;Integrated Security=True";
        // protected void Page_Load(object sender, EventArgs e)
         //{
             //MultiViewSupervisor.ActiveViewIndex = 0;
@@ -28,11 +28,6 @@ namespace synchr2
          
         }
 
-        protected void btnProfiles_Click(object sender, EventArgs e)
-        {
-            MultiViewSupervisor.ActiveViewIndex = 2;
-        }
-
         protected void btnLabourrep_Click(object sender, EventArgs e)
         {
             MultiViewSupervisor.ActiveViewIndex = 3;
@@ -45,7 +40,7 @@ namespace synchr2
 
         protected void btnOutsideworkers_Click(object sender, EventArgs e)
         {
-            MultiViewSupervisor.ActiveViewIndex = 5;
+            MultiViewSupervisor.ActiveViewIndex = 6;
         }
 
         protected void btnExit_Click(object sender, EventArgs e)
@@ -669,6 +664,11 @@ namespace synchr2
             
             }
 
+        }
+
+        protected void btnActiveInactive_Click(object sender, EventArgs e)
+        {
+            MultiViewSupervisor.ActiveViewIndex = 3;
         }
     }
 }

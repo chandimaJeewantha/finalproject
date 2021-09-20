@@ -34,7 +34,7 @@
     <!-- Bootstrap DatePicker -->
 
     
-
+    
 
 
 
@@ -78,7 +78,7 @@
 
 
             <asp:View ID="ViewProduction" runat="server">
-                <div class="container">
+                <div class="container" id="conViewProduction">
                 <div class="row justify-content-start">
                 <div class="col-4">
                           <div class="card" style="height:60rem; width: 40rem;background-color:#194C43; margin-left:-60px;margin-right:5px; margin-top:60px; margin-bottom:20px">
@@ -163,7 +163,7 @@
                <div class="col-4">
                   
 
-                            <div class="card" style="height:60rem; width: 80rem; background-color:#194C43; margin-left:-20px; margin-right:40px; margin-top:60px; margin-bottom:20px">
+                            <div class="card" style="height:60rem; width: 85rem; background-color:#194C43; margin-left:-30px; margin-right:40px; margin-top:60px; margin-bottom:20px">
                             <div class="card-body">
                                 <div class="input-group">
                             <h3 class="card-title" id="viewDataSup" style="text-align:center; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa" ><b>View Data</b></h3>
@@ -198,7 +198,7 @@
 
                                             </asp:View>
                                             <asp:View ID="Viewprintunit" runat="server">
-                                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabaseConnectionString %>" SelectCommand="SELECT * FROM [printunitTbl]"></asp:SqlDataSource>
+                                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString %>" SelectCommand="SELECT * FROM [printunitTbl]"></asp:SqlDataSource>
                                                 <div>
                                                     <div class="row">
                                                         <div class="col">
@@ -217,7 +217,7 @@
                                                 </div>
                                             </asp:View>
                                             <asp:View ID="ViewHandleunit" runat="server">
-                                                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabaseConnectionString %>" SelectCommand="SELECT * FROM [handleunitTbl]"></asp:SqlDataSource>
+                                                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString2 %>" SelectCommand="SELECT * FROM [handleunitTbl]"></asp:SqlDataSource>
                                                 <div>
                                                     <asp:GridView ID="GridVewHandleunit" class="table table-hover table-white" style="text-align:center; background-color:#2f3640; color:#f5f6fa; margin-left:1px; margin-top:30px" runat="server" AutoGenerateColumns="False" DataKeyNames="Date" DataSourceID="SqlDataSource2">
                                                         <Columns>
@@ -235,7 +235,7 @@
 
                                             </asp:View>
                                             <asp:View ID="Viewcuttingunit" runat="server">
-                                                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabaseConnectionString %>" SelectCommand="SELECT * FROM [cuttingunitTbl]"></asp:SqlDataSource>
+                                                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString3 %>" SelectCommand="SELECT * FROM [cuttingunitTbl]"></asp:SqlDataSource>
 
                                                 <div>
                                                     <asp:GridView ID="GridViewCuttingunit" class="table table-hover table-white" style="text-align:center; background-color:#2f3640; color:#f5f6fa; margin-left:1px; margin-top:30px" runat="server" AutoGenerateColumns="False" DataKeyNames="Date" DataSourceID="SqlDataSource3">
@@ -252,7 +252,7 @@
                                             </asp:View>
 
                                             <asp:View ID="Viewborderingunit" runat="server">
-                                                <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabaseConnectionString %>" SelectCommand="SELECT * FROM [borderingunitTbl]"></asp:SqlDataSource>
+                                                <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString4 %>" SelectCommand="SELECT * FROM [borderingunitTbl]"></asp:SqlDataSource>
                                                 <div>
                                                     <asp:GridView ID="GridViewborderingunit" class="table table-hover table-white" style="text-align:center; background-color:#2f3640; color:#f5f6fa; margin-left:1px; margin-top:30px" runat="server" AutoGenerateColumns="False" DataKeyNames="Date" DataSourceID="SqlDataSource4">
                                                         <Columns>
@@ -269,7 +269,7 @@
                                             </asp:View>
 
                                             <asp:View ID="Viewtailoringunit" runat="server">
-                                                <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabaseConnectionString %>" SelectCommand="SELECT * FROM [TailoringunitTbl]"></asp:SqlDataSource>
+                                                <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString5 %>" SelectCommand="SELECT * FROM [TailoringunitTbl]"></asp:SqlDataSource>
                                                 <div>
                                                     <asp:GridView ID="GridViewTailoringunit" class="table table-hover table-white" style="text-align:center; background-color:#2f3640; color:#f5f6fa; margin-left:1px; margin-top:30px" runat="server" AutoGenerateColumns="False" DataKeyNames="Date" DataSourceID="SqlDataSource5">
                                                         <Columns>
@@ -286,7 +286,7 @@
                                             </asp:View>
 
                                             <asp:View ID="Viewcompleteunit" runat="server">
-                                                <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabaseConnectionString %>" SelectCommand="SELECT * FROM [completeunitTbl]"></asp:SqlDataSource>
+                                                <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString6 %>" SelectCommand="SELECT * FROM [completeunitTbl]"></asp:SqlDataSource>
                                                 <div>
                                                     <asp:GridView ID="GridViewCompleteunit" class="table table-hover table-white" style="text-align:center; background-color:#2f3640; color:#f5f6fa; margin-left:1px; margin-top:30px" runat="server" AutoGenerateColumns="False" DataKeyNames="Date" DataSourceID="SqlDataSource6">
                                                         <Columns>
