@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
+using System.IO;
 
 namespace synchr2
 {
@@ -390,7 +391,9 @@ namespace synchr2
                 try
                 {
                     SqlConnection con = new SqlConnection(connectionString);
-                    string queary = "insert into personTbl values('" + txtNICNumber.Text + "','" + txtInitials.Text + "','" + txtFirstName.Text + "','" + txtSurname.Text + "','" + txtFullName.Text + "','" + txtMiddleName.Text + "','" + DropDownListGender.SelectedValue + "','" + DropDownListTitle.SelectedValue + "','" + DropDownListMeritalStatus.SelectedValue + "','" + DropDownListBloodGroup.SelectedValue + "','" + txtDOB.Text + "' ,'" + txtDrivingLicenseNumber.Text + "','" + txtPassportNumber.Text + "','" + txtPassportExpryDate.Text + "','" + DropDownListReligonNumber.SelectedValue + "','" + DropDownListRace.SelectedValue + "','" + DropDownListNationality.SelectedValue + "','" + DropDownListLivingStatus.SelectedValue + "','" + txtNumberOfDepartment.Text + "','" + txtNumberOfChildren.Text + "')";
+                    FileUpload1.SaveAs(Server.MapPath("~/empImgs/") + Path.GetFileName(FileUpload1.FileName));
+                    string link = "empImgs/" + Path.GetFileName(FileUpload1.FileName);
+                    string queary = "insert into personTbl values('" + txtNICNumber.Text + "','" + txtInitials.Text + "','" + txtFirstName.Text + "','" + txtSurname.Text + "','" + txtFullName.Text + "','" + txtMiddleName.Text + "','" + DropDownListGender.SelectedValue + "','" + DropDownListTitle.SelectedValue + "','" + DropDownListMeritalStatus.SelectedValue + "','" + DropDownListBloodGroup.SelectedValue + "','" + txtDOB.Text + "' ,'" + txtDrivingLicenseNumber.Text + "','" + txtPassportNumber.Text + "','" + txtPassportExpryDate.Text + "','" + DropDownListReligonNumber.SelectedValue + "','" + DropDownListRace.SelectedValue + "','" + DropDownListNationality.SelectedValue + "','" + DropDownListLivingStatus.SelectedValue + "','" + txtNumberOfDepartment.Text + "','" + txtNumberOfChildren.Text + "','"+link+"')";
                     SqlCommand cmd = new SqlCommand(queary, con);
                     con.Open();
                     cmd.ExecuteNonQuery();
@@ -669,6 +672,11 @@ namespace synchr2
         protected void btnActiveInactive_Click(object sender, EventArgs e)
         {
             MultiViewSupervisor.ActiveViewIndex = 3;
+        }
+
+        protected void LinkButtonViewImage_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("imageView.aspx");
         }
     }
 }

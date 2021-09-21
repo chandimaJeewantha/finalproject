@@ -1730,6 +1730,7 @@
     <Content Include="fontawesome\webfonts\fa-regular-400.svg" />
     <Content Include="fontawesome\webfonts\fa-solid-900.svg" />
     <Content Include="hrDepartment.aspx" />
+    <Content Include="imageView.aspx" />
     <Content Include="imgs\MicrosoftTeams-image %2811%29.png" />
     <Content Include="imgs\MicrosoftTeams-image %287%29.png" />
     <Content Include="imgs\MicrosoftTeams-image %289%29.png" />
@@ -1759,6 +1760,13 @@
     </Compile>
     <Compile Include="hrDepartment.aspx.designer.cs">
       <DependentUpon>hrDepartment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="imageView.aspx.cs">
+      <DependentUpon>imageView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="imageView.aspx.designer.cs">
+      <DependentUpon>imageView.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
@@ -1846,7 +1854,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="empImgs\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

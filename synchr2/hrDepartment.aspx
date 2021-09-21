@@ -30,6 +30,15 @@
         {
             background-color:gainsboro;
         }
+        .vrtical
+        {
+            border-left: 2px solid #2d3436;
+            height:600px;
+            position:absolute;
+            margin-left:390px;
+            margin-top:30px;
+        }
+    
     </style>
     
 
@@ -94,7 +103,7 @@
                                                     <asp:Label ID="Label1" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa" runat="server" Text="Initials(*)"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:TextBox ID="txtInitials" style=" width:300px; margin-left:-150px" runat="server"></asp:TextBox>
+                                                     <asp:TextBox ID="txtInitials" CssClass="form-control" style=" width:300px; margin-left:-150px" runat="server"></asp:TextBox>
                                                 </div>
                                             </div>
                                              <div class="row" style="margin-bottom:10px;" >
@@ -102,7 +111,7 @@
                                                     <asp:Label ID="Label2" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="First Name"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:TextBox ID="txtFirstName" style=" width:300px;  margin-left:-150px" runat="server"></asp:TextBox>
+                                                     <asp:TextBox ID="txtFirstName" CssClass="form-control" style=" width:300px;  margin-left:-150px" runat="server"></asp:TextBox>
                                                 </div>
                                             </div>
                                              <div class="row" style="margin-bottom:10px;" >
@@ -110,7 +119,7 @@
                                                     <asp:Label ID="Label3" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Surname"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:TextBox ID="txtSurname" style=" width:300px;  margin-left:-150px" runat="server"></asp:TextBox>
+                                                     <asp:TextBox ID="txtSurname" CssClass="form-control" style=" width:300px; margin-left:-150px" runat="server"></asp:TextBox>
                                                 </div>
                                             </div>
                                              <div class="row" style="margin-bottom:10px;" >
@@ -118,7 +127,7 @@
                                                     <asp:Label ID="Label4" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Full Name"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:TextBox ID="txtFullName" style=" width:300px; margin-left:-150px" runat="server"></asp:TextBox>
+                                                     <asp:TextBox ID="txtFullName" CssClass="form-control" style=" width:300px; margin-left:-150px" runat="server"></asp:TextBox>
                                                 </div>
                                             </div>
                                              <div class="row" style="margin-bottom:10px;" >
@@ -126,7 +135,7 @@
                                                     <asp:Label ID="Label5" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Middle Name"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:TextBox ID="txtMiddleName"  style="margin-left:-150px" runat="server"></asp:TextBox>
+                                                     <asp:TextBox ID="txtMiddleName" CssClass="form-control"  style="margin-left:-150px" runat="server"></asp:TextBox>
                                                 </div>
                                             </div> 
                                             
@@ -135,7 +144,7 @@
                                                     <asp:Label ID="Label6" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Gender"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:DropDownList ID="DropDownListGender" style=" width:150px;  text-align:center; height:26px; margin-left:-150px" runat="server">
+                                                     <asp:DropDownList ID="DropDownListGender" CssClass="form-control" style=" width:150px;  text-align:center; height:30px; margin-left:-150px" runat="server">
                                                           <asp:ListItem Value="0">--select--</asp:ListItem>
                                                           <asp:ListItem Value="Male">Male</asp:ListItem>
                                                           <asp:ListItem Value="Female">Female</asp:ListItem> 
@@ -147,7 +156,7 @@
                                                     <asp:Label ID="Label7" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Title"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:DropDownList ID="DropDownListTitle" style=" width:150px; text-align:center;  height:26px; margin-left:-150px" runat="server">
+                                                     <asp:DropDownList ID="DropDownListTitle" CssClass="form-control" style=" width:150px; text-align:center;  height:30px; margin-left:-150px" runat="server">
                                                           <asp:ListItem Value="0">--select--</asp:ListItem>
                                                           <asp:ListItem Value="Mr">Mr</asp:ListItem>
                                                           <asp:ListItem Value="Mrs">Mrs</asp:ListItem>
@@ -161,7 +170,7 @@
                                                     <asp:Label ID="Label8" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Merital status"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:DropDownList ID="DropDownListMeritalStatus" style=" width:150px; text-align:center;  height:26px; margin-left:-150px" runat="server">
+                                                     <asp:DropDownList ID="DropDownListMeritalStatus" CssClass="form-control" style=" width:150px; text-align:center;  height:30px; margin-left:-150px" runat="server">
                                                           <asp:ListItem Value="0">--select--</asp:ListItem>
                                                           <asp:ListItem Value="Single">Single</asp:ListItem>
                                                           <asp:ListItem Value="Married">Married</asp:ListItem> 
@@ -173,7 +182,7 @@
                                                     <asp:Label ID="Label9" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Blood Group"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:DropDownList ID="DropDownListBloodGroup" style=" width:150px; text-align:center;  height:26px; margin-left:-150px" runat="server">
+                                                     <asp:DropDownList ID="DropDownListBloodGroup" CssClass="form-control" style=" width:150px; text-align:center;  height:30px; margin-left:-150px" runat="server">
                                                           <asp:ListItem Value="0">--select--</asp:ListItem>
                                                           <asp:ListItem Value="A+">A+</asp:ListItem>
                                                           <asp:ListItem Value="O+">O+</asp:ListItem>
@@ -193,7 +202,23 @@
                                                     <asp:Label ID="Label10" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Date of Birth"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:TextBox ID="txtDOB" style=" width:150px; text-align:center;  margin-left:-150px" runat="server" TextMode="Date"></asp:TextBox>
+                                                     <asp:TextBox ID="txtDOB" CssClass="form-control" style=" width:150px; text-align:center;  margin-left:-150px" runat="server" TextMode="Date"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                             <div class="row" style="margin-bottom:10px;" >
+                                                <div class="col">
+                                                    <asp:Label ID="Label70" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Upload the image"></asp:Label>
+                                                </div>
+                                                 <div class="col">
+                                                     <asp:FileUpload ID="FileUpload1" Class="btn btn-danger" style="margin-right:25px" runat="server" />
+                                                </div>
+                                            </div>
+                                             <div class="row" style="margin-bottom:10px;" >
+                                                <div class="col">
+                                                    <asp:Label ID="Label71" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="View image"></asp:Label>
+                                                </div>
+                                                 <div class="col">
+                                                     <asp:LinkButton ID="LinkButtonViewImage" style="color:white; margin-left:-90px" runat="server" OnClick="LinkButtonViewImage_Click">Click here to view image</asp:LinkButton>
                                                 </div>
                                             </div> 
 
@@ -216,7 +241,7 @@
                                                 </div>
                                                  <div class="col">
                                                      <div class="input-group">
-                                                        <asp:TextBox ID="txtNICNumber" style=" width:200px; margin-left:-80px" runat="server"></asp:TextBox>
+                                                        <asp:TextBox ID="txtNICNumber" CssClass="form-control" style=" width:200px; margin-left:-80px" runat="server"></asp:TextBox>
                                                         
                                                      </div>
                                                 </div>
@@ -226,7 +251,7 @@
                                                     <asp:Label ID="Label12" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Driving License Number"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:TextBox ID="txtDrivingLicenseNumber" style=" width:200px;  margin-left:-80px" runat="server"></asp:TextBox>
+                                                     <asp:TextBox ID="txtDrivingLicenseNumber" CssClass="form-control" style=" width:200px;  margin-left:-80px" runat="server"></asp:TextBox>
                                                 </div>
                                             </div>
                                              <div class="row" style="margin-bottom:10px;" >
@@ -234,7 +259,7 @@
                                                     <asp:Label ID="Label13" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Passport Number"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:TextBox ID="txtPassportNumber" style=" width:200px;  margin-left:-80px" runat="server"></asp:TextBox>
+                                                     <asp:TextBox ID="txtPassportNumber" CssClass="form-control" style=" width:200px;  margin-left:-80px" runat="server"></asp:TextBox>
                                                 </div>
                                             </div>
                                              <div class="row" style="margin-bottom:10px;" >
@@ -242,7 +267,7 @@
                                                     <asp:Label ID="Label14" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Passport Expiry Date"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:TextBox ID="txtPassportExpryDate" style=" width:200px; text-align:center;  margin-left:-80px" runat="server" TextMode="Date"></asp:TextBox>
+                                                     <asp:TextBox ID="txtPassportExpryDate" CssClass="form-control" style=" width:200px; text-align:center;  margin-left:-80px" runat="server" TextMode="Date"></asp:TextBox>
                                                 </div>
                                             </div>
                                              
@@ -266,7 +291,7 @@
                                                     <asp:Label ID="Label15" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Religon"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:DropDownList ID="DropDownListReligonNumber" style=" width:150px;  text-align:center; height:26px; margin-left:-100px" runat="server">
+                                                     <asp:DropDownList ID="DropDownListReligonNumber" CssClass="form-control" style=" width:150px;  text-align:center; height:30px; margin-left:-100px" runat="server">
                                                           <asp:ListItem Value="0">--select one--</asp:ListItem>
                                                           <asp:ListItem Value="Buddhist">Buddhist</asp:ListItem>
                                                           <asp:ListItem Value="Catholic">Catholic</asp:ListItem>
@@ -280,7 +305,7 @@
                                                     <asp:Label ID="Label16" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Race"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:DropDownList ID="DropDownListRace" style=" width:150px;  text-align:center; height:26px; margin-left:-100px" runat="server">
+                                                     <asp:DropDownList ID="DropDownListRace" CssClass="form-control" style=" width:150px;  text-align:center; height:30px; margin-left:-100px" runat="server">
                                                           <asp:ListItem Value="0">--select one--</asp:ListItem>
                                                           <asp:ListItem Value="Sinhala">Sinhala</asp:ListItem>
                                                           <asp:ListItem Value="Tamil">Tamil</asp:ListItem>
@@ -294,7 +319,7 @@
                                                     <asp:Label ID="Label17" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Nationality"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:DropDownList ID="DropDownListNationality" style=" width:150px;  text-align:center; height:26px; margin-left:-100px" runat="server">
+                                                     <asp:DropDownList ID="DropDownListNationality" CssClass="form-control" style=" width:150px;  text-align:center; height:30px; margin-left:-100px" runat="server">
                                                           <asp:ListItem Value="0">--select one--</asp:ListItem>
                                                           <asp:ListItem Value="Sri lankan">Sri Lankan</asp:ListItem>
                                                           <asp:ListItem Value="Indian">Indian</asp:ListItem> 
@@ -321,7 +346,7 @@
                                                     <asp:Label ID="Label18" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Living Status"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:DropDownList ID="DropDownListLivingStatus" style=" width:150px;text-align:center; height:26px; margin-left:-80px" runat="server">
+                                                     <asp:DropDownList ID="DropDownListLivingStatus" CssClass="form-control" style=" width:150px;text-align:center; height:30px; margin-left:-80px" runat="server">
                                                           <asp:ListItem Value="0">--select one--</asp:ListItem>
                                                           <asp:ListItem Value="Home">Home</asp:ListItem>
                                                           <asp:ListItem Value="Bording House">Bording House</asp:ListItem>
@@ -335,7 +360,7 @@
                                                     <asp:Label ID="Label20" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="No: of Department"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:TextBox ID="txtNumberOfDepartment" style=" width:200px; margin-left:-80px" runat="server"></asp:TextBox>
+                                                     <asp:TextBox ID="txtNumberOfDepartment" CssClass="form-control" style=" width:200px; margin-left:-80px" runat="server"></asp:TextBox>
                                                 </div>
                                             </div>
                                              <div class="row" style="margin-bottom:10px;" >
@@ -343,7 +368,7 @@
                                                     <asp:Label ID="Label21" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="No: of Children"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:TextBox ID="txtNumberOfChildren" style=" width:200px; margin-left:-80px" runat="server"></asp:TextBox>
+                                                     <asp:TextBox ID="txtNumberOfChildren" CssClass="form-control" style=" width:200px; margin-left:-80px" runat="server"></asp:TextBox>
                                                 </div>
                                             </div>
                                              
@@ -364,11 +389,11 @@
                                            
                                              <div class="row" style="margin-bottom:10px;" >
                                                 <div class="col-6">
-                                                    <asp:Button ID="btnNew" class="btn btn-danger btn-block" runat="server" Text="New" OnClick="btnNew_Click" />
+                                                    <asp:Button ID="btnNew" class="btn btn-danger btn-block form-control" runat="server" Text="New" OnClick="btnNew_Click" />
                                                 </div>
                                                 
                                                 <div class="col-6">
-                                                     <asp:Button ID="btnPersonClear" class="btn btn-primary btn-block" runat="server" Text="Clear" OnClick="btnPersonClear_Click" />
+                                                     <asp:Button ID="btnPersonClear" class="btn btn-primary btn-block form-control" runat="server" Text="Clear" OnClick="btnPersonClear_Click" />
                                                 </div>
                                             </div>
                                             
@@ -395,7 +420,7 @@
                                                     <asp:Label ID="Label22" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa" runat="server" Text="Employee Number"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:TextBox ID="txtEmployeeNumber" style=" width:300px; margin-left:-100px" runat="server"></asp:TextBox>
+                                                     <asp:TextBox ID="txtEmployeeNumber" CssClass="form-control" style=" width:300px; margin-left:-100px" runat="server"></asp:TextBox>
                                                 </div>
                                             </div>
                                              <div class="row" style="margin-bottom:10px;" >
@@ -403,7 +428,7 @@
                                                     <asp:Label ID="Label23" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="NIC Number"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:TextBox ID="txtNicsNumber" style=" width:300px;  margin-left:-100px" runat="server"></asp:TextBox>
+                                                     <asp:TextBox ID="txtNicsNumber" CssClass="form-control" style=" width:300px;  margin-left:-100px" runat="server"></asp:TextBox>
                                                 </div>
                                             </div>
                                              <div class="row" style="margin-bottom:10px;" >
@@ -411,7 +436,7 @@
                                                     <asp:Label ID="Label24" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="EPF No"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:TextBox ID="txtEPFNumber" style=" width:300px;  margin-left:-100px" runat="server"></asp:TextBox>
+                                                     <asp:TextBox ID="txtEPFNumber" CssClass="form-control" style=" width:300px;  margin-left:-100px" runat="server"></asp:TextBox>
                                                 </div>
                                             </div>
                                              <div class="row" style="margin-bottom:10px;" >
@@ -419,7 +444,7 @@
                                                     <asp:Label ID="Label25" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Previous EPF No"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:TextBox ID="txtPreviousEpfNumber" style=" width:300px; margin-left:-100px" runat="server"></asp:TextBox>
+                                                     <asp:TextBox ID="txtPreviousEpfNumber" CssClass="form-control" style=" width:300px; margin-left:-100px" runat="server"></asp:TextBox>
                                                 </div>
                                             </div>
                                             
@@ -442,7 +467,7 @@
                                                     <asp:Label ID="Label32" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Group(*)"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                      <asp:DropDownList ID="DropDownListGroup" style=" width:150px; text-align:center;  height:26px; margin-left:-80px" runat="server">
+                                                      <asp:DropDownList ID="DropDownListGroup" CssClass="form-control" style=" width:150px; text-align:center;  height:30px; margin-left:-80px" runat="server">
                                                           <asp:ListItem Value="0">--select--</asp:ListItem>
                                                           <asp:ListItem Value="Aenvera Group">Aenvera Group</asp:ListItem>
                                                           <asp:ListItem Value="Sync Group">Sync Group</asp:ListItem> 
@@ -454,7 +479,7 @@
                                                     <asp:Label ID="Label33" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Company(*)"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                      <asp:DropDownList ID="DropDownListCompany" style=" width:150px; text-align:center;  height:26px; margin-left:-80px" runat="server">
+                                                      <asp:DropDownList ID="DropDownListCompany" CssClass="form-control" style=" width:150px; text-align:center;  height:30px; margin-left:-80px" runat="server">
                                                           <asp:ListItem Value="0">--select--</asp:ListItem>
                                                           <asp:ListItem Value="Sync Umbrella">Sync Umbrella</asp:ListItem>
                                                           <asp:ListItem Value="Sync Food">Sync Food</asp:ListItem> 
@@ -466,7 +491,7 @@
                                                     <asp:Label ID="Label34" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Department"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:DropDownList ID="DropDownListDeprtment" style=" width:150px; text-align:center;  height:26px; margin-left:-80px" runat="server">
+                                                     <asp:DropDownList ID="DropDownListDeprtment" CssClass="form-control" style=" width:150px; text-align:center;  height:30px; margin-left:-80px" runat="server">
                                                           <asp:ListItem Value="0">--select--</asp:ListItem>
                                                           <asp:ListItem Value="Hr">Hr</asp:ListItem>
                                                           <asp:ListItem Value="Marketing">Marketing</asp:ListItem>
@@ -484,7 +509,7 @@
                                                     <asp:Label ID="Label35" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Division"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:DropDownList ID="DropDownListDivision" style=" width:150px; text-align:center;  height:26px; margin-left:-80px" runat="server">
+                                                     <asp:DropDownList ID="DropDownListDivision" CssClass="form-control" style=" width:150px; text-align:center;  height:30px; margin-left:-80px" runat="server">
                                                           <asp:ListItem Value="0">--select--</asp:ListItem>
                                                           <asp:ListItem Value="Print">Print</asp:ListItem>
                                                           <asp:ListItem Value="Handle">Handle</asp:ListItem>
@@ -501,7 +526,7 @@
                                                     <asp:Label ID="Label26" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Seconded Department"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:DropDownList ID="DropDownListSecondedDepartment" style=" width:150px; text-align:center;  height:26px; margin-left:-80px" runat="server">
+                                                     <asp:DropDownList ID="DropDownListSecondedDepartment" CssClass="form-control" style=" width:150px; text-align:center;  height:30px; margin-left:-80px" runat="server">
                                                           <asp:ListItem Value="0">--select--</asp:ListItem>
                                                           <asp:ListItem Value="Sync Second">Sync Second</asp:ListItem>
                                                           <asp:ListItem Value="Sync Third">Sync Third</asp:ListItem> 
@@ -529,7 +554,7 @@
                                                     <asp:Label ID="Label36" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Job Category"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:DropDownList ID="DropDownListJobCategory" style=" width:150px;  text-align:center; height:26px; margin-left:-100px" runat="server">
+                                                     <asp:DropDownList ID="DropDownListJobCategory" CssClass="form-control" style=" width:150px;  text-align:center; height:30px; margin-left:-100px" runat="server">
                                                           <asp:ListItem Value="0">--select one--</asp:ListItem>
                                                           <asp:ListItem Value="Minor">Minor</asp:ListItem>
                                                           <asp:ListItem Value="Staff">Staff</asp:ListItem>
@@ -542,7 +567,7 @@
                                                     <asp:Label ID="Label37" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Current Designation"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:DropDownList ID="DropDownListCurrentDesignation" style=" width:300px; height:26px; margin-left:-100px" runat="server">
+                                                     <asp:DropDownList ID="DropDownListCurrentDesignation" CssClass="form-control" style=" width:300px; height:30px; margin-left:-100px" runat="server">
                                                           <asp:ListItem style="font-style:italic" Value="0" Selected="True">select designation</asp:ListItem>
                                                          <asp:ListItem Value="0">--select one--</asp:ListItem>
                                                           <asp:ListItem Value="Coo">Coo</asp:ListItem>
@@ -562,7 +587,7 @@
                                                     <asp:Label ID="Label38" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Joined Designation"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:DropDownList ID="DropDownListJoinedDesignation" style=" width:300px; text-align:left; height:26px; margin-left:-100px" runat="server">
+                                                     <asp:DropDownList ID="DropDownListJoinedDesignation" CssClass="form-control" style=" width:300px; text-align:left; height:30px; margin-left:-100px" runat="server">
                                                           <asp:ListItem style="font-style:italic" Value="0">select joined designation</asp:ListItem>
                                                          <asp:ListItem Value="0">--select one--</asp:ListItem>
                                                           <asp:ListItem Value="Coo">Coo</asp:ListItem>
@@ -581,7 +606,7 @@
                                                     <asp:Label ID="Label27" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Reporting Designation"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:DropDownList ID="DropDownListReportingDesignation" style=" width:300px; text-align:left; height:26px; margin-left:-100px" runat="server">
+                                                     <asp:DropDownList ID="DropDownListReportingDesignation" CssClass="form-control" style=" width:300px; text-align:left; height:30px; margin-left:-100px" runat="server">
                                                           <asp:ListItem style="font-style:italic" Value="0">select reporting designation</asp:ListItem>
                                                          <asp:ListItem Value="0">--select one--</asp:ListItem>
                                                           <asp:ListItem Value="Coo">Coo</asp:ListItem>
@@ -600,7 +625,7 @@
                                                     <asp:Label ID="Label28" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Reporting Persion"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:DropDownList ID="DropDownListReportingPersion" style=" width:300px;  text-align:left; height:26px; margin-left:-100px" runat="server">
+                                                     <asp:DropDownList ID="DropDownListReportingPersion" CssClass="form-control" style=" width:300px;  text-align:left; height:30px; margin-left:-100px" runat="server">
                                                           <asp:ListItem style="font-style:italic" Value="0">select reporting persion</asp:ListItem>
                                                           <asp:ListItem Value="Mr.Gamunu">Mr.Gamunu</asp:ListItem>
                                                           <asp:ListItem Value="Mr.Chamath">Mr.Chamath</asp:ListItem>
@@ -621,7 +646,7 @@
                                                     <asp:Label ID="Label29" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa;" runat="server" Text="Location Branch"></asp:Label>
                                                 </div>
                                                  <div class="col">
-                                                     <asp:DropDownList ID="DropDownListLocationBranch" style=" width:150px;  text-align:center; height:26px; margin-left:-100px" runat="server">
+                                                     <asp:DropDownList ID="DropDownListLocationBranch" CssClass="form-control" style=" width:150px;  text-align:center; height:30px; margin-left:-100px" runat="server">
                                                           <asp:ListItem Value="0">--select one--</asp:ListItem>
                                                           <asp:ListItem Value="Kandy">Kandy</asp:ListItem>
                                                           <asp:ListItem Value="Mawanella">Mawanella</asp:ListItem> 
@@ -657,8 +682,8 @@
                                                      <div class="input-group">
                                                          
                                                             
-                                                     <asp:TextBox ID="txtBasicSalary" style="margin-left:-40px; text-align:right" runat="server"> .00</asp:TextBox>
-                                                     <asp:DropDownList ID="DropDownListLKR" style=" width:80px;text-align:center; height:24px; margin-left:5px; margin-right:-5px" runat="server">
+                                                     <asp:TextBox ID="txtBasicSalary" CssClass="form-control" style="margin-left:-40px; width:170px; text-align:right" runat="server"> .00</asp:TextBox>
+                                                     <asp:DropDownList ID="DropDownListLKR" CssClass="form-control" style=" width:80px;text-align:center; height:30px; margin-left:5px; margin-right:-5px" runat="server">
                                                           <asp:ListItem Value="0">LKR</asp:ListItem>
                                                          
                                                      </asp:DropDownList>
@@ -673,7 +698,7 @@
                                                 </div>
                                                  <div class="col">
                                                      <div class="input-group">
-                                                     <asp:TextBox ID="txtBudgetaryReliefAllowance02" style="margin-left:-40px; text-align:right" runat="server"> .00</asp:TextBox>
+                                                     <asp:TextBox ID="txtBudgetaryReliefAllowance02" CssClass="form-control" style="margin-left:-40px; text-align:right" runat="server"> .00</asp:TextBox>
                                                      </div>
                                                 </div>
                                             </div>
@@ -683,7 +708,7 @@
                                                 </div>
                                                  <div class="col">
                                                      <div class="input-group">
-                                                     <asp:TextBox ID="txtBudgetaryReliefAllowance01" style="margin-left:-40px; text-align:right" runat="server"> .00</asp:TextBox>
+                                                     <asp:TextBox ID="txtBudgetaryReliefAllowance01" CssClass="form-control" style="margin-left:-40px; text-align:right" runat="server"> .00</asp:TextBox>
                                                      </div>
                                                 </div>
                                             </div>
@@ -693,7 +718,7 @@
                                                 </div>
                                                  <div class="col">
                                                      <div class="input-group">                                                   
-                                                     <asp:DropDownList ID="DropDownListEmployeementPlan" style=" width:330px;text-align:left; height:24px; margin-left:-100px" runat="server">
+                                                     <asp:DropDownList ID="DropDownListEmployeementPlan" CssClass="form-control" style=" width:330px;text-align:left; height:28px; margin-left:-100px" runat="server">
                                                           <asp:ListItem Value="0">--select one--</asp:ListItem>
                                                           <asp:ListItem Value="Executive">Executive</asp:ListItem>
                                                           <asp:ListItem Value="Nonexecutive">Nonexecutive</asp:ListItem> 
@@ -707,7 +732,7 @@
                                                 </div>
                                                  <div class="col">
                                                      <div class="input-group">                                                   
-                                                        <asp:TextBox ID="txtAnnualLeave" style="margin-left:-40px" runat="server"></asp:TextBox>
+                                                        <asp:TextBox ID="txtAnnualLeave" CssClass="form-control" style="margin-left:-40px" runat="server"></asp:TextBox>
                                                      </div>
                                                 </div>
                                             </div>
@@ -717,7 +742,7 @@
                                                 </div>
                                                  <div class="col">
                                                      <div class="input-group">                                                   
-                                                        <asp:TextBox ID="txtCasualLeave" style="margin-left:-40px" runat="server"></asp:TextBox>
+                                                        <asp:TextBox ID="txtCasualLeave" CssClass="form-control" style="margin-left:-40px" runat="server"></asp:TextBox>
                                                      </div>
                                                 </div>
                                             </div>
@@ -740,10 +765,10 @@
                                            
                                              <div class="row" style="margin-bottom:10px;" >
                                                  <div class="col-6">
-                                                     <asp:Button ID="btnSaveWork" class="btn btn-danger btn-block" runat="server" Text="Save" OnClick="btnSaveWork_Click" />
+                                                     <asp:Button ID="btnSaveWork" class="btn btn-danger btn-block form-control" runat="server" Text="Save" OnClick="btnSaveWork_Click" />
                                                 </div>
                                                 <div class="col-6">
-                                                     <asp:Button ID="btnWorkClear" class="btn btn-primary btn-block" runat="server" Text="Clear" OnClick="btnWorkClear_Click" />
+                                                     <asp:Button ID="btnWorkClear" class="btn btn-primary btn-block form-control" runat="server" Text="Clear" OnClick="btnWorkClear_Click" />
                                                 </div>
                                             </div>
                                             
@@ -1042,8 +1067,92 @@
 
 
             <asp:View ID="ViewActiveInactive" runat="server">
+                <div class="container">
+                    <div class="row justify-content-start">
+                        <div class="col-4">
+                            <div class="card" style="margin-left:30px; background-color:#194C43; margin-top:80px">
+                                <div class="card-body">
+                                    <div class="row pb-3 pt-5">
+                                        <div class="col-6">
+                                            <asp:Label ID="Label65" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa" runat="server" Text="Date:"></asp:Label>
+                                        </div>
+                                        <div class="col-6">
+                                            <asp:TextBox ID="txtDate" style="margin-left:-70px;width:200px" Class="form-control" runat="server" TextMode="Date"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                     <div class="row pb-3">
+                                        <div class="col-6">
+                                            <asp:Label ID="Label66" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa" runat="server" Text="NIC No:"></asp:Label>
+                                        </div>
+                                        <div class="col-6">
+                                            <asp:TextBox ID="txtNicNumberes" style="margin-left:-70px;width:200px" Class="form-control" runat="server"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                     <div class="row pb-3">
+                                        <div class="col-6">
+                                            <asp:Label ID="Label67" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa" runat="server" Text="Employe Id:"></asp:Label>
+                                        </div>
+                                        <div class="col-6">
+                                            <asp:TextBox ID="txtEmployeId" style="margin-left:-70px;width:200px" Class="form-control" runat="server"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="row pt-4">
+                                        <div class="col-12">
+                                            <asp:Button ID="btnDeleteEmp" Class="btn btn-danger btn-block form-control" runat="server" Text="Delete Employe" />
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
+                        <div class="vrtical">   
+                        </div>
 
+                         <div class="col-4">
+                            <div class="card" style="margin-left:30px; background-color:#194C43; margin-top:80px">
+                                <div class="card-body">
+                                    <div class="row pb-3 pt-3">
+                                        <div class="col-12">
+                                            <asp:Label ID="Label68" style="margin-left:60px;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa" runat="server" Text="Inactive Employe Details"></asp:Label>
+                                        </div>
+                                       
+                                    </div>
+                                     <div class="row">
+                                        <div class="col-12">
+                                            <hr style="margin-top:0px;"/>
+                                        </div>
+                                    </div>
+                                     <div class="row pb-3">
+                                        <div class="col-3">
+                                            <asp:Label ID="Label69" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa" runat="server" Text="Date"></asp:Label>
+                                        </div>
+                                        <div class="col-3">
+                                            <asp:TextBox ID="txtSearchDate" style="margin-left:-40px; width:170px" Class="form-control" runat="server"></asp:TextBox>
+                                        </div>
+                                          <div class="col-3">
+                                              <asp:Button ID="btnViews" style="margin-left:55px;width:80px" Class="form-control btn btn-danger" runat="server" Text="View" />
+                                        </div>
+                                    </div>
+                                     <div class="row pb-3">
+                                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString10 %>" SelectCommand="SELECT * FROM [inactiveTbl]"></asp:SqlDataSource>
+                                        <div class="col-12">
+                                            <asp:GridView ID="GridView1" runat="server" class="table table-hover table-white" style="text-align:center;color:#f5f6fa" AutoGenerateColumns="False" DataKeyNames="date,NIC_No" DataSourceID="SqlDataSource1">
+                                                <Columns>
+                                                    <asp:BoundField DataField="date" HeaderText="date" ReadOnly="True" SortExpression="date" />
+                                                    <asp:BoundField DataField="NIC_No" HeaderText="NIC_No" ReadOnly="True" SortExpression="NIC_No" />
+                                                    <asp:BoundField DataField="Emp_Id" HeaderText="Emp_Id" SortExpression="Emp_Id" />
+                                                </Columns>
+                                            </asp:GridView>
+                                        </div>
+                                       
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </asp:View>
 
 
