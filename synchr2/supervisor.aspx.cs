@@ -12,7 +12,7 @@ namespace synchr2
     public partial class supervisor : System.Web.UI.Page
     {
 
-        string connectionstring = "Data Source=DESKTOP-M9R4O4O;Initial Catalog=HrmsDatabase1;Integrated Security=True";
+        string connectionstring = "Data Source=localhost;Initial Catalog=HrmsDatabase1;Integrated Security=True";
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -32,14 +32,7 @@ namespace synchr2
 
             int hour = DateTime.Now.Hour;
 
-            if (hour < 12)
-            {
-                Response.Write("<script>alert('Good Morning');</script>");
-            }
-            else
-            {
-                Response.Write("<script>alert('Good Evening');</script>");
-            }
+            
         }
 
         protected void btnExit_Click(object sender, EventArgs e)

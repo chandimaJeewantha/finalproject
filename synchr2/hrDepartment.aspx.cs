@@ -12,11 +12,11 @@ namespace synchr2
 {
     public partial class hrDepartment : System.Web.UI.Page
     {
-        string connectionString = "Data Source=DESKTOP-M9R4O4O;Initial Catalog=HrmsDatabase1;Integrated Security=True";
-       // protected void Page_Load(object sender, EventArgs e)
-        //{
-            //MultiViewSupervisor.ActiveViewIndex = 0;
-        //}
+        string connectionString = "Data Source=localhost;Initial Catalog=HrmsDatabase1;Integrated Security=True";
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            MultiViewSupervisor.ActiveViewIndex = 0;
+        }
 
         protected void btnHome_Click(object sender, EventArgs e)
         {

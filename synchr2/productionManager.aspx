@@ -42,12 +42,7 @@
         });
     </script>
 
-    <style>
-        #ConViewStatus
-        {
-             background-color:gainsboro;
-        }
-    </style>
+    
 
 </head>
 <body>
@@ -59,8 +54,8 @@
         
         <ul>
             <li><asp:LinkButton ID="btnHome" runat="server" class="fas fa-home" OnClick="btnHome_Click"> Home</asp:LinkButton></li>
-            <li><asp:LinkButton ID="btnStatus" runat="server" class="fas fa-umbrella" OnClick="btnStatus_Click"> Daily view Production Efficiency and status of each unit</asp:LinkButton></li>
-            <li><asp:LinkButton ID="btnExpenses" runat="server" class="fas fa-child" OnClick="btnExpenses_Click"> Daily view of Expenses in each</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnStatus" runat="server" class="fas fa-umbrella" OnClick="btnStatus_Click"> Daily Production view Efficiency and status of each unit</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnExpenses" runat="server" class="fas fa-child" OnClick="btnExpenses_Click"> Chart demonstrations</asp:LinkButton></li>
             <li><asp:LinkButton ID="btnExit" runat="server" class="fas fa-hand-point-left" OnClick="btnExit_Click"> Exit</asp:LinkButton></li>
 
        
@@ -101,9 +96,9 @@
                 <div class="container" id="ConViewStatus">
                 <div class="row justify-content-start">
                 <div class="col-4">
-                          <div class="card" style="height:60rem; width: 40rem;background-color:#50DBB4; margin-left:-60px;margin-right:5px; margin-top:60px; margin-bottom:20px">
+                          <div class="card" style="height:60rem; width: 38rem;background-color:#50DBB4; margin-left:5px; margin-top:90px">
                                            <div class="card-body">
-                                             <h3 class="card-title" id="cardtitle" style="color:black;text-align:center;font-family:Segoe UI;color:#303952" >Analystics Details of each unit</h3>
+                                             <h3 class="card-title" id="cardtitle" style="color:black;text-align:center;font-family:Segoe UI;color:#303952" >Analytical Details of each unit</h3>
 
                                               
                                             <ul>
@@ -136,7 +131,7 @@
                                           <div class="form-group">
                                             <ul>
                                                 <li>
-                                                  <label style="color:#2c3e50; float: left; margin-top: 5px"><b>Meal Expences</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px; margin-bottom: 38px" CssClass="form-control" ID="txtMeal" runat="server" placeholder="Expences" ReadOnly="True"></asp:TextBox>
+                                                  <label style="color:#2c3e50; float: left; margin-top: 5px"><b>Meal Expenses</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px; margin-bottom: 38px" CssClass="form-control" ID="txtMeal" runat="server" placeholder="Expenses" ReadOnly="True"></asp:TextBox>
                                                 </li>
                                                
                                                  <li>
@@ -175,9 +170,14 @@
                     
                    
                     <div class="col">
-
-                        <h1>ttttttt</h1>       
-                          </div>
+                        <div style="margin-top:140px">
+                            <img src="Animation/“1”.gif" style="width: 700px"/>
+                        </div>
+                        <div style="margin-top:-220px; margin-left:280px">
+                            <img src="Animation/67012-404-error-animation.gif" style="width: 400px" />
+                        </div>
+                        
+                    </div>
                            
                </div>
                       

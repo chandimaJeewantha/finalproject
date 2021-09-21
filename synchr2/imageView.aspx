@@ -38,7 +38,7 @@
 
 
         <div>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString11 %>" SelectCommand="SELECT [NIC_number], [full_name], [title], [date_of_birth], [personImg] FROM [personTbl]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString12 %>" SelectCommand="SELECT [NIC_number], [full_name], [title], [date_of_birth], [personImg] FROM [personTbl]"></asp:SqlDataSource>
             <asp:GridView ID="GridViewImgeView" runat="server" style="margin-left:50px; margin-top:20px" AutoGenerateColumns="False" DataKeyNames="NIC_number" DataSourceID="SqlDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
@@ -46,7 +46,7 @@
                     <asp:BoundField DataField="full_name" HeaderText="full_name" SortExpression="full_name" />
                     <asp:BoundField DataField="title" HeaderText="title" SortExpression="title" />
                     <asp:BoundField DataField="date_of_birth" HeaderText="date_of_birth" SortExpression="date_of_birth" />
-                    <asp:ImageField DataImageUrlField="personImg" HeaderText="Person Details">
+                    <asp:ImageField HeaderText="Person_image">
                     </asp:ImageField>
                 </Columns>
                 <EditRowStyle BackColor="#7C6F57" />

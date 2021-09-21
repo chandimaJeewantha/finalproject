@@ -198,7 +198,7 @@
 
                                             </asp:View>
                                             <asp:View ID="Viewprintunit" runat="server">
-                                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString %>" SelectCommand="SELECT * FROM [printunitTbl]"></asp:SqlDataSource>
+                                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString12 %>" SelectCommand="SELECT * FROM [printunitTbl]"></asp:SqlDataSource>
                                                 <div>
                                                     <div class="row">
                                                         <div class="col">
@@ -217,7 +217,7 @@
                                                 </div>
                                             </asp:View>
                                             <asp:View ID="ViewHandleunit" runat="server">
-                                                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString2 %>" SelectCommand="SELECT * FROM [handleunitTbl]"></asp:SqlDataSource>
+                                                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString12 %>" SelectCommand="SELECT * FROM [handleunitTbl]"></asp:SqlDataSource>
                                                 <div>
                                                     <asp:GridView ID="GridVewHandleunit" class="table table-hover table-white" style="text-align:center; background-color:#2f3640; color:#f5f6fa; margin-left:1px; margin-top:30px" runat="server" AutoGenerateColumns="False" DataKeyNames="Date" DataSourceID="SqlDataSource2">
                                                         <Columns>
@@ -235,7 +235,7 @@
 
                                             </asp:View>
                                             <asp:View ID="Viewcuttingunit" runat="server">
-                                                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString3 %>" SelectCommand="SELECT * FROM [cuttingunitTbl]"></asp:SqlDataSource>
+                                                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString12 %>" SelectCommand="SELECT * FROM [cuttingunitTbl]"></asp:SqlDataSource>
 
                                                 <div>
                                                     <asp:GridView ID="GridViewCuttingunit" class="table table-hover table-white" style="text-align:center; background-color:#2f3640; color:#f5f6fa; margin-left:1px; margin-top:30px" runat="server" AutoGenerateColumns="False" DataKeyNames="Date" DataSourceID="SqlDataSource3">
@@ -252,7 +252,7 @@
                                             </asp:View>
 
                                             <asp:View ID="Viewborderingunit" runat="server">
-                                                <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString4 %>" SelectCommand="SELECT * FROM [borderingunitTbl]"></asp:SqlDataSource>
+                                                <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString12 %>" SelectCommand="SELECT * FROM [borderingunitTbl]"></asp:SqlDataSource>
                                                 <div>
                                                     <asp:GridView ID="GridViewborderingunit" class="table table-hover table-white" style="text-align:center; background-color:#2f3640; color:#f5f6fa; margin-left:1px; margin-top:30px" runat="server" AutoGenerateColumns="False" DataKeyNames="Date" DataSourceID="SqlDataSource4">
                                                         <Columns>
@@ -269,7 +269,7 @@
                                             </asp:View>
 
                                             <asp:View ID="Viewtailoringunit" runat="server">
-                                                <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString5 %>" SelectCommand="SELECT * FROM [TailoringunitTbl]"></asp:SqlDataSource>
+                                                <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString12 %>" SelectCommand="SELECT * FROM [TailoringunitTbl]"></asp:SqlDataSource>
                                                 <div>
                                                     <asp:GridView ID="GridViewTailoringunit" class="table table-hover table-white" style="text-align:center; background-color:#2f3640; color:#f5f6fa; margin-left:1px; margin-top:30px" runat="server" AutoGenerateColumns="False" DataKeyNames="Date" DataSourceID="SqlDataSource5">
                                                         <Columns>
@@ -286,7 +286,7 @@
                                             </asp:View>
 
                                             <asp:View ID="Viewcompleteunit" runat="server">
-                                                <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString6 %>" SelectCommand="SELECT * FROM [completeunitTbl]"></asp:SqlDataSource>
+                                                <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString12 %>" SelectCommand="SELECT * FROM [completeunitTbl]"></asp:SqlDataSource>
                                                 <div>
                                                     <asp:GridView ID="GridViewCompleteunit" class="table table-hover table-white" style="text-align:center; background-color:#2f3640; color:#f5f6fa; margin-left:1px; margin-top:30px" runat="server" AutoGenerateColumns="False" DataKeyNames="Date" DataSourceID="SqlDataSource6">
                                                         <Columns>
@@ -338,7 +338,7 @@
 
                                            <div class="card" style="height:50rem; width: 40rem;  background-color:#194C43; margin-left:-60px;margin-right:5px; margin-top:60px; margin-bottom:20px">
                                            <div class="card-body">
-                                           <h3 class="card-title" id="traineeCard"  style="text-align:center; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa; margin-bottom:20px"><b>Training Need</b></h3>
+                                           <h3 class="card-title" id="traineeCard"  style="text-align:center; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa; margin-bottom:20px"><b>Training Needs</b></h3>
                                             
                                                         
 
@@ -522,7 +522,7 @@
                                                                 <asp:ListItem Value="0">Please Select</asp:ListItem>  
                                                     
                                                                 <asp:ListItem Value="1">Outside worker </asp:ListItem>  
-                                                                <asp:ListItem Value="2">Cluster Head out side Worker </asp:ListItem>  
+                                                                <asp:ListItem Value="2">Cluster Head outside Worker </asp:ListItem>  
                                                                 
                                                                 </asp:DropDownList>
                                                             </div>
@@ -624,7 +624,7 @@
                                 <br />
                                                    <div class="row">
                                                             <div class="col-6">
-                                                                <label style=" margin-top:10px;font-size: 15px; color:#2c3e50"><b>Expected Umbrellas from this outside worker</b></label>
+                                                                <label style=" margin-top:10px;font-size: 15px; color:#2c3e50"><b>Expected Umbrellas from outside worker</b></label>
                                                             </div>
                                                                 
                                                             <div class="col-6">
@@ -634,7 +634,7 @@
                                 <br />
                                                    <div class="row">
                                                             <div class="col-6">
-                                                                <label style=" margin-top:10px;font-size: 15px; color:#2c3e50"><b>Rejected Umbrellas Amount from this outside worker</b></label>
+                                                                <label style=" margin-top:10px;font-size: 15px; color:#2c3e50"><b>Rejected Umbrellas from outside worker</b></label>
                                                             </div>
                                                                 
                                                             <div class="col-6">
@@ -661,33 +661,12 @@
 
 
               <div class="col-sm">
-                            <div class="row" style="margin-left:10rem;margin-top:50px">
-     <%--sql data Source --%>  <asp:SqlDataSource ID="SqlDataSource7" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabaseConnectionString2 %>" SelectCommand="SELECT * FROM [supervisorTbl]"></asp:SqlDataSource>
-                            <div class="col">
+                            <div class="row"style="margin-left:500px; margin-top:-800px">
 
-                               <%-- grid view--%>
-                                <asp:GridView ID="GridView1" style="margin-left:10px" runat="server" AutoGenerateColumns="False" DataKeyNames="employeeid" DataSourceID="SqlDataSource7">
-                                    <Columns>
-                                        <asp:BoundField DataField="employeeid" HeaderText="employeeid" ReadOnly="True" SortExpression="employeeid" />
-                                        <asp:BoundField DataField="username" HeaderText="username" SortExpression="username" />
-                                        <asp:BoundField DataField="password" HeaderText="password" SortExpression="password" />
-                                        <asp:BoundField DataField="security_question" HeaderText="security_question" SortExpression="security_question" />
-                                        <asp:BoundField DataField="answer" HeaderText="answer" SortExpression="answer" />
-                                    </Columns>
-                                </asp:GridView>
-                            </div>
-                            </div>
-                  <br />
-                            <div class="row" style="margin-left:10rem">
                             <div class="col">
-                                      <hr/>
-                            </div>
-                            </div>
-
-
-                            <div class="row" style="margin-left:10rem">
-                            <div class="col">
-                                     <%--Description--%>
+                                <div class="card" style="width:500px">
+                                    <div class="card-body">
+                                         <%--Description--%>
                                 <p> An Assumption ----> Only thread will be provided for sewing one umbrella.</p>
 
                                 <br />
@@ -699,8 +678,24 @@
                                                          Company will be providing same equal quantity of raw materials such as, 10 frames,
                                                          10 pieces of covers and 10 wheels of 10 umbrellas from the out side worker.</p>
 
-                                 <p>* out side worker can get raw materials from company for only maximum 100 umbrellas per month.</p>
-                                 <p>* cluster head outside worker can get raw materials from company for only maximum 3000 umbrellas per month.</p>
+                                 <p>* out side worker can get raw materials from company only for maximum 100 umbrellas per month.</p>
+                                 <p>* cluster head outside worker can get raw materials from company only for maximum 3000 umbrellas per month.</p>
+
+                                    </div>
+                                </div>
+                                     
+                               
+
+                            </div>
+                            </div>
+                  <br />
+                           
+
+
+                            <div class="row" style="margin-left:-60px; margin-top:100px">
+                            <div class="col">
+                               
+                                 <img src="imgs/tbl.JPG" style="margin-top:400px; width:1100px" />
                                                          
                             </div>
                             </div>

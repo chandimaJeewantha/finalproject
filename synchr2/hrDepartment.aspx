@@ -28,7 +28,7 @@
     <style>
         body
         {
-            background-color:gainsboro;
+            
         }
         .vrtical
         {
@@ -79,8 +79,12 @@
 
 
             <asp:View ID="ViewHome" runat="server">
-
-              
+                <div style="font-family:'Segoe UI';font-size:3rem; color:black; margin-left:30%; margin-top:40px">
+                <asp:Label ID="lblGreetings" runat="server" Text="Label" ></asp:Label>
+               </div>
+                <div >
+                    <img src="imgs/journey.gif"   style="width:80rem; margin-left:28%; margin-top:40px"/>
+                </div>
             </asp:View>
 
 
@@ -406,7 +410,7 @@
                               </div>
 
                                 <div class="col-md-6" style="margin-left:-43px">
-                                  <h3 style="margin-left:130px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-bottom:-20px; font-size:30px; text-decoration-style:solid"><i style="margin-left:-40px; margin-top:20px" class="fas fa-users-cog"></i><b>Employeement Details</b></h3>
+                                  <h3 style="margin-left:130px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-bottom:-20px; font-size:30px; text-decoration-style:solid"><i style="margin-left:-40px; margin-top:20px" class="fas fa-users-cog"></i><b>Employment Details</b></h3>
                                      <div class="card" style="margin-left:70px; background-color:#194C43; width:500px; margin-top:30px">
                                       
                                         <div class="card-body">
@@ -1135,7 +1139,7 @@
                                         </div>
                                     </div>
                                      <div class="row pb-3">
-                                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString10 %>" SelectCommand="SELECT * FROM [inactiveTbl]"></asp:SqlDataSource>
+                                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString12 %>" SelectCommand="SELECT * FROM [inactiveTbl]"></asp:SqlDataSource>
                                         <div class="col-12">
                                             <asp:GridView ID="GridView1" runat="server" class="table table-hover table-white" style="text-align:center;color:#f5f6fa" AutoGenerateColumns="False" DataKeyNames="date,NIC_No" DataSourceID="SqlDataSource1">
                                                 <Columns>
@@ -1275,17 +1279,23 @@
                                                                 <asp:Button ID="btnEvaluate" runat="server" class="btn btn-danger btn-block" Height="40px" style="margin-top:20px; margin-left:130px;" Text="Evaluate" Width="147px" OnClick="btnEvaluate_Click" />
                                                                 <br />
 
-                                                   <div class="row">
-                                                            <div class="col">
-                                                            </div>
-                                                   </div>   
+                                                   
                            
                                 
                             </div>
                             </div>
                             </div>
+                               
+                                                            <div class="col-8">
+
+                                                                <img src="Animation/69820-rotating-gears-loading.gif" style="width:400px; margin-left:150px"/>
+                                                            </div>
+                                </div>   
+                                </div>
     </div>
-    </div>
+
+                                
+    
 
 
 
@@ -1301,4 +1311,20 @@
         
     </form>
 </body>
+    <script>
+        var myDate = new Date();
+        var hrs = myDate.getHours();
+
+        var greet;
+
+        if (hrs < 12)
+            greet = 'Good Morning';
+        else if (hrs >= 12 && hrs <= 17)
+            greet = 'Good Afternoon';
+        else if (hrs >= 17 && hrs <= 24)
+            greet = 'Good Evening';
+
+        document.getElementById('lblGreetings').innerHTML =
+            '<b>' + greet + '</b> and welcome to Sync!';
+    </script>
 </html>
