@@ -443,7 +443,7 @@
                             <div class="col-4">
                             <div class="card" style="border-radius:25px; width: 38rem; background-color:#194C43; margin-left:-60px;margin-right:5px; margin-top:90px; margin-bottom:20px">
                             <div class="card-body">
-                            <h2 class="card-title" id="cardLeave" style="color:black;text-align:center;font-family:':Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color:#f5f6fa" ><b>Leave unit</b></h2>
+                            <h2 class="card-title" id="cardLeave" style="color:black;text-align:center;font-family:':Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color:#f5f6fa" ><b>Leave Request</b></h2>
                                       
                                             <ul>
                                                 <li>
@@ -478,7 +478,7 @@
                                                  </li>
 
                                                 <li>
-                                                     <asp:Button ID="btnLeave" runat="server" Text="Request Leave" style="float:right;margin-top:120px;margin-right:-90px; width:130px" type="button" class="btn btn-danger" />
+                                                     <asp:Button ID="btnLeave" runat="server" Text="Request Leave" style="float:right;margin-top:120px;margin-right:-90px; width:130px" type="button" class="btn btn-danger" OnClick="btnLeave_Click" />
                                                  </li>
                                             </ul>
                                                

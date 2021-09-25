@@ -13,10 +13,12 @@ namespace synchr2
     public partial class hrDepartment : System.Web.UI.Page
     {
         string connectionString = "Data Source=localhost;Initial Catalog=HrmsDatabase1;Integrated Security=True";
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            MultiViewSupervisor.ActiveViewIndex = 0;
-        }
+        //private string connectionstring;
+
+        //protected void Page_Load(object sender, EventArgs e)
+        //{
+            //MultiViewSupervisor.ActiveViewIndex = 0;
+        //}
 
         protected void btnHome_Click(object sender, EventArgs e)
         {
@@ -678,6 +680,238 @@ namespace synchr2
         {
             Response.Redirect("imageView.aspx");
         }
+
+        protected void btnDeleteEmp_Click(object sender, EventArgs e)
+        {
+
+            if (txtDateDel.Text == "" || txtEmployeIdDel.Text == "" || txtNicNumberesDel.Text == "")
+            {
+                Response.Write("<script>alert('Please Enter Employee Id ,Nic Number and Current Date To Inactive Employee Profile  ....')</script>");
+
+            }
+            else
+            {
+                Response.Write("<script>alert('" + workerTryCatch() + "');</script>");
+                Response.Write("<script>alert('" + PersonTryCatch() + "');</script>");
+
+
+                ////workerTryCatch();
+                //PersonTryCatch();
+
+                if (workerTryCatch() == 1 || PersonTryCatch() == 1)
+
+                {
+                    //workerTryCatch();
+                    //PersonTryCatch();
+                    workerTblDel();
+                    personTblDelete();
+                    Response.Write("<script>alert('Inactive Process Successful!!!  ....')</script>");
+                    try
+                    {
+                        SqlConnection con = new SqlConnection(connectionString);
+                        string query = "insert into inactiveTbl values('" + txtDateDel.Text + "','" + txtNicNumberesDel.Text + "','" + txtEmployeIdDel.Text + "')";
+                        SqlCommand cmd = new SqlCommand(query, con);
+
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        Response.Write("<script>alert('Data Saved....')</script>");
+                        GridViewInactive.DataBind();
+
+
+                    }
+                    catch (Exception ex)
+                    {
+
+
+                        Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+                    }
+
+
+                }
+                else{
+
+                    Response.Write("<script>alert('  This Is Not Active Profile Try Again!!!  ....')</script>");
+
+                }
+
+
+
+                // workerTblDel();
+                //personTblDelete();
+
+
+                //Response.Write("<script>alert('Inactive Process Successful!!!  ....')</script>");
+
+
+
+
+            }
+        }
+
+        public void personTblDelete()
+        {
+           // Response.Write("<script>alert('personTbl....');</script>");
+            //Response.Write("<script>alert('" + txtNicNumberesDel.Text + "');</script>");
+            try
+            {
+                
+                SqlConnection con = new SqlConnection(connectionString);
+                string query = "delete from personTbl where NIC_number='" + txtNicNumberesDel.Text + "' ";
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                //Response.Write("<script>alert('Deleted....');</script>");
+
+
+            }
+            catch (Exception ex)
+            {
+
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+            }
+        
+        }
+        public void workerTblDel()
+        {
+            //Response.Write("<script>alert('WorkerTbl....');</script>");
+            //Response.Write("<script>alert('" + txtEmployeIdDel.Text + "');</script>");
+            try
+            {
+
+                
+                SqlConnection con= new SqlConnection(connectionString);
+                string query = "delete from workTbl  where employee_number='"+txtEmployeIdDel.Text+"' ";
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                //Response.Write("<script>alert('Deleted....');</script>");
+
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+            }
+        
+        
+        
+        
+        }
+        public int workerTryCatch()
+        {
+            //Response.Write("<script>alert(' workertry ....')</script>");
+             int returnvale = 0;
+            try
+            {
+                //Response.Write("<script>alert(' workertrycatch ....')</script>");
+
+                SqlConnection con = new SqlConnection(connectionString);
+
+
+                string quary = "Select * from workTbl where employee_number='" + txtEmployeIdDel.Text + "'and NIC_no='"+txtNicNumberesDel.Text+"'";
+                SqlCommand cmd = new SqlCommand(quary, con);
+                con.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                if (rdr.Read() == true)
+                {
+                    //String epf = rdr.GetString(2);
+                    //Response.Write("<script>alert('" + epf + "');</script>");
+                    returnvale = 1;
+                    //workerTblDel();
+                    //Response.Write("<script>alert('read worker ....')</script>");
+
+                    
+
+
+                }
+                else
+                {
+                    //Response.Write("<script>alert('This Is Not Active Profile Try Again!!!  ....')</script>");
+                    returnvale = 0;
+
+                }
+
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+
+            }
+            return returnvale;
+
+
+
+
+
+
+
+        }
+        public int PersonTryCatch()
+        {
+            int returnvalue2=0;
+
+            try
+            {
+
+                SqlConnection con = new SqlConnection(connectionString);
+
+
+                string quary = "Select * from personTbl where NIC_number='" + txtNicNumberesDel.Text + "'";
+                SqlCommand cmd = new SqlCommand(quary, con);
+                con.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                if (rdr.Read() == true)
+                {
+                    returnvalue2 = 1;
+                    //personTblDelete();
+                    //Response.Write("<script>alert('read personal  ....')</script>");
+                   
+
+                }
+                else
+                {
+                    //Response.Write("<script>alert('This Is Not Active Profile Try Again!!!  ....')</script>");
+                    returnvalue2=0;
+                }
+
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+
+            }
+            return returnvalue2;
+
+
+
+
+
+        }
+        
+       
     }
 }
 

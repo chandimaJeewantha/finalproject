@@ -1428,13 +1428,13 @@ namespace synchr2
         protected global::System.Web.UI.WebControls.Label Label65;
 
         /// <summary>
-        /// txtDate control.
+        /// txtDateDel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDate;
+        protected global::System.Web.UI.WebControls.TextBox txtDateDel;
 
         /// <summary>
         /// Label66 control.
@@ -1446,13 +1446,13 @@ namespace synchr2
         protected global::System.Web.UI.WebControls.Label Label66;
 
         /// <summary>
-        /// txtNicNumberes control.
+        /// txtNicNumberesDel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNicNumberes;
+        protected global::System.Web.UI.WebControls.TextBox txtNicNumberesDel;
 
         /// <summary>
         /// Label67 control.
@@ -1464,13 +1464,13 @@ namespace synchr2
         protected global::System.Web.UI.WebControls.Label Label67;
 
         /// <summary>
-        /// txtEmployeId control.
+        /// txtEmployeIdDel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmployeId;
+        protected global::System.Web.UI.WebControls.TextBox txtEmployeIdDel;
 
         /// <summary>
         /// btnDeleteEmp control.
@@ -1527,13 +1527,13 @@ namespace synchr2
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
 
         /// <summary>
-        /// GridView1 control.
+        /// GridViewInactive control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView GridViewInactive;
 
         /// <summary>
         /// ViewLabourrep control.

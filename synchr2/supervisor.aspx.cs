@@ -13,6 +13,7 @@ namespace synchr2
     {
 
         string connectionstring = "Data Source=localhost;Initial Catalog=HrmsDatabase1;Integrated Security=True";
+        string connectionstring1 = "Data Source=localhost;Initial Catalog=HrmsDatabase1;Integrated Security=True";
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -789,6 +790,276 @@ namespace synchr2
             
             
             }
+        }
+
+        protected void btnLeave_Click(object sender, EventArgs e)
+        {
+            if (DropDownListUnit.SelectedValue == "0" || txtLeaveEmployeeid.Text == "" || txtLeaveDate.Text == "" || DropDownListLeaveType.SelectedValue == "0")
+            {
+                Response.Write("<script>alert('Please Fill All Fields....')</script>");
+
+            }
+            else {
+                if (DropDownListLeaveType.SelectedValue == "1")
+                {
+                    try
+                    {
+                        SqlConnection con = new SqlConnection(connectionstring);
+                        string quary = "Select * from workTbl where employee_number='" + txtLeaveEmployeeid.Text + "'";
+                        SqlCommand cmd = new SqlCommand(quary, con);
+                        con.Open();
+                        SqlDataReader rdr = cmd.ExecuteReader();
+                        if (rdr.Read() == true)
+                        {
+
+                            int anualleave = Convert.ToInt32(rdr.GetValue(19));
+                            int casulleave = Convert.ToInt32(rdr.GetValue(20));
+
+                            //Response.Write("<script>alert('" + anualleave + "');</script>");
+
+                            try
+                            {
+                                int updatevalue;
+
+                                if (anualleave > 0)
+
+                                {
+                                    updatevalue = anualleave - 1;
+                                    //Response.Write("<script>alert('" + updatevalue + "');</script>");
+
+                                    SqlConnection sqlConnection = new SqlConnection(connectionstring1);
+                                    //Response.Write("<script>alert('" + txtLeaveEmployeeid.Text + "');</script>");
+
+                                    string query = "update  workTbl set annual_leave='" + updatevalue + "'where employee_number='" + txtLeaveEmployeeid.Text + "'";
+                                    SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                                    sqlConnection.Open();
+                                    sqlCommand.ExecuteNonQuery();
+                                    sqlConnection.Close();
+                                    Response.Write("<script>alert(' Leave Requset Approved....')</script>");
+                                    if (updatevalue > 0)
+                                    {
+
+                                        try
+                                        {
+
+
+                                            SqlConnection con1 = new SqlConnection(connectionstring);
+                                            string query1 = "insert into leaveDataTbl values('" + DropDownListUnit.Text + "','" + txtLeaveEmployeeid.Text + "','" + txtLeaveDate.Text + "','" + DropDownListLeaveType.SelectedItem.Text + "')";
+                                            SqlCommand cmd1 = new SqlCommand(query1, con1);
+
+                                            con1.Open();
+                                            cmd1.ExecuteNonQuery();
+                                            con1.Close();
+                                            //Response.Write("<script>alert('inserted....')</script>");
+
+
+                                        }
+                                        catch (Exception ex)
+                                        {
+
+                                            Response.Write("<script>alert('" + ex.Message + "');</script>");
+                                        }
+
+
+
+
+                                    }
+                                    else
+                                    {
+
+
+
+                                    }
+
+
+                                }
+                                else
+                                {
+
+
+                                    Response.Write("<script>alert('No Annual Leaves AnyMore....')</script>");
+
+                                }
+
+
+
+
+
+
+
+
+
+
+                            }
+                            catch (Exception ex)
+                            {
+
+                                Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+                            }
+
+
+
+                        }
+                        else
+                        {
+
+                            Response.Write("<script>alert('Invalid EmployeeId Check Again....')</script>");
+
+
+                        }
+
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+                    }
+
+
+                }
+                else if (DropDownListLeaveType.SelectedValue == "2")
+                {
+
+
+                    try
+                    {
+                        SqlConnection con = new SqlConnection(connectionstring);
+                        string quary = "Select * from workTbl where employee_number='" + txtLeaveEmployeeid.Text + "'";
+                        SqlCommand cmd = new SqlCommand(quary, con);
+                        con.Open();
+                        SqlDataReader rdr = cmd.ExecuteReader();
+                        if (rdr.Read() == true)
+                        {
+
+                           // int anualleave = Convert.ToInt32(rdr.GetValue(19));
+                            int casulleave = Convert.ToInt32(rdr.GetValue(20));
+
+                            //Response.Write("<script>alert('" + casulleave + "');</script>");
+
+                            try
+                            {
+                                int updatevalue;
+
+                                if (casulleave > 0)
+
+                                {
+                                    updatevalue = casulleave - 1;
+                                    //Response.Write("<script>alert('" + updatevalue + "');</script>");
+
+                                    SqlConnection sqlConnection = new SqlConnection(connectionstring1);
+                                    //Response.Write("<script>alert('" + txtLeaveEmployeeid.Text + "');</script>");
+
+                                    string query = "update  workTbl set casual_leave='" + updatevalue + "'where employee_number='" + txtLeaveEmployeeid.Text + "'";
+                                    SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                                    sqlConnection.Open();
+                                    sqlCommand.ExecuteNonQuery();
+                                    sqlConnection.Close();
+                                    Response.Write("<script>alert(' Leave Requset Approved....')</script>");
+                                    if (updatevalue > 0)
+                                    {
+
+                                        try
+                                        {
+
+
+                                            SqlConnection con1 = new SqlConnection(connectionstring);
+                                            string query1 = "insert into leaveDataTbl values('" + DropDownListUnit.Text + "','" + txtLeaveEmployeeid.Text + "','" + txtLeaveDate.Text + "','" + DropDownListLeaveType.SelectedItem.Text + "')";
+                                            SqlCommand cmd1 = new SqlCommand(query1, con1);
+
+                                            con1.Open();
+                                            cmd1.ExecuteNonQuery();
+                                            con1.Close();
+                                            //Response.Write("<script>alert('inserted....')</script>");
+
+
+                                        }
+                                        catch (Exception ex)
+                                        {
+
+                                            Response.Write("<script>alert('" + ex.Message + "');</script>");
+                                        }
+
+
+
+
+                                    }
+                                    else
+                                    {
+
+
+
+                                    }
+
+
+                                }
+                                else
+                                {
+
+
+                                    Response.Write("<script>alert('No Casual Leaves AnyMore....')</script>");
+
+                                }
+
+
+
+
+
+
+
+
+
+
+                            }
+                            catch (Exception ex)
+                            {
+
+                                Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+                            }
+
+
+
+                        }
+                        else
+                        {
+
+                            Response.Write("<script>alert('Invalid EmployeeId Check Again....')</script>");
+
+
+                        }
+
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+                    }
+
+
+
+
+
+
+
+                }
+
+                leaveClear();
+
+            }
+        }
+        public void leaveClear()
+        {
+
+            DropDownListUnit.SelectedValue = "0";
+            txtLeaveEmployeeid.Text = "";
+            txtLeaveDate.Text = "";
+            DropDownListLeaveType.SelectedValue = "0";
+        
         }
     }
 }

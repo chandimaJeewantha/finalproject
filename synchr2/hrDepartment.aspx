@@ -75,7 +75,7 @@
     <div class="main_content">
         
 
-        <asp:MultiView ID="MultiViewSupervisor" runat="server">
+        <asp:MultiView ID="MultiViewSupervisor" runat="server" ActiveViewIndex="0">
 
 
             <asp:View ID="ViewHome" runat="server">
@@ -1081,7 +1081,7 @@
                                             <asp:Label ID="Label65" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa" runat="server" Text="Date:"></asp:Label>
                                         </div>
                                         <div class="col-6">
-                                            <asp:TextBox ID="txtDate" style="margin-left:-70px;width:200px" Class="form-control" runat="server" TextMode="Date"></asp:TextBox>
+                                            <asp:TextBox ID="txtDateDel" style="margin-left:-70px;width:200px" Class="form-control" runat="server" TextMode="Date"></asp:TextBox>
                                         </div>
                                     </div>
                                      <div class="row pb-3">
@@ -1089,7 +1089,7 @@
                                             <asp:Label ID="Label66" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa" runat="server" Text="NIC No:"></asp:Label>
                                         </div>
                                         <div class="col-6">
-                                            <asp:TextBox ID="txtNicNumberes" style="margin-left:-70px;width:200px" Class="form-control" runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="txtNicNumberesDel" style="margin-left:-70px;width:200px" Class="form-control" runat="server"></asp:TextBox>
                                         </div>
                                     </div>
                                      <div class="row pb-3">
@@ -1097,12 +1097,12 @@
                                             <asp:Label ID="Label67" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa" runat="server" Text="Employe Id:"></asp:Label>
                                         </div>
                                         <div class="col-6">
-                                            <asp:TextBox ID="txtEmployeId" style="margin-left:-70px;width:200px" Class="form-control" runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="txtEmployeIdDel" style="margin-left:-70px;width:200px" Class="form-control" runat="server"></asp:TextBox>
                                         </div>
                                     </div>
                                     <div class="row pt-4">
                                         <div class="col-12">
-                                            <asp:Button ID="btnDeleteEmp" Class="btn btn-danger btn-block form-control" runat="server" Text="Delete Employe" />
+                                            <asp:Button ID="btnDeleteEmp" Class="btn btn-danger btn-block form-control" runat="server" Text="Delete Employe" OnClick="btnDeleteEmp_Click" />
                                         </div>
                                        
                                     </div>
@@ -1141,7 +1141,7 @@
                                      <div class="row pb-3">
                                          <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString12 %>" SelectCommand="SELECT * FROM [inactiveTbl]"></asp:SqlDataSource>
                                         <div class="col-12">
-                                            <asp:GridView ID="GridView1" runat="server" class="table table-hover table-white" style="text-align:center;color:#f5f6fa" AutoGenerateColumns="False" DataKeyNames="date,NIC_No" DataSourceID="SqlDataSource1">
+                                            <asp:GridView ID="GridViewInactive" runat="server" class="table table-hover table-white" style="text-align:center;color:#f5f6fa" AutoGenerateColumns="False" DataKeyNames="date,NIC_No" DataSourceID="SqlDataSource1">
                                                 <Columns>
                                                     <asp:BoundField DataField="date" HeaderText="date" ReadOnly="True" SortExpression="date" />
                                                     <asp:BoundField DataField="NIC_No" HeaderText="NIC_No" ReadOnly="True" SortExpression="NIC_No" />
