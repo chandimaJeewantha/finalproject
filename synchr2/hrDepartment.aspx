@@ -1139,7 +1139,7 @@
                                         </div>
                                     </div>
                                      <div class="row pb-3">
-                                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString12 %>" SelectCommand="SELECT * FROM [inactiveTbl]"></asp:SqlDataSource>
+                                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString14 %>" SelectCommand="SELECT * FROM [inactiveTbl]"></asp:SqlDataSource>
                                         <div class="col-12">
                                             <asp:GridView ID="GridViewInactive" runat="server" class="table table-hover table-white" style="text-align:center;color:#f5f6fa" AutoGenerateColumns="False" DataKeyNames="date,NIC_No" DataSourceID="SqlDataSource1">
                                                 <Columns>
@@ -1163,6 +1163,40 @@
             
             <asp:View ID="ViewLabourrep" runat="server">
 
+                <div class="row" style="margin-left:150px; margin-top:50px">
+                    <div class="col">
+                        <asp:TextBox ID="txtStartDate" style="width:200px" Class="form-control" runat="server"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="row" style="margin-left:150px; margin-top:30px">
+                    <div class="col">
+                        <div class="form-group">
+                        <asp:TextBox ID="txtEndDate" style="width:200px" Class="form-control" runat="server"></asp:TextBox>
+                        <asp:Button ID="btnLabourRepotView" style="width:150px; margin-left:220px;margin-top:-55px"  Class="form-control btn btn-danger" runat="server" Text="View" OnClick="btnLabourRepotView_Click" />
+                            <asp:Button ID="btnConvertPdf" style="width:150px; margin-left:20px;margin-top:-55px"  Class="form-control btn btn-success" runat="server" Text="Convert To PDF" OnClick="btnConvertPdf_Click" />
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="row">
+                    
+                    <div class="col">
+                        <asp:GridView style="margin-left:165px; width:600px;" ID="GridView1" runat="server" CellPadding="10" ForeColor="#333333" GridLines="None">
+                            <AlternatingRowStyle BackColor="White" />
+                            <EditRowStyle BackColor="#7C6F57" />
+                            <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                            <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" HorizontalAlign="Center" VerticalAlign="Middle" />
+                            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                            <RowStyle BackColor="#E3EAEB" />
+                            <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                            <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                            <SortedAscendingHeaderStyle BackColor="#246B61" />
+                            <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                            <SortedDescendingHeaderStyle BackColor="#15524A" />
+                        </asp:GridView>                       
+                    </div>
+                </div>
 
             </asp:View>
 
@@ -1177,9 +1211,7 @@
 
 
             <asp:View ID="ViewOutsideworkers" runat="server">
-                            
-
-
+        
                 <div class="container">
                             <div class="row justify-content-start">
                             <div class="col-4">
@@ -1292,22 +1324,13 @@
                                                             </div>
                                 </div>   
                                 </div>
+                 </asp:View>
+             </asp:MultiView>
     </div>
-
-                                
-    
-
-
-
-            </asp:View>
-
-
-        </asp:MultiView>
-        
 
 
     </div>
-</div>
+
         
     </form>
 </body>

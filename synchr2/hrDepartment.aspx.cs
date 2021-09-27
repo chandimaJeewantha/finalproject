@@ -7,12 +7,16 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.text.html.simpleparser;
+
 
 namespace synchr2
 {
     public partial class hrDepartment : System.Web.UI.Page
     {
-        string connectionString = "Data Source=localhost;Initial Catalog=HrmsDatabase1;Integrated Security=True";
+        string connectionString = "Data Source=DESKTOP-M9R4O4O;Initial Catalog=HrmsDatabase1;Integrated Security=True";
         //private string connectionstring;
 
         //protected void Page_Load(object sender, EventArgs e)
@@ -33,12 +37,12 @@ namespace synchr2
 
         protected void btnLabourrep_Click(object sender, EventArgs e)
         {
-            MultiViewSupervisor.ActiveViewIndex = 3;
+            MultiViewSupervisor.ActiveViewIndex = 4;
         }
 
         protected void btnMonthlyrep_Click(object sender, EventArgs e)
         {
-            MultiViewSupervisor.ActiveViewIndex = 4;
+            MultiViewSupervisor.ActiveViewIndex = 5;
         }
 
         protected void btnOutsideworkers_Click(object sender, EventArgs e)
@@ -910,8 +914,72 @@ namespace synchr2
 
 
         }
-        
-       
+
+        protected void btnLabourRepotView_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(connectionString);
+            string queary = "select * from inactiveTbl where date between '"+txtStartDate.Text+"' and '"+txtEndDate.Text+"'";
+            SqlCommand cmd = new SqlCommand(queary,con);
+            con.Open();
+            SqlDataAdapter sdp = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sdp.Fill(dt);
+            SqlDataReader sdr = cmd.ExecuteReader();
+            if(sdr.Read())
+            {
+                GridView1.DataSource = dt;
+                GridView1.DataBind();
+            }
+            else
+            {
+                Response.Write("<script>alert('No record founds ....')</script>");
+            }
+            con.Close();
+        }
+
+        protected void btnConvertPdf_Click(object sender, EventArgs e)
+        {
+            PdfPTable pdftbl = new PdfPTable(GridView1.HeaderRow.Cells.Count);
+
+            foreach (TableCell headercell in GridView1.HeaderRow.Cells)
+            {
+                Font fon = new Font();
+                fon.Color = new BaseColor(GridView1.HeaderStyle.ForeColor);
+
+                PdfPCell pdfcel = new PdfPCell(new Phrase(headercell.Text,fon));
+                pdfcel.BackgroundColor = new BaseColor(GridView1.HeaderStyle.BackColor);
+                pdftbl.AddCell(pdfcel);
+            }
+
+            foreach (GridViewRow gridvrow in GridView1.Rows)
+            {
+                foreach(TableCell tblcell in gridvrow.Cells)
+                {
+                    Font fon = new Font();
+                    fon.Color = new BaseColor(GridView1.RowStyle.ForeColor);
+
+                    PdfPCell pdfcel = new PdfPCell(new Phrase(tblcell.Text));
+                    pdfcel.BackgroundColor = new BaseColor(GridView1.RowStyle.BackColor);
+                    pdftbl.AddCell(pdfcel);
+                }
+            }
+            Document pdfDocumnet = new Document(PageSize.A4, 10f, 10f, 10f, 10f);
+            Paragraph p = new Paragraph("LABOUR TURNOVER REPORT");
+            p.SetAlignment("center");
+          
+            PdfWriter.GetInstance(pdfDocumnet, Response.OutputStream);
+
+            pdfDocumnet.Open();
+            pdfDocumnet.Add(p);
+            pdfDocumnet.Add(pdftbl);
+            pdfDocumnet.Close();
+
+            Response.ContentType = "application/pdf";
+            Response.AppendHeader("content-disposition", "attachment;filename=inactive.pdf");
+            Response.Write(pdfDocumnet);
+            Response.Flush();
+            Response.End();
+        }
     }
 }
 

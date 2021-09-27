@@ -6,16 +6,20 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
-
+using System.Web.UI.DataVisualization.Charting;
 namespace synchr2
 {
     public partial class productionManager : System.Web.UI.Page
     {
-        string connectionString = "Data Source=localhost;Initial Catalog=HrmsDatabase;Integrated Security=True";
-        //protected void Page_Load(object sender, EventArgs e)
-        //{
-        //  MultiViewProduction.ActiveViewIndex = 0;
-        //}
+        string connectionString = "Data Source=localhost;Initial Catalog=HrmsDatabase1;Integrated Security=True";
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            //  MultiViewProduction.ActiveViewIndex = 0;
+           /* if(!IsPostBack)
+            {
+                chartData();
+            }*/
+        }
 
         protected void btnHome_Click(object sender, EventArgs e)
         {
@@ -579,7 +583,42 @@ namespace synchr2
 
             }
         }
+
+
+       /* public void chartData()
+        {
+            DateTime today = DateTime.Today;
+            try
+            {
+                SqlConnection con = new SqlConnection(connectionString);
+                string queary = "select * from chartTbl where date = '" + today + "'";
+                
+                con.Open();
+                SqlCommand cmd = new SqlCommand(queary, con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                con.Close();
+
+                string[] x = new string[dt.Rows.Count];
+                int[] y = new int[dt.Rows.Count];
+
+                for(int i=0; i<dt.Rows.Count; i++)
+                {
+                    x[i] = dt.Rows[i][1].ToString();
+                    y[i] = Convert.ToInt32(dt.Rows[i][2]);
+                }
+
+                Chart1.Series[0].Points.DataBindXY(x,y);
+                Chart1.Series[0].ChartType = SeriesChartType.Pie;
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+            }
+        }*/
     }
+   
 }
 
 

@@ -16,7 +16,7 @@ namespace synchr2
         string connectionstring1 = "Data Source=localhost;Initial Catalog=HrmsDatabase1;Integrated Security=True";
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+           // DateTime today = DateTime.Today;
 
             if (!IsPostBack)
             {
@@ -119,6 +119,21 @@ namespace synchr2
 
                 }
 
+                try
+                {
+                    SqlConnection con = new SqlConnection(connectionstring);
+                    string queary = "insert into chartTbl values('"+txtdatenew.Text+"','"+selectUnit.SelectedItem.Text+"',"+txtTotalProduction.Text+")";
+                    SqlCommand cmd = new SqlCommand(queary, con);
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                   // Response.Write("<script>alert('Data Inserted another table....')</script>");
+                }
+                catch(Exception ex)
+                {
+                    Response.Write("<script>alert('" + ex.Message + "');</script>");
+                }
 
 
 
@@ -156,6 +171,21 @@ namespace synchr2
 
 
                 }
+                try
+                {
+                    SqlConnection con = new SqlConnection(connectionstring);
+                    string queary = "insert into chartTbl values('" + txtdatenew.Text + "','" + selectUnit.SelectedItem.Text + "'," + txtTotalProduction.Text + ")";
+                    SqlCommand cmd = new SqlCommand(queary, con);
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    // Response.Write("<script>alert('Data Inserted another table....')</script>");
+                }
+                catch (Exception ex)
+                {
+                    Response.Write("<script>alert('" + ex.Message + "');</script>");
+                }
 
             }
             else if (selectUnit.SelectedValue == "3")
@@ -188,15 +218,22 @@ namespace synchr2
                     }
 
 
-
-
-
-
-
-
-
                 }
+                try
+                {
+                    SqlConnection con = new SqlConnection(connectionstring);
+                    string queary = "insert into chartTbl values('" + txtdatenew.Text + "','" + selectUnit.SelectedItem.Text + "'," + txtTotalProduction.Text + ")";
+                    SqlCommand cmd = new SqlCommand(queary, con);
 
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    // Response.Write("<script>alert('Data Inserted another table....')</script>");
+                }
+                catch (Exception ex)
+                {
+                    Response.Write("<script>alert('" + ex.Message + "');</script>");
+                }
 
 
             }
@@ -233,27 +270,22 @@ namespace synchr2
                     }
 
 
-
-
-
-
-
-
-
                 }
+                try
+                {
+                    SqlConnection con = new SqlConnection(connectionstring);
+                    string queary = "insert into chartTbl values('" + txtdatenew.Text + "','" + selectUnit.SelectedItem.Text + "'," + txtTotalProduction.Text + ")";
+                    SqlCommand cmd = new SqlCommand(queary, con);
 
-
-
-
-
-
-
-
-
-
-
-
-
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    Response.Write("<script>alert('Data Inserted another table....')</script>");
+                }
+                catch (Exception ex)
+                {
+                    Response.Write("<script>alert('" + ex.Message + "');</script>");
+                }
 
 
 
@@ -290,7 +322,21 @@ namespace synchr2
 
 
                 }
+                try
+                {
+                    SqlConnection con = new SqlConnection(connectionstring);
+                    string queary = "insert into chartTbl values('" + txtdatenew.Text + "','" + selectUnit.SelectedItem.Text + "'," + txtTotalProduction.Text + ")";
+                    SqlCommand cmd = new SqlCommand(queary, con);
 
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    // Response.Write("<script>alert('Data Inserted another table....')</script>");
+                }
+                catch (Exception ex)
+                {
+                    Response.Write("<script>alert('" + ex.Message + "');</script>");
+                }
 
 
 
@@ -331,12 +377,21 @@ namespace synchr2
 
 
                 }
+                try
+                {
+                    SqlConnection con = new SqlConnection(connectionstring);
+                    string queary = "insert into chartTbl values('" + txtdatenew.Text + "','" + selectUnit.SelectedItem.Text + "'," + txtTotalProduction.Text + ")";
+                    SqlCommand cmd = new SqlCommand(queary, con);
 
-
-
-
-
-
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    // Response.Write("<script>alert('Data Inserted another table....')</script>");
+                }
+                catch (Exception ex)
+                {
+                    Response.Write("<script>alert('" + ex.Message + "');</script>");
+                }
 
 
             }
@@ -359,7 +414,7 @@ namespace synchr2
             }
             catch (Exception ex)
             {
-
+                Response.Write("<script>alert('"+ex.Message+"')</script>");
 
             }
         }
@@ -1061,5 +1116,7 @@ namespace synchr2
             DropDownListLeaveType.SelectedValue = "0";
         
         }
+        
+        
     }
 }
