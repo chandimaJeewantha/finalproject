@@ -1163,6 +1163,15 @@
             
             <asp:View ID="ViewLabourrep" runat="server">
 
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col text-right" style="margin-right:50px; margin-top:10px">
+                            <a href="mailto:synchrmanager@email.com" style="color:#2c3e50; font-weight:700; font-size:2rem"><i class="fas fa-envelope-open-text pr-1"></i>synchrmanager@email.com</a>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="row" style="margin-left:150px; margin-top:50px">
                     <div class="col">
                         <asp:TextBox ID="txtStartDate" style="width:200px" Class="form-control" runat="server"></asp:TextBox>
@@ -1216,7 +1225,7 @@
                             <div class="row justify-content-start">
                             <div class="col-4">
 
-                            <div class="card" style="border-radius:25px; width: 45rem;background-color:#194C43; margin-left:60px;margin-right:5px; margin-top:10px; margin-bottom:20px">
+                            <div class="card" style="border-radius:25px; width: 45rem;background-color:#194C43; margin-left:60px;margin-right:5px; margin-top:30px; margin-bottom:20px">
                             <div class="card-body">
                             <h2 class="card-title" id="cardOutSideWorkers" style="text-align:center;font-family:Segoe UI;color:#f5f6fa" >Preformance Evaluation of Out Side Workers</h2>
                                                 

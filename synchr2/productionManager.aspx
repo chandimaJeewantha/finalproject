@@ -98,14 +98,14 @@
                 <div class="container" id="ConViewStatus">
                 <div class="row justify-content-start">
                 <div class="col-4">
-                          <div class="card" style="height:60rem; width: 38rem;background-color:#50DBB4; margin-left:5px; margin-top:90px">
+                          <div class="card" style="height:60rem; width: 38rem;background-color:#194C43; margin-left:5px; margin-top:60px">
                                            <div class="card-body">
-                                             <h3 class="card-title" id="cardtitle" style="color:black;text-align:center;font-family:Segoe UI;color:#303952" >Analytical Details of each unit</h3>
+                                             <h3 class="card-title" id="cardtitle" style="color:black;text-align:center;font-family:Segoe UI;color:aliceblue; margin-bottom:30px" >Analytical Details of each unit</h3>
 
                                               
                                             <ul>
                                                 <li>
-                                                    <label style="color:#2c3e50; margin-top:20px; margin-bottom:20px"><b>Unit</b></label>&nbsp<asp:DropDownList ID="selectUnit" runat="server" style="float: right; margin-top:20px; width: 200px; margin-bottom:30px">
+                                                    <label style="color:aliceblue; margin-top:20px; margin-bottom:20px"><b>Unit</b></label>&nbsp<asp:DropDownList ID="selectUnit" class="form-group" runat="server" style="float: right; margin-top:20px; width: 200px; margin-bottom:30px">
                                                         <asp:ListItem Value="0">Please Select</asp:ListItem>  
                                                     
                                                         <asp:ListItem Value="1">Print Unit </asp:ListItem>  
@@ -122,7 +122,7 @@
 
 <li>
                                             
-    <label style="color:#2c3e50; margin-bottom:30px"><b>Date</b></label><asp:TextBox ID="txtProductionManagerDate" runat="server" style="float:right;width:200px;height:25px;margin-bottom:10px" TextMode="Date"></asp:TextBox>
+    <label style="color:aliceblue; margin-bottom:30px"><b>Date</b></label><asp:TextBox ID="txtProductionManagerDate" runat="server" style="float:right;width:200px;height:25px;margin-bottom:10px" TextMode="Date"></asp:TextBox>
  
 </li>
 </ul>
@@ -133,19 +133,19 @@
                                           <div class="form-group">
                                             <ul>
                                                 <li>
-                                                  <label style="color:#2c3e50; float: left; margin-top: 5px"><b>Meal Expenses</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px; margin-bottom: 38px" CssClass="form-control" ID="txtMeal" runat="server" placeholder="Expenses" ReadOnly="True"></asp:TextBox>
+                                                  <label style="color:aliceblue; float: left; margin-top: 5px"><b>Meal Expenses</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px; margin-bottom: 38px" CssClass="form-control" ID="txtMeal" runat="server" placeholder="Expenses" ReadOnly="True"></asp:TextBox>
                                                 </li>
                                                
                                                  <li>
-                                                   <label style="color:#2c3e50; float: left; margin-top: 40px"><b>Production Efficiency</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px; margin-bottom: 38px" CssClass="form-control" ID="txtEfficiency" runat="server" placeholder="Efficiency" ReadOnly="True"></asp:TextBox>
+                                                   <label style="color:aliceblue; float: left; margin-top: 40px"><b>Production Efficiency</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px; margin-bottom: 38px" CssClass="form-control" ID="txtEfficiency" runat="server" placeholder="Efficiency" ReadOnly="True"></asp:TextBox>
                                                  </li>
                                                  
                                                  <li>
-                                                   <label style="color:#2c3e50; float: left; margin-top: 40px"><b>Damage Percentage</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px; margin-bottom: 38px" CssClass="form-control" ID="txtDamage" runat="server" placeholder="Percentage" ReadOnly="True"></asp:TextBox>
+                                                   <label style="color:aliceblue; float: left; margin-top: 40px"><b>Damage Percentage</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px; margin-bottom: 38px" CssClass="form-control" ID="txtDamage" runat="server" placeholder="Percentage" ReadOnly="True"></asp:TextBox>
                                                  </li>
                                                  
                                                   <li>
-                                                   <label style="color:#2c3e50; float: left; margin-top: 45px"><b>Final Status</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px; margin-bottom: 38px" CssClass="form-control" ID="txtStatus" runat="server" placeholder="Status" ReadOnly="True"></asp:TextBox>
+                                                   <label style="color:aliceblue; float: left; margin-top: 45px"><b>Final Status</b></label>&nbsp<asp:TextBox style="float: right; height:30px; width:200px; margin-bottom: 38px" CssClass="form-control" ID="txtStatus" runat="server" placeholder="Status" ReadOnly="True"></asp:TextBox>
                                                   </li>
 
                                             </ul>
@@ -155,7 +155,7 @@
                                                   <ul>
                                                       <li>
                                                
-                                                  <asp:Button class="btn btn-primary" style="width: 300px; height: 50px; float:right; margin-top: 50px; margin-right: 50px" ID="btnProductionManagerShow" runat="server" Text="Show" OnClick="btnProductionManagerShow_Click" />
+                                                  <asp:Button class="btn btn-danger form-group" style=" float:right; width:150px; margin-top: 20px; margin-right: 100px" ID="btnProductionManagerShow" runat="server" Text="Show" OnClick="btnProductionManagerShow_Click" />
                                                         </li>
                                                             
                                                       </ul>
@@ -196,18 +196,23 @@
 
 
             <asp:View ID="ViewExpenses" runat="server">
-                <div class="row" style="margin-left:100px">
-                    <div class="col">
-                <asp:Chart ID="Chart1" runat="server" DataSourceID="SqlDataSource1">
-                    <Series>
-                        <asp:Series Name="Series1" ChartType="Pie" XValueMember="unit" YValueMembers="production"></asp:Series>
-                    </Series>
-                    <ChartAreas>
-                        <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
-                    </ChartAreas>
-                </asp:Chart>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString12 %>" SelectCommand="SELECT [unit], [production] FROM [chartTbl]"></asp:SqlDataSource>
-                        </div>
+                
+                    
+                        <asp:TextBox ID="txtchdate" runat="server" style="margin-left:240px; margin-top:50px; height:32px; border-width:3px"></asp:TextBox>
+                        <asp:Button ID="btnChartView" class="btn btn-danger" runat="server" Text="Chart View" OnClick="btnChartView_Click" />
+                   
+               
+                <div class="row">
+                    <div class="col" style="">
+                        <asp:Chart ID="Chart1" runat="server" style="margin-top:20px; margin-left:150px" Width="700px" BackColor="Silver" BackGradientStyle="LeftRight" BackImageTransparentColor="White" BackSecondaryColor="White" Palette="SeaGreen" PaletteCustomColors="Teal; Olive">
+                            <Series>
+                                <asp:Series Name="Series1" ChartType="Bar" YValuesPerPoint="6" LabelBackColor="Teal" LabelBorderColor="0, 64, 64" LabelForeColor="0, 64, 64"></asp:Series>
+                            </Series>
+                            <ChartAreas>
+                                <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
+                            </ChartAreas>
+                        </asp:Chart>
+                    </div>
                 </div>
             </asp:View>
 

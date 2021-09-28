@@ -12,12 +12,13 @@ namespace synchr2
     public partial class productionManager : System.Web.UI.Page
     {
         string connectionString = "Data Source=localhost;Initial Catalog=HrmsDatabase1;Integrated Security=True";
+        DateTime today = DateTime.Today;
         protected void Page_Load(object sender, EventArgs e)
         {
             //  MultiViewProduction.ActiveViewIndex = 0;
            /* if(!IsPostBack)
             {
-                chartData();
+                ViewChart();
             }*/
         }
 
@@ -584,39 +585,27 @@ namespace synchr2
             }
         }
 
-
-       /* public void chartData()
+        protected void btnChartView_Click(object sender, EventArgs e)
         {
-            DateTime today = DateTime.Today;
-            try
+            SqlConnection con = new SqlConnection(connectionString);
+            string quary = "select * from chartTbl where Date='" +txtchdate.Text+ "'";
+            SqlCommand cmd = new SqlCommand(quary, con);
+            Series seri = Chart1.Series["Series1"];
+            con.Open();
+            SqlDataReader rdr = cmd.ExecuteReader();
+            while(rdr.Read())
             {
-                SqlConnection con = new SqlConnection(connectionString);
-                string queary = "select * from chartTbl where date = '" + today + "'";
-                
-                con.Open();
-                SqlCommand cmd = new SqlCommand(queary, con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                con.Close();
+                string unit = Convert.ToString(rdr.GetValue(1));
+                int product = Convert.ToInt32(rdr.GetValue(2));
 
-                string[] x = new string[dt.Rows.Count];
-                int[] y = new int[dt.Rows.Count];
+                seri.Points.AddXY(unit,product);
 
-                for(int i=0; i<dt.Rows.Count; i++)
-                {
-                    x[i] = dt.Rows[i][1].ToString();
-                    y[i] = Convert.ToInt32(dt.Rows[i][2]);
-                }
 
-                Chart1.Series[0].Points.DataBindXY(x,y);
-                Chart1.Series[0].ChartType = SeriesChartType.Pie;
+               // Response.Write("<script>alert('"+unit+"');</script>");
+               // Response.Write("<script>alert('" + product + "');</script>");
+
             }
-            catch (Exception ex)
-            {
-                Response.Write("<script>alert('" + ex.Message + "');</script>");
-            }
-        }*/
+        }
     }
    
 }
