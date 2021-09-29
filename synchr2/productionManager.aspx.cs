@@ -11,7 +11,7 @@ namespace synchr2
 {
     public partial class productionManager : System.Web.UI.Page
     {
-        string connectionString = "Data Source=localhost;Initial Catalog=HrmsDatabase1;Integrated Security=True";
+        string connectionString = "Data Source=localhost;Initial Catalog=HrmsDatabase2;Integrated Security=True";
         
         protected void Page_Load(object sender, EventArgs e)
         {

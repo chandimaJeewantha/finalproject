@@ -18,7 +18,7 @@ namespace synchr2
     {
         //DateTime today = DateTime.Today;
         string today = DateTime.UtcNow.ToString("MM-dd-yyyy");
-        string connectionString = "Data Source=localhost;Initial Catalog=HrmsDatabase1;Integrated Security=True";
+        string connectionString = "Data Source=localhost;Initial Catalog=HrmsDatabase2;Integrated Security=True";
         //private string connectionstring;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -704,7 +704,7 @@ namespace synchr2
                         cmd.ExecuteNonQuery();
                         con.Close();
                         Response.Write("<script>alert('Data Saved....')</script>");
-                        GridViewInactive.DataBind();
+                        GridView3.DataBind();
 
 
                     }
@@ -986,33 +986,38 @@ namespace synchr2
             }
         }
 
-       /* void maleFemale()
+        protected void btnViews_Click(object sender, EventArgs e)
         {
-            
 
-            SqlConnection con = new SqlConnection(connectionString);
-            string quary = "Select * from personTbl where NIC_number='" + txtPersonDetailNicNo.Text + "'";
-            SqlCommand cmd = new SqlCommand(quary, con);
-            Series serie = Chart1.Series["Series1"];
-            con.Open();
-            SqlDataReader rdr = cmd.ExecuteReader();
+        }
 
-            while(rdr.Read())
-            {
-                string males, females;
+        /* void maleFemale()
+         {
 
-                if (DropDownListGender.SelectedValue == "Male")
-                {
-                   males = Convert.ToString(rdr.GetValue(6));
-                }
-                else if(DropDownListGender.SelectedValue == "Female")
-                {
-                   females = Convert.ToString(rdr.GetValue(6));
-                }
 
-                _ = serie.Points.AddXY(males, females);
-            }
-        }*/
+             SqlConnection con = new SqlConnection(connectionString);
+             string quary = "Select * from personTbl where NIC_number='" + txtPersonDetailNicNo.Text + "'";
+             SqlCommand cmd = new SqlCommand(quary, con);
+             Series serie = Chart1.Series["Series1"];
+             con.Open();
+             SqlDataReader rdr = cmd.ExecuteReader();
+
+             while(rdr.Read())
+             {
+                 string males, females;
+
+                 if (DropDownListGender.SelectedValue == "Male")
+                 {
+                    males = Convert.ToString(rdr.GetValue(6));
+                 }
+                 else if(DropDownListGender.SelectedValue == "Female")
+                 {
+                    females = Convert.ToString(rdr.GetValue(6));
+                 }
+
+                 _ = serie.Points.AddXY(males, females);
+             }
+         }*/
     }
 }
 

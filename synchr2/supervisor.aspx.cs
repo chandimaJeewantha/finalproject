@@ -1,19 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace synchr2
 {
     public partial class supervisor : System.Web.UI.Page
     {
 
-        string connectionstring = "Data Source=localhost;Initial Catalog=HrmsDatabase1;Integrated Security=True";
-        string connectionstring1 = "Data Source=localhost;Initial Catalog=HrmsDatabase1;Integrated Security=True";
+        string connectionstring = "Data Source=localhost;Initial Catalog=HrmsDatabase2;Integrated Security=True";
+        string connectionstring1 = "Data Source=localhost;Initial Catalog=HrmsDatabase2;Integrated Security=True";
         protected void Page_Load(object sender, EventArgs e)
         {
            // DateTime today = DateTime.Today;
@@ -30,6 +25,7 @@ namespace synchr2
 
 
             GridViewPrintunit.DataBind();
+            GridVewHandleunit.DataBind();
 
             int hour = DateTime.Now.Hour;
 
@@ -174,7 +170,7 @@ namespace synchr2
                         cmd.ExecuteNonQuery();
                         con.Close();
                         Response.Write("<script>alert('Data Inserted....')</script>");
-                        GridViewPrintunit.DataBind();
+                        GridVewHandleunit.DataBind();
 
                     }
                     catch (Exception ex)
@@ -238,7 +234,7 @@ namespace synchr2
                         cmd.ExecuteNonQuery();
                         con.Close();
                         Response.Write("<script>alert('Data Inserted....')</script>");
-                        GridViewPrintunit.DataBind();
+                        GridViewCuttingunit.DataBind();
 
                     }
                     catch (Exception ex)
@@ -304,7 +300,8 @@ namespace synchr2
                         cmd.ExecuteNonQuery();
                         con.Close();
                         Response.Write("<script>alert('Data Inserted....')</script>");
-                        GridViewPrintunit.DataBind();
+                        GridViewborderingunit.DataBind();
+
 
                     }
                     catch (Exception ex)
@@ -367,7 +364,7 @@ namespace synchr2
                         cmd.ExecuteNonQuery();
                         con.Close();
                         Response.Write("<script>alert('Data Inserted....')</script>");
-                        GridViewPrintunit.DataBind();
+                        GridViewTailoringunit.DataBind();
 
                     }
                     catch (Exception ex)
@@ -436,7 +433,7 @@ namespace synchr2
                         cmd.ExecuteNonQuery();
                         con.Close();
                         Response.Write("<script>alert('Data Inserted....')</script>");
-                        GridViewPrintunit.DataBind();
+                        GridViewCompleteunit.DataBind();
 
                     }
                     catch (Exception ex)

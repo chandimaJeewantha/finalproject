@@ -56,8 +56,8 @@
         
         <ul>
             <li><asp:LinkButton ID="btnHome" runat="server" class="fas fa-home" OnClick="btnHome_Click"> Home</asp:LinkButton></li>
-            <li><asp:LinkButton ID="btnStatus" runat="server" class="fas fa-umbrella" OnClick="btnStatus_Click"> Daily Production view Efficiency and status of each unit</asp:LinkButton></li>
-            <li><asp:LinkButton ID="btnExpenses" runat="server" class="fas fa-child" OnClick="btnExpenses_Click"> Chart demonstrations</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnStatus" runat="server" class="fas fa-umbrella" OnClick="btnStatus_Click"> Daily Production Efficiency and Status </asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnExpenses" runat="server" class="fas fa-child" OnClick="btnExpenses_Click"> Chart Demonstrations</asp:LinkButton></li>
             <li><asp:LinkButton ID="btnExit" runat="server" class="fas fa-hand-point-left" OnClick="btnExit_Click"> Exit</asp:LinkButton></li>
 
        
@@ -96,7 +96,7 @@
                 <div class="col-4">
                           <div class="card" style="height:60rem; width: 38rem;background-color:#194C43; margin-left:5px; margin-top:60px">
                                            <div class="card-body">
-                                             <h3 class="card-title" id="cardtitle" style="color:black;text-align:center;font-family:Segoe UI;color:aliceblue; margin-bottom:30px" >Analytical Details of each unit</h3>
+                                             <h3 class="card-title" id="cardtitle" style="color:black;text-align:center;font-family:Segoe UI;color:aliceblue; margin-bottom:30px" >Analytical Details</h3>
 
                                               
                                             <ul>
@@ -194,7 +194,7 @@
             <asp:View ID="ViewExpenses" runat="server">
                 
                     
-                        <asp:TextBox ID="txtchdate" runat="server" style="margin-left:240px; margin-top:50px; height:32px; border-width:3px"></asp:TextBox>
+                        <asp:TextBox ID="txtchdate" runat="server" style="margin-left:240px; margin-top:50px; height:32px; border-width:3px" TextMode="Date"></asp:TextBox>
                         <asp:Button ID="btnChartView" class="btn btn-danger" runat="server" Text="View" OnClick="btnChartView_Click" />
                    
                

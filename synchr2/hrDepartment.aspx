@@ -55,12 +55,12 @@
         <ul>
             <li><asp:LinkButton ID="btnHome" runat="server" class="fas fa-home" OnClick="btnHome_Click"> Home</asp:LinkButton></li>
             <li><asp:LinkButton ID="btnAddemp" runat="server" class="fas fa-ad" OnClick="btnAddemp_Click"> Add New Employee</asp:LinkButton></li>
-            <li><asp:LinkButton ID="btnViewProfile" runat="server" class="fas fa-eye" OnClick="btnViewProfile_Click">View Profile</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnViewProfile" runat="server" class="fas fa-eye" OnClick="btnViewProfile_Click"> Profile View</asp:LinkButton></li>
             <li><asp:LinkButton ID="btnActiveInactive" runat="server" class="fas fa-user-shield" OnClick="btnActiveInactive_Click"> Active/Inactive Profiles</asp:LinkButton></li>
-            <li><asp:LinkButton ID="btnLabourrep" runat="server" class="fas fa-cogs" OnClick="btnLabourrep_Click"> Generate labour turn over reports</asp:LinkButton></li>
-            <li><asp:LinkButton ID="btnMonthlyrep" runat="server" class="fas fa-address-card" OnClick="btnMonthlyrep_Click">Training needs employe details</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnLabourrep" runat="server" class="fas fa-cogs" OnClick="btnLabourrep_Click"> Labour Turn Over Reports</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnMonthlyrep" runat="server" class="fas fa-address-card" OnClick="btnMonthlyrep_Click"> Employee Training Requirement</asp:LinkButton></li>
             
-            <li><asp:LinkButton ID="btnOutsideworkers" runat="server" class="fas fa-tasks" OnClick="btnOutsideworkers_Click"> Performance Evaluation of outside workers</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnOutsideworkers" runat="server" class="fas fa-tasks" OnClick="btnOutsideworkers_Click"> Performance Evaluation of Outside workers</asp:LinkButton></li>
             <li><asp:LinkButton ID="btnExit" runat="server" class="fas fa-hand-point-left" OnClick="btnExit_Click"> Exit</asp:LinkButton></li>
 
 
@@ -797,7 +797,7 @@
                         <div class="col-4">
                             <div class="card" style="height:25rem; width: 40rem;  background-color:#194C43; margin-left:30px; margin-top:30px; margin-bottom:20px">
                                            <div class="card-body">
-                                           <h3 class="card-title" id="viewprofileCard1"  style=" text-align:center; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa; margin-bottom:10px;"><b>Find</b></h3>
+                                           <h3 class="card-title" id="viewprofileCard1"  style=" text-align:center; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa; margin-bottom:10px;"><b>Forgot Identity??</b></h3>
                                             
                                                         
 
@@ -955,7 +955,7 @@
                                       
                                         <div class="card-body">
                                         <div class="personalInfo">
-                                            <h4 style="text-align:left; margin-top:-5px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa; margin-bottom:-10px">Employeement Details</h4>
+                                            <h4 style="text-align:left; margin-top:-5px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa; margin-bottom:-10px">Employment Details</h4>
                                             <br/>
                                             <br/>
                                             <br/>
@@ -1095,7 +1095,7 @@
                                     </div>
                                      <div class="row pb-3">
                                         <div class="col-6">
-                                            <asp:Label ID="Label67" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa" runat="server" Text="Employe Id:"></asp:Label>
+                                            <asp:Label ID="Label67" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa" runat="server" Text="Employee Id:"></asp:Label>
                                         </div>
                                         <div class="col-6">
                                             <asp:TextBox ID="txtEmployeIdDel" style="margin-left:-70px;width:200px" Class="form-control" runat="server"></asp:TextBox>
@@ -1103,7 +1103,7 @@
                                     </div>
                                     <div class="row pt-4">
                                         <div class="col-12">
-                                            <asp:Button ID="btnDeleteEmp" Class="btn btn-danger btn-block form-control" runat="server" Text="Delete Employe" OnClick="btnDeleteEmp_Click" />
+                                            <asp:Button ID="btnDeleteEmp" Class="btn btn-danger btn-block form-control" runat="server" Text="Delete Employee" OnClick="btnDeleteEmp_Click" />
                                         </div>
                                        
                                     </div>
@@ -1119,7 +1119,7 @@
                                 <div class="card-body">
                                     <div class="row pb-3 pt-3">
                                         <div class="col-12">
-                                            <asp:Label ID="Label68" style="margin-left:60px;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa" runat="server" Text="Inactive Employe Details"></asp:Label>
+                                            <asp:Label ID="Label68" style="margin-left:60px;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa" runat="server" Text="Inactive Employee Details"></asp:Label>
                                         </div>
                                        
                                     </div>
@@ -1128,24 +1128,15 @@
                                             <hr style="margin-top:0px;"/>
                                         </div>
                                     </div>
+                                    
                                      <div class="row pb-3">
-                                        <div class="col-3">
-                                            <asp:Label ID="Label69" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa" runat="server" Text="Date"></asp:Label>
-                                        </div>
-                                        <div class="col-3">
-                                            <asp:TextBox ID="txtSearchDate" style="margin-left:-40px; width:170px" Class="form-control" runat="server"></asp:TextBox>
-                                        </div>
-                                          <div class="col-3">
-                                              <asp:Button ID="btnViews" style="margin-left:55px;width:80px" Class="form-control btn btn-danger" runat="server" Text="View" />
-                                        </div>
-                                    </div>
-                                     <div class="row pb-3">
-                                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString12 %>" SelectCommand="SELECT [gender], [NIC_number] FROM [personTbl]"></asp:SqlDataSource>
+                                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase2ConnectionString %>" SelectCommand="SELECT [date], [NIC_No], [Emp_Id] FROM [inactiveTbl]"></asp:SqlDataSource>
                                         <div class="col-12">
-                                            <asp:GridView ID="GridViewInactive" runat="server" class="table table-hover table-white" style="text-align:center;color:#f5f6fa" AutoGenerateColumns="False" DataKeyNames="NIC_number" DataSourceID="SqlDataSource1">
+                                            <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" DataKeyNames="date,NIC_No" DataSourceID="SqlDataSource1" class="table table-hover table-white" style="color:aliceblue">
                                                 <Columns>
-                                                    <asp:BoundField DataField="gender" HeaderText="gender" SortExpression="gender" />
-                                                    <asp:BoundField DataField="NIC_number" HeaderText="NIC_number" ReadOnly="True" SortExpression="NIC_number" />
+                                                    <asp:BoundField DataField="date" HeaderText="date" ReadOnly="True" SortExpression="date" />
+                                                    <asp:BoundField DataField="NIC_No" HeaderText="NIC_No" ReadOnly="True" SortExpression="NIC_No" />
+                                                    <asp:BoundField DataField="Emp_Id" HeaderText="Emp_Id" SortExpression="Emp_Id" />
                                                 </Columns>
                                             </asp:GridView>
                                         </div>
@@ -1174,15 +1165,17 @@
 
                 <div class="row" style="margin-left:150px; margin-top:50px">
                     <div class="col">
-                        <asp:TextBox ID="txtStartDate" style="width:200px" Class="form-control" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtStartDate" style="width:200px" Class="form-control" runat="server" TextMode="Date"></asp:TextBox>&nbsp<asp:TextBox ID="txtEndDate" style="width:200px" Class="form-control" runat="server" TextMode="Date"></asp:TextBox>
                     </div>
                 </div>
+                <br />  
+                <br />
                 <div class="row" style="margin-left:150px; margin-top:30px">
                     <div class="col">
-                        <div class="form-group">
-                        <asp:TextBox ID="txtEndDate" style="width:200px" Class="form-control" runat="server"></asp:TextBox>
+                        <div class="form-group" style="margin-left:-220px">
+                        
                         <asp:Button ID="btnLabourRepotView" style="width:150px; margin-left:220px;margin-top:-55px"  Class="form-control btn btn-danger" runat="server" Text="View" OnClick="btnLabourRepotView_Click" />
-                            <asp:Button ID="btnConvertPdf" style="width:150px; margin-left:20px;margin-top:-55px"  Class="form-control btn btn-success" runat="server" Text="Convert To PDF" OnClick="btnConvertPdf_Click" />
+                            <asp:Button ID="btnConvertPdf" style="width:150px; margin-left:20px;margin-top:-55px"  Class="form-control btn btn-success" runat="server" Text="Convert to PDF" OnClick="btnConvertPdf_Click" />
                         </div>
                         
                     </div>
@@ -1216,7 +1209,7 @@
                 <div class="row">
                     <div class="col" style="margin-left:200px; margin-top:50px">
                         <h2 style="margin-left:230px;color:black;">
-                            <b>Training needs details</b>
+                            <b>Training Requirement details</b>
                         </h2>
                         <asp:GridView ID="GridView2" class="table table-hover table-white" style=" width:800px; background-color:#2f3640; color:#f5f6fa;" runat="server"></asp:GridView>
                     </div>
@@ -1314,11 +1307,11 @@
                                 <br />
                                                    <div class="row">
                                                             <div class="col-6">
-                                                                <label style=" margin-top:10px;font-size: 15px; color:#f5f6fa;"><b>Gross Profit Amount</b></label>
+                                                                <label style=" margin-top:10px;font-size: 15px; color:#f5f6fa;"><b>Net Profit Amount</b></label>
                                                             </div>
                                                                 
                                                             <div class="col-6">
-                                                                <asp:TextBox style=" margin-left:-30px;margin-top:10px;height:30px; width:200px" CssClass="form-control" ID="txtGrossProfit" runat="server" placeholder="Gross Profit" ReadOnly="True"></asp:TextBox>
+                                                                <asp:TextBox style=" margin-left:-30px;margin-top:10px;height:30px; width:200px" CssClass="form-control" ID="txtGrossProfit" runat="server" placeholder="Net Profit" ReadOnly="True"></asp:TextBox>
                                                             </div>
                                                    </div>
                                 <br />

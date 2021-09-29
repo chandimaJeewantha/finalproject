@@ -51,9 +51,9 @@
         <ul>
             <li><asp:LinkButton ID="btnHome" style="color:#ecf0f1" runat="server" class="fas fa-home" OnClick="btnHome_Click"> Home</asp:LinkButton></li>
             <li><asp:LinkButton ID="btnProduction" style="color:#ecf0f1" runat="server" class="fas fa-umbrella" OnClick="btnProduction_Click"> Daily Production</asp:LinkButton></li>
-            <li><asp:LinkButton ID="btnTrain" style="color:#ecf0f1" runat="server" class="fas fa-child" OnClick="btnTrain_Click"> Training Needs</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnTrain" style="color:#ecf0f1" runat="server" class="fas fa-child" OnClick="btnTrain_Click"> Training Requirements</asp:LinkButton></li>
             <li><asp:LinkButton ID="btnLeaves" style="color:#ecf0f1" runat="server" class="fas fa-mug-hot" OnClick="btnLeaves_Click"> Enter Leaves</asp:LinkButton></li>
-            <li><asp:LinkButton ID="btnEmployee" style="color:#ecf0f1" runat="server" class="fas fa-dolly" OnClick="btnEmployee_Click"> Out Sourse Order Details</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnEmployee" style="color:#ecf0f1" runat="server" class="fas fa-dolly" OnClick="btnEmployee_Click"> Outsource Order Details</asp:LinkButton></li>
             <li><asp:LinkButton ID="btnExit" style="margin-top:20px; color:#ecf0f1" runat="server" class="fas fa-hand-point-left" OnClick="btnExit_Click"> Exit</asp:LinkButton></li>
                      
             
@@ -120,11 +120,11 @@
                                                 </li>
                                                
                                                  <li>
-                                                   <label style="color:#ecf0f1; font-size:medium; margin-left:8px; float: left; margin-top: 35px"><b>Present Employee</b></label>&nbsp<asp:TextBox style="float: right;  margin-right:10px; height:30px; width:200px; margin-bottom: 30px" CssClass="form-control" ID="txtPresentEmployees" runat="server"></asp:TextBox>
+                                                   <label style="color:#ecf0f1; font-size:medium; margin-left:8px; float: left; margin-top: 35px"><b>Present Employees</b></label>&nbsp<asp:TextBox style="float: right;  margin-right:10px; height:30px; width:200px; margin-bottom: 30px" CssClass="form-control" ID="txtPresentEmployees" runat="server"></asp:TextBox>
                                                  </li>
                                                  
                                                  <li>
-                                                   <label style="color:#ecf0f1; font-size:medium; margin-left:8px; float: left; margin-top: 35px"><b>Absence Employee</b></label>&nbsp<asp:TextBox style="float: right;  margin-right:10px; height:30px; width:200px; margin-bottom: 30px" CssClass="form-control" ID="txtAbsenceEmployees" runat="server"></asp:TextBox>
+                                                   <label style="color:#ecf0f1; font-size:medium; margin-left:8px; float: left; margin-top: 35px"><b>Absent Employees</b></label>&nbsp<asp:TextBox style="float: right;  margin-right:10px; height:30px; width:200px; margin-bottom: 30px" CssClass="form-control" ID="txtAbsenceEmployees" runat="server"></asp:TextBox>
                                                  </li>
                                                  
                                                   <li>
@@ -166,7 +166,7 @@
                             <div class="card" style="height:60rem; width: 85rem; background-color:#194C43; margin-left:-30px; margin-right:40px; margin-top:60px; margin-bottom:20px">
                             <div class="card-body">
                                 <div class="input-group">
-                            <h3 class="card-title" id="viewDataSup" style="text-align:center; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa" ><b>View Data</b></h3>
+                            <h3 class="card-title" id="viewDataSup" style="text-align:center; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:#f5f6fa" ><b>Data Demonstration</b></h3>
                                 <img src="Animation/search.png" style="margin-top:-40px; margin-bottom:-30px; width:90px" />
                                     </div>
                                 
@@ -198,7 +198,7 @@
 
                                             </asp:View>
                                             <asp:View ID="Viewprintunit" runat="server">
-                                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString12 %>" SelectCommand="SELECT * FROM [printunitTbl]"></asp:SqlDataSource>
+                                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase2ConnectionString %>" SelectCommand="SELECT [Date], [Supervisor_Id], [Present_Employees], [Absence_Employees], [Total_Production], [Damage_Count] FROM [printunitTbl]"></asp:SqlDataSource>
                                                 <div>
                                                     <div class="row">
                                                         <div class="col">
@@ -217,7 +217,7 @@
                                                 </div>
                                             </asp:View>
                                             <asp:View ID="ViewHandleunit" runat="server">
-                                                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString12 %>" SelectCommand="SELECT * FROM [handleunitTbl]"></asp:SqlDataSource>
+                                                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase2ConnectionString %>" SelectCommand="SELECT [Date], [Supervisor_Id], [Absence_Employees], [Present_Employees], [Total_Production], [damage_count] FROM [handleunitTbl]"></asp:SqlDataSource>
                                                 <div>
                                                     <asp:GridView ID="GridVewHandleunit" class="table table-hover table-white" style="text-align:center; background-color:#2f3640; color:#f5f6fa; margin-left:1px; margin-top:30px" runat="server" AutoGenerateColumns="False" DataKeyNames="Date" DataSourceID="SqlDataSource2">
                                                         <Columns>
@@ -235,7 +235,7 @@
 
                                             </asp:View>
                                             <asp:View ID="Viewcuttingunit" runat="server">
-                                                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString12 %>" SelectCommand="SELECT * FROM [cuttingunitTbl]"></asp:SqlDataSource>
+                                                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase2ConnectionString %>" SelectCommand="SELECT [Date], [Supervisor_Id], [Present_Employees], [Absence_Employees], [Total_Production], [Damge_Count] FROM [cuttingunitTbl]"></asp:SqlDataSource>
 
                                                 <div>
                                                     <asp:GridView ID="GridViewCuttingunit" class="table table-hover table-white" style="text-align:center; background-color:#2f3640; color:#f5f6fa; margin-left:1px; margin-top:30px" runat="server" AutoGenerateColumns="False" DataKeyNames="Date" DataSourceID="SqlDataSource3">
@@ -252,7 +252,7 @@
                                             </asp:View>
 
                                             <asp:View ID="Viewborderingunit" runat="server">
-                                                <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString12 %>" SelectCommand="SELECT * FROM [borderingunitTbl]"></asp:SqlDataSource>
+                                                <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase2ConnectionString %>" SelectCommand="SELECT [Date], [Supervisor_Id], [Present_Employees], [Absence_Employee], [Total_Production], [Damage_Count] FROM [borderingunitTbl]"></asp:SqlDataSource>
                                                 <div>
                                                     <asp:GridView ID="GridViewborderingunit" class="table table-hover table-white" style="text-align:center; background-color:#2f3640; color:#f5f6fa; margin-left:1px; margin-top:30px" runat="server" AutoGenerateColumns="False" DataKeyNames="Date" DataSourceID="SqlDataSource4">
                                                         <Columns>
@@ -269,7 +269,7 @@
                                             </asp:View>
 
                                             <asp:View ID="Viewtailoringunit" runat="server">
-                                                <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString12 %>" SelectCommand="SELECT * FROM [TailoringunitTbl]"></asp:SqlDataSource>
+                                                <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase2ConnectionString %>" SelectCommand="SELECT [Date], [Supervisor_Id], [Present_Employees], [Absence_Employees], [Total_Production], [Damage_Count] FROM [TailoringunitTbl]"></asp:SqlDataSource>
                                                 <div>
                                                     <asp:GridView ID="GridViewTailoringunit" class="table table-hover table-white" style="text-align:center; background-color:#2f3640; color:#f5f6fa; margin-left:1px; margin-top:30px" runat="server" AutoGenerateColumns="False" DataKeyNames="Date" DataSourceID="SqlDataSource5">
                                                         <Columns>
@@ -286,7 +286,7 @@
                                             </asp:View>
 
                                             <asp:View ID="Viewcompleteunit" runat="server">
-                                                <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString12 %>" SelectCommand="SELECT * FROM [completeunitTbl]"></asp:SqlDataSource>
+                                                <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase2ConnectionString %>" SelectCommand="SELECT [Date], [Supervisor_Id], [Present_Employees], [Absence_Employees], [Toatal_Production], [Damage_Count] FROM [completeunitTbl]"></asp:SqlDataSource>
                                                 <div>
                                                     <asp:GridView ID="GridViewCompleteunit" class="table table-hover table-white" style="text-align:center; background-color:#2f3640; color:#f5f6fa; margin-left:1px; margin-top:30px" runat="server" AutoGenerateColumns="False" DataKeyNames="Date" DataSourceID="SqlDataSource6">
                                                         <Columns>
@@ -509,7 +509,7 @@
 
                             <div class="card" style="border-radius:25px; width: 45rem;background-color:#50DBB4; margin-left:-60px;margin-right:5px; margin-top:10px; margin-bottom:20px">
                             <div class="card-body">
-                            <h2 class="card-title" id="cardOutSource" style="color:black;text-align:center;font-family:Segoe UI;color:#303952" >Out Source Order</h2>
+                            <h2 class="card-title" id="cardOutSource" style="color:black;text-align:center;font-family:Segoe UI;color:#303952" >Outsource Order</h2>
                                                 
                                                 <div class="row">
                                                            <div class="col-6">
@@ -614,7 +614,7 @@
                                 <br />
                                                    <div class="row">
                                                             <div class="col-6">
-                                                                <label style=" margin-top:10px;font-size: 15px; color:#2c3e50"><b>Enter the Threads Amount</b></label>
+                                                                <label style=" margin-top:10px;font-size: 15px; color:#2c3e50"><b>Enter the Thread Amount</b></label>
                                                             </div>
                                                                 
                                                             <div class="col-6">
