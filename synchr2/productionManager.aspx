@@ -63,11 +63,7 @@
        
             
         </ul> 
-        <div class="social_media">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
+        
     </div>
     <div class="main_content">
 
@@ -199,14 +195,29 @@
                 
                     
                         <asp:TextBox ID="txtchdate" runat="server" style="margin-left:240px; margin-top:50px; height:32px; border-width:3px"></asp:TextBox>
-                        <asp:Button ID="btnChartView" class="btn btn-danger" runat="server" Text="Chart View" OnClick="btnChartView_Click" />
+                        <asp:Button ID="btnChartView" class="btn btn-danger" runat="server" Text="View" OnClick="btnChartView_Click" />
                    
                
                 <div class="row">
                     <div class="col" style="">
-                        <asp:Chart ID="Chart1" runat="server" style="margin-top:20px; margin-left:150px" Width="700px" BackColor="Silver" BackGradientStyle="LeftRight" BackImageTransparentColor="White" BackSecondaryColor="White" Palette="SeaGreen" PaletteCustomColors="Teal; Olive">
+                        <h3 style="margin-left:150px">Total production</h3>
+                        <asp:Chart ID="Chart1" runat="server" style="margin-top:5px; margin-left:150px" Width="700px" BackColor="Silver" BackGradientStyle="LeftRight" BackImageTransparentColor="White" BackSecondaryColor="White" Palette="SeaGreen" PaletteCustomColors="Teal; Olive">
                             <Series>
                                 <asp:Series Name="Series1" ChartType="Bar" YValuesPerPoint="6" LabelBackColor="Teal" LabelBorderColor="0, 64, 64" LabelForeColor="0, 64, 64"></asp:Series>
+                            </Series>
+                            <ChartAreas>
+                                <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
+                            </ChartAreas>
+                        </asp:Chart>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col">
+                        <h3 style="margin-left:150px">Damage count</h3>
+                        <asp:Chart ID="Chart2" runat="server" style="margin-top:5px; margin-left:150px" Width="700px" BackColor="Silver" BackGradientStyle="LeftRight" BackImageTransparentColor="White" BackSecondaryColor="White" Palette="EarthTones" PaletteCustomColors="Teal; Olive">
+                            <Series>
+                                <asp:Series Name="Series1" ChartType="Bar" LabelBackColor="Teal" LabelBorderColor="0, 64, 64" LabelForeColor="0, 64, 64"></asp:Series>
                             </Series>
                             <ChartAreas>
                                 <asp:ChartArea Name="ChartArea1"></asp:ChartArea>

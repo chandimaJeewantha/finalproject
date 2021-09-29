@@ -10,19 +10,22 @@ using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.text.html.simpleparser;
-
+using System.Web.UI.DataVisualization.Charting;
 
 namespace synchr2
 {
     public partial class hrDepartment : System.Web.UI.Page
     {
-        string connectionString = "Data Source=DESKTOP-M9R4O4O;Initial Catalog=HrmsDatabase1;Integrated Security=True";
+        //DateTime today = DateTime.Today;
+        string today = DateTime.UtcNow.ToString("MM-dd-yyyy");
+        string connectionString = "Data Source=localhost;Initial Catalog=HrmsDatabase1;Integrated Security=True";
         //private string connectionstring;
 
-        //protected void Page_Load(object sender, EventArgs e)
-        //{
+        protected void Page_Load(object sender, EventArgs e)
+        {
             //MultiViewSupervisor.ActiveViewIndex = 0;
-        //}
+            GetTainingNeed();
+        }
 
         protected void btnHome_Click(object sender, EventArgs e)
         {
@@ -32,7 +35,7 @@ namespace synchr2
         protected void btnAddemp_Click(object sender, EventArgs e)
         {
             MultiViewSupervisor.ActiveViewIndex = 1;
-         
+
         }
 
         protected void btnLabourrep_Click(object sender, EventArgs e)
@@ -68,7 +71,7 @@ namespace synchr2
                 try
                 {
                     SqlConnection con = new SqlConnection(connectionString);
-                    string quary = "select * from OutSourceOrderTbl where Month='" + DropDownListMonth.SelectedItem.Text + "' and Id='"+txtWorkerID.Text+"'";
+                    string quary = "select * from OutSourceOrderTbl where Month='" + DropDownListMonth.SelectedItem.Text + "' and Id='" + txtWorkerID.Text + "'";
                     SqlCommand cmd = new SqlCommand(quary, con);
                     con.Open();
                     SqlDataReader rdr = cmd.ExecuteReader();
@@ -77,14 +80,14 @@ namespace synchr2
                         string worker_type = rdr.GetString(0);
                         string umbrella_code = rdr.GetString(4);
                         int cover_amount = Convert.ToInt32(rdr.GetValue(5));
-                        int frame_amount= Convert.ToInt32(rdr.GetValue(6));
-                        int thread_amount= Convert.ToInt32(rdr.GetValue(7));
-                        double expected_umbrellas= Convert.ToInt32(rdr.GetValue(8));
-                        double rejected_amount= Convert.ToInt32(rdr.GetValue(9));
-                        Response.Write("<script>alert('" +expected_umbrellas + "');</script>");
+                        int frame_amount = Convert.ToInt32(rdr.GetValue(6));
+                        int thread_amount = Convert.ToInt32(rdr.GetValue(7));
+                        double expected_umbrellas = Convert.ToInt32(rdr.GetValue(8));
+                        double rejected_amount = Convert.ToInt32(rdr.GetValue(9));
+                        Response.Write("<script>alert('" + expected_umbrellas + "');</script>");
                         //Response.Write("<script>alert('" + worker_type+ "');</script>");
 
-                        double reject_precentage,cost_for_rawmaterials, payment_for_this_outside_worker, total_cost_for_this_outside_order, market_value_of_this_outside_order, profit_amount_from_this_outside_order, profit_precentage,profit_amount;
+                        double reject_precentage, cost_for_rawmaterials, payment_for_this_outside_worker, total_cost_for_this_outside_order, market_value_of_this_outside_order, profit_amount_from_this_outside_order, profit_precentage, profit_amount;
                         int valueble_goods;
 
                         if (umbrella_code == "bu1212")
@@ -238,7 +241,7 @@ namespace synchr2
                             profit_amount = market_value_of_this_outside_order - total_cost_for_this_outside_order;
                             if (market_value_of_this_outside_order > total_cost_for_this_outside_order)
                             {
-                                if (profit_precentage >=35.75  && reject_precentage <= 30)
+                                if (profit_precentage >= 35.75 && reject_precentage <= 30)
                                 {
                                     txtProfitPrecentage.Text = profit_precentage.ToString();
                                     txtReject.Text = reject_precentage.ToString();
@@ -278,25 +281,6 @@ namespace synchr2
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         }
 
 
@@ -317,11 +301,11 @@ namespace synchr2
 
 
                 }
-              
-            
-            
-            
-            
+
+
+
+
+
             }
         }
 
@@ -383,12 +367,12 @@ namespace synchr2
             DropDownListEmployeementPlan.SelectedValue = "0";
             txtAnnualLeave.Text = "";
             txtCasualLeave.Text = "";
-           
+
         }
 
         protected void btnNew_Click(object sender, EventArgs e)
         {
-            if(txtInitials.Text == "" || txtFirstName.Text == "" || txtSurname.Text == "" || txtFullName.Text == "" || txtMiddleName.Text == "" || DropDownListGender.SelectedValue == "0" || DropDownListTitle.SelectedValue == "" || DropDownListMeritalStatus.SelectedValue == "" || DropDownListBloodGroup.SelectedValue == "0" || txtDOB.Text == "" || txtNICNumber.Text == "" || txtDrivingLicenseNumber.Text == "" || txtPassportNumber.Text == "" || txtPassportExpryDate.Text == "" || DropDownListReligonNumber.SelectedValue == "0" || DropDownListRace.SelectedValue == "0" || DropDownListNationality.SelectedValue == "0" || DropDownListLivingStatus.SelectedValue == "0" || txtNumberOfDepartment.Text == "" || txtNumberOfChildren.Text == "")
+            if (txtInitials.Text == "" || txtFirstName.Text == "" || txtSurname.Text == "" || txtFullName.Text == "" || txtMiddleName.Text == "" || DropDownListGender.SelectedValue == "0" || DropDownListTitle.SelectedValue == "" || DropDownListMeritalStatus.SelectedValue == "" || DropDownListBloodGroup.SelectedValue == "0" || txtDOB.Text == "" || txtNICNumber.Text == "" || txtDrivingLicenseNumber.Text == "" || txtPassportNumber.Text == "" || txtPassportExpryDate.Text == "" || DropDownListReligonNumber.SelectedValue == "0" || DropDownListRace.SelectedValue == "0" || DropDownListNationality.SelectedValue == "0" || DropDownListLivingStatus.SelectedValue == "0" || txtNumberOfDepartment.Text == "" || txtNumberOfChildren.Text == "")
             {
                 Response.Write("<script>alert('All fields are requireds......');</script>");
             }
@@ -399,14 +383,14 @@ namespace synchr2
                     SqlConnection con = new SqlConnection(connectionString);
                     FileUpload1.SaveAs(Server.MapPath("~/empImgs/") + Path.GetFileName(FileUpload1.FileName));
                     string link = "empImgs/" + Path.GetFileName(FileUpload1.FileName);
-                    string queary = "insert into personTbl values('" + txtNICNumber.Text + "','" + txtInitials.Text + "','" + txtFirstName.Text + "','" + txtSurname.Text + "','" + txtFullName.Text + "','" + txtMiddleName.Text + "','" + DropDownListGender.SelectedValue + "','" + DropDownListTitle.SelectedValue + "','" + DropDownListMeritalStatus.SelectedValue + "','" + DropDownListBloodGroup.SelectedValue + "','" + txtDOB.Text + "' ,'" + txtDrivingLicenseNumber.Text + "','" + txtPassportNumber.Text + "','" + txtPassportExpryDate.Text + "','" + DropDownListReligonNumber.SelectedValue + "','" + DropDownListRace.SelectedValue + "','" + DropDownListNationality.SelectedValue + "','" + DropDownListLivingStatus.SelectedValue + "','" + txtNumberOfDepartment.Text + "','" + txtNumberOfChildren.Text + "','"+link+"')";
+                    string queary = "insert into personTbl values('" + txtNICNumber.Text + "','" + txtInitials.Text + "','" + txtFirstName.Text + "','" + txtSurname.Text + "','" + txtFullName.Text + "','" + txtMiddleName.Text + "','" + DropDownListGender.SelectedValue + "','" + DropDownListTitle.SelectedValue + "','" + DropDownListMeritalStatus.SelectedValue + "','" + DropDownListBloodGroup.SelectedValue + "','" + txtDOB.Text + "' ,'" + txtDrivingLicenseNumber.Text + "','" + txtPassportNumber.Text + "','" + txtPassportExpryDate.Text + "','" + DropDownListReligonNumber.SelectedValue + "','" + DropDownListRace.SelectedValue + "','" + DropDownListNationality.SelectedValue + "','" + DropDownListLivingStatus.SelectedValue + "','" + txtNumberOfDepartment.Text + "','" + txtNumberOfChildren.Text + "','" + link + "')";
                     SqlCommand cmd = new SqlCommand(queary, con);
                     con.Open();
                     cmd.ExecuteNonQuery();
                     con.Close();
                     Response.Write("<script>alert('Data Inserted....')</script>");
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Response.Write("<script>alert('" + ex.Message + "');</script>");
                 }
@@ -424,14 +408,14 @@ namespace synchr2
                 try
                 {
                     SqlConnection con = new SqlConnection(connectionString);
-                    string queary = "insert into workTbl values('"+txtEmployeeNumber.Text+"','"+txtNicsNumber.Text+"','"+txtEPFNumber.Text+"','"+txtPreviousEpfNumber.Text+"','"+DropDownListGroup.SelectedValue+"','"+DropDownListCompany.SelectedValue+"','"+DropDownListDeprtment.SelectedValue+"','"+DropDownListDivision.SelectedValue+"','"+DropDownListSecondedDepartment.SelectedValue+"','"+DropDownListJobCategory.SelectedValue+"','"+DropDownListCurrentDesignation.SelectedValue+"','"+DropDownListJoinedDesignation.SelectedValue+"','"+DropDownListReportingDesignation.SelectedValue+"','"+DropDownListReportingPersion.SelectedValue+"','"+DropDownListLocationBranch.SelectedValue+"','"+txtBasicSalary.Text+"','"+txtBudgetaryReliefAllowance02.Text+"','"+txtBudgetaryReliefAllowance01.Text+"','"+DropDownListEmployeementPlan.SelectedValue+"','"+txtAnnualLeave.Text+"','"+txtCasualLeave.Text+"')";
-                    SqlCommand cmd = new SqlCommand(queary,con);
+                    string queary = "insert into workTbl values('" + txtEmployeeNumber.Text + "','" + txtNicsNumber.Text + "','" + txtEPFNumber.Text + "','" + txtPreviousEpfNumber.Text + "','" + DropDownListGroup.SelectedValue + "','" + DropDownListCompany.SelectedValue + "','" + DropDownListDeprtment.SelectedValue + "','" + DropDownListDivision.SelectedValue + "','" + DropDownListSecondedDepartment.SelectedValue + "','" + DropDownListJobCategory.SelectedValue + "','" + DropDownListCurrentDesignation.SelectedValue + "','" + DropDownListJoinedDesignation.SelectedValue + "','" + DropDownListReportingDesignation.SelectedValue + "','" + DropDownListReportingPersion.SelectedValue + "','" + DropDownListLocationBranch.SelectedValue + "','" + txtBasicSalary.Text + "','" + txtBudgetaryReliefAllowance02.Text + "','" + txtBudgetaryReliefAllowance01.Text + "','" + DropDownListEmployeementPlan.SelectedValue + "','" + txtAnnualLeave.Text + "','" + txtCasualLeave.Text + "')";
+                    SqlCommand cmd = new SqlCommand(queary, con);
                     con.Open();
                     cmd.ExecuteNonQuery();
                     con.Close();
                     Response.Write("<script>alert('Data Inserted....')</script>");
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Response.Write("<script>alert('" + ex.Message + "');</script>");
                 }
@@ -510,7 +494,7 @@ namespace synchr2
                         {
                             String employeeid = rdr.GetString(0);
                             txtEmployeeIdsearch.Text = employeeid.ToString();
-                            
+
 
 
                         }
@@ -527,16 +511,16 @@ namespace synchr2
                         Response.Write("<script>alert('" + ex.Message + "');</script>");
 
                     }
-                
-                
-                
+
+
+
                 }
-            
-            
-            
-            
+
+
+
+
             }
-           
+
 
         }
 
@@ -556,7 +540,7 @@ namespace synchr2
                     con.Open();
                     SqlDataReader rdr = cmd.ExecuteReader();
 
-                    if (rdr.Read()==true)
+                    if (rdr.Read() == true)
                     {
                         String epfnumber = rdr.GetString(2);
                         String previousEpfNum = rdr.GetString(3);
@@ -589,7 +573,7 @@ namespace synchr2
                     }
 
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
 
                     Response.Write("<script>alert('" + ex.Message + "');</script>");
@@ -620,7 +604,7 @@ namespace synchr2
                     SqlConnection con = new SqlConnection(connectionString);
 
 
-                    string quary = "Select * from personTbl where NIC_number='"+txtPersonDetailNicNo.Text+"'";
+                    string quary = "Select * from personTbl where NIC_number='" + txtPersonDetailNicNo.Text + "'";
                     SqlCommand cmd = new SqlCommand(quary, con);
                     con.Open();
                     SqlDataReader rdr = cmd.ExecuteReader();
@@ -668,9 +652,9 @@ namespace synchr2
                     Response.Write("<script>alert('" + ex.Message + "');</script>");
 
                 }
-            
-            
-            
+
+
+
             }
 
         }
@@ -734,7 +718,7 @@ namespace synchr2
 
 
                 }
-                else{
+                else {
 
                     Response.Write("<script>alert('  This Is Not Active Profile Try Again!!!  ....')</script>");
 
@@ -756,11 +740,11 @@ namespace synchr2
 
         public void personTblDelete()
         {
-           // Response.Write("<script>alert('personTbl....');</script>");
+            // Response.Write("<script>alert('personTbl....');</script>");
             //Response.Write("<script>alert('" + txtNicNumberesDel.Text + "');</script>");
             try
             {
-                
+
                 SqlConnection con = new SqlConnection(connectionString);
                 string query = "delete from personTbl where NIC_number='" + txtNicNumberesDel.Text + "' ";
                 con.Open();
@@ -777,7 +761,7 @@ namespace synchr2
                 Response.Write("<script>alert('" + ex.Message + "');</script>");
 
             }
-        
+
         }
         public void workerTblDel()
         {
@@ -786,9 +770,9 @@ namespace synchr2
             try
             {
 
-                
-                SqlConnection con= new SqlConnection(connectionString);
-                string query = "delete from workTbl  where employee_number='"+txtEmployeIdDel.Text+"' ";
+
+                SqlConnection con = new SqlConnection(connectionString);
+                string query = "delete from workTbl  where employee_number='" + txtEmployeIdDel.Text + "' ";
                 con.Open();
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.ExecuteNonQuery();
@@ -807,15 +791,15 @@ namespace synchr2
                 Response.Write("<script>alert('" + ex.Message + "');</script>");
 
             }
-        
-        
-        
-        
+
+
+
+
         }
         public int workerTryCatch()
         {
             //Response.Write("<script>alert(' workertry ....')</script>");
-             int returnvale = 0;
+            int returnvale = 0;
             try
             {
                 //Response.Write("<script>alert(' workertrycatch ....')</script>");
@@ -823,7 +807,7 @@ namespace synchr2
                 SqlConnection con = new SqlConnection(connectionString);
 
 
-                string quary = "Select * from workTbl where employee_number='" + txtEmployeIdDel.Text + "'and NIC_no='"+txtNicNumberesDel.Text+"'";
+                string quary = "Select * from workTbl where employee_number='" + txtEmployeIdDel.Text + "'and NIC_no='" + txtNicNumberesDel.Text + "'";
                 SqlCommand cmd = new SqlCommand(quary, con);
                 con.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
@@ -835,7 +819,7 @@ namespace synchr2
                     //workerTblDel();
                     //Response.Write("<script>alert('read worker ....')</script>");
 
-                    
+
 
 
                 }
@@ -869,7 +853,7 @@ namespace synchr2
         }
         public int PersonTryCatch()
         {
-            int returnvalue2=0;
+            int returnvalue2 = 0;
 
             try
             {
@@ -886,13 +870,13 @@ namespace synchr2
                     returnvalue2 = 1;
                     //personTblDelete();
                     //Response.Write("<script>alert('read personal  ....')</script>");
-                   
+
 
                 }
                 else
                 {
                     //Response.Write("<script>alert('This Is Not Active Profile Try Again!!!  ....')</script>");
-                    returnvalue2=0;
+                    returnvalue2 = 0;
                 }
 
 
@@ -918,14 +902,14 @@ namespace synchr2
         protected void btnLabourRepotView_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(connectionString);
-            string queary = "select * from inactiveTbl where date between '"+txtStartDate.Text+"' and '"+txtEndDate.Text+"'";
-            SqlCommand cmd = new SqlCommand(queary,con);
+            string queary = "select * from inactiveTbl where date between '" + txtStartDate.Text + "' and '" + txtEndDate.Text + "'";
+            SqlCommand cmd = new SqlCommand(queary, con);
             con.Open();
             SqlDataAdapter sdp = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sdp.Fill(dt);
             SqlDataReader sdr = cmd.ExecuteReader();
-            if(sdr.Read())
+            if (sdr.Read())
             {
                 GridView1.DataSource = dt;
                 GridView1.DataBind();
@@ -946,14 +930,14 @@ namespace synchr2
                 Font fon = new Font();
                 fon.Color = new BaseColor(GridView1.HeaderStyle.ForeColor);
 
-                PdfPCell pdfcel = new PdfPCell(new Phrase(headercell.Text,fon));
+                PdfPCell pdfcel = new PdfPCell(new Phrase(headercell.Text, fon));
                 pdfcel.BackgroundColor = new BaseColor(GridView1.HeaderStyle.BackColor);
                 pdftbl.AddCell(pdfcel);
             }
 
             foreach (GridViewRow gridvrow in GridView1.Rows)
             {
-                foreach(TableCell tblcell in gridvrow.Cells)
+                foreach (TableCell tblcell in gridvrow.Cells)
                 {
                     Font fon = new Font();
                     fon.Color = new BaseColor(GridView1.RowStyle.ForeColor);
@@ -966,7 +950,7 @@ namespace synchr2
             Document pdfDocumnet = new Document(PageSize.A4, 10f, 10f, 10f, 10f);
             Paragraph p = new Paragraph("LABOUR TURNOVER REPORT");
             p.SetAlignment("center");
-          
+
             PdfWriter.GetInstance(pdfDocumnet, Response.OutputStream);
 
             pdfDocumnet.Open();
@@ -980,6 +964,55 @@ namespace synchr2
             Response.Flush();
             Response.End();
         }
+
+        void GetTainingNeed()
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(connectionString);
+                string queary = "select * from TraninigNeedsTbl where date = '" + today + "'";
+                SqlCommand cmd = new SqlCommand(queary, con);
+                con.Open();
+                SqlDataAdapter sdp = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                sdp.Fill(dt);
+                GridView2.DataSource = dt;
+                GridView2.DataBind();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+            }
+        }
+
+       /* void maleFemale()
+        {
+            
+
+            SqlConnection con = new SqlConnection(connectionString);
+            string quary = "Select * from personTbl where NIC_number='" + txtPersonDetailNicNo.Text + "'";
+            SqlCommand cmd = new SqlCommand(quary, con);
+            Series serie = Chart1.Series["Series1"];
+            con.Open();
+            SqlDataReader rdr = cmd.ExecuteReader();
+
+            while(rdr.Read())
+            {
+                string males, females;
+
+                if (DropDownListGender.SelectedValue == "Male")
+                {
+                   males = Convert.ToString(rdr.GetValue(6));
+                }
+                else if(DropDownListGender.SelectedValue == "Female")
+                {
+                   females = Convert.ToString(rdr.GetValue(6));
+                }
+
+                _ = serie.Points.AddXY(males, females);
+            }
+        }*/
     }
 }
 

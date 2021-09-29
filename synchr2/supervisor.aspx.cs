@@ -135,6 +135,21 @@ namespace synchr2
                     Response.Write("<script>alert('" + ex.Message + "');</script>");
                 }
 
+                try
+                {
+                    SqlConnection con = new SqlConnection(connectionstring);
+                    string queary = "insert into damageCountTbl values('" + txtdatenew.Text + "','" + selectUnit.SelectedItem.Text + "'," +txtDamageCount.Text+ ")";
+                    SqlCommand cmd = new SqlCommand(queary, con);
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    // Response.Write("<script>alert('Data Inserted another table....')</script>");
+                }
+                catch (Exception ex)
+                {
+                    Response.Write("<script>alert('" + ex.Message + "');</script>");
+                }
 
 
 
@@ -175,6 +190,21 @@ namespace synchr2
                 {
                     SqlConnection con = new SqlConnection(connectionstring);
                     string queary = "insert into chartTbl values('" + txtdatenew.Text + "','" + selectUnit.SelectedItem.Text + "'," + txtTotalProduction.Text + ")";
+                    SqlCommand cmd = new SqlCommand(queary, con);
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    // Response.Write("<script>alert('Data Inserted another table....')</script>");
+                }
+                catch (Exception ex)
+                {
+                    Response.Write("<script>alert('" + ex.Message + "');</script>");
+                }
+                try
+                {
+                    SqlConnection con = new SqlConnection(connectionstring);
+                    string queary = "insert into damageCountTbl values('" + txtdatenew.Text + "','" + selectUnit.SelectedItem.Text + "'," + txtDamageCount.Text + ")";
                     SqlCommand cmd = new SqlCommand(queary, con);
 
                     con.Open();
@@ -234,7 +264,21 @@ namespace synchr2
                 {
                     Response.Write("<script>alert('" + ex.Message + "');</script>");
                 }
+                try
+                {
+                    SqlConnection con = new SqlConnection(connectionstring);
+                    string queary = "insert into damageCountTbl values('" + txtdatenew.Text + "','" + selectUnit.SelectedItem.Text + "'," + txtDamageCount.Text + ")";
+                    SqlCommand cmd = new SqlCommand(queary, con);
 
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    // Response.Write("<script>alert('Data Inserted another table....')</script>");
+                }
+                catch (Exception ex)
+                {
+                    Response.Write("<script>alert('" + ex.Message + "');</script>");
+                }
 
             }
             else if (selectUnit.SelectedValue == "4")
@@ -280,13 +324,27 @@ namespace synchr2
                     con.Open();
                     cmd.ExecuteNonQuery();
                     con.Close();
-                    Response.Write("<script>alert('Data Inserted another table....')</script>");
+                 //   Response.Write("<script>alert('Data Inserted another table....')</script>");
                 }
                 catch (Exception ex)
                 {
                     Response.Write("<script>alert('" + ex.Message + "');</script>");
                 }
+                try
+                {
+                    SqlConnection con = new SqlConnection(connectionstring);
+                    string queary = "insert into damageCountTbl values('" + txtdatenew.Text + "','" + selectUnit.SelectedItem.Text + "'," + txtDamageCount.Text + ")";
+                    SqlCommand cmd = new SqlCommand(queary, con);
 
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    // Response.Write("<script>alert('Data Inserted another table....')</script>");
+                }
+                catch (Exception ex)
+                {
+                    Response.Write("<script>alert('" + ex.Message + "');</script>");
+                }
 
 
             }
@@ -338,7 +396,21 @@ namespace synchr2
                     Response.Write("<script>alert('" + ex.Message + "');</script>");
                 }
 
+                try
+                {
+                    SqlConnection con = new SqlConnection(connectionstring);
+                    string queary = "insert into damageCountTbl values('" + txtdatenew.Text + "','" + selectUnit.SelectedItem.Text + "'," + txtDamageCount.Text + ")";
+                    SqlCommand cmd = new SqlCommand(queary, con);
 
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    // Response.Write("<script>alert('Data Inserted another table....')</script>");
+                }
+                catch (Exception ex)
+                {
+                    Response.Write("<script>alert('" + ex.Message + "');</script>");
+                }
 
 
 
@@ -392,7 +464,21 @@ namespace synchr2
                 {
                     Response.Write("<script>alert('" + ex.Message + "');</script>");
                 }
+                try
+                {
+                    SqlConnection con = new SqlConnection(connectionstring);
+                    string queary = "insert into damageCountTbl values('" + txtdatenew.Text + "','" + selectUnit.SelectedItem.Text + "'," + txtDamageCount.Text + ")";
+                    SqlCommand cmd = new SqlCommand(queary, con);
 
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    // Response.Write("<script>alert('Data Inserted another table....')</script>");
+                }
+                catch (Exception ex)
+                {
+                    Response.Write("<script>alert('" + ex.Message + "');</script>");
+                }
 
             }
         }

@@ -58,7 +58,7 @@
             <li><asp:LinkButton ID="btnViewProfile" runat="server" class="fas fa-eye" OnClick="btnViewProfile_Click">View Profile</asp:LinkButton></li>
             <li><asp:LinkButton ID="btnActiveInactive" runat="server" class="fas fa-user-shield" OnClick="btnActiveInactive_Click"> Active/Inactive Profiles</asp:LinkButton></li>
             <li><asp:LinkButton ID="btnLabourrep" runat="server" class="fas fa-cogs" OnClick="btnLabourrep_Click"> Generate labour turn over reports</asp:LinkButton></li>
-            <li><asp:LinkButton ID="btnMonthlyrep" runat="server" class="fas fa-address-card" OnClick="btnMonthlyrep_Click"> Monthly Recruitment report</asp:LinkButton></li>
+            <li><asp:LinkButton ID="btnMonthlyrep" runat="server" class="fas fa-address-card" OnClick="btnMonthlyrep_Click">Training needs employe details</asp:LinkButton></li>
             
             <li><asp:LinkButton ID="btnOutsideworkers" runat="server" class="fas fa-tasks" OnClick="btnOutsideworkers_Click"> Performance Evaluation of outside workers</asp:LinkButton></li>
             <li><asp:LinkButton ID="btnExit" runat="server" class="fas fa-hand-point-left" OnClick="btnExit_Click"> Exit</asp:LinkButton></li>
@@ -831,6 +831,7 @@
                                            </div>
                         </div>
 
+                       
 
                         <div class="col-4">                    
                             <div class="card" style="margin-left:-350px; background-color:#194C43; width:500px; margin-top:300px">
@@ -1139,13 +1140,12 @@
                                         </div>
                                     </div>
                                      <div class="row pb-3">
-                                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString14 %>" SelectCommand="SELECT * FROM [inactiveTbl]"></asp:SqlDataSource>
+                                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HrmsDatabase1ConnectionString12 %>" SelectCommand="SELECT [gender], [NIC_number] FROM [personTbl]"></asp:SqlDataSource>
                                         <div class="col-12">
-                                            <asp:GridView ID="GridViewInactive" runat="server" class="table table-hover table-white" style="text-align:center;color:#f5f6fa" AutoGenerateColumns="False" DataKeyNames="date,NIC_No" DataSourceID="SqlDataSource1">
+                                            <asp:GridView ID="GridViewInactive" runat="server" class="table table-hover table-white" style="text-align:center;color:#f5f6fa" AutoGenerateColumns="False" DataKeyNames="NIC_number" DataSourceID="SqlDataSource1">
                                                 <Columns>
-                                                    <asp:BoundField DataField="date" HeaderText="date" ReadOnly="True" SortExpression="date" />
-                                                    <asp:BoundField DataField="NIC_No" HeaderText="NIC_No" ReadOnly="True" SortExpression="NIC_No" />
-                                                    <asp:BoundField DataField="Emp_Id" HeaderText="Emp_Id" SortExpression="Emp_Id" />
+                                                    <asp:BoundField DataField="gender" HeaderText="gender" SortExpression="gender" />
+                                                    <asp:BoundField DataField="NIC_number" HeaderText="NIC_number" ReadOnly="True" SortExpression="NIC_number" />
                                                 </Columns>
                                             </asp:GridView>
                                         </div>
@@ -1212,6 +1212,15 @@
 
 
             <asp:View ID="ViewMonthlyrep" runat="server">
+
+                <div class="row">
+                    <div class="col" style="margin-left:200px; margin-top:50px">
+                        <h2 style="margin-left:230px;color:black;">
+                            <b>Training needs details</b>
+                        </h2>
+                        <asp:GridView ID="GridView2" class="table table-hover table-white" style=" width:800px; background-color:#2f3640; color:#f5f6fa;" runat="server"></asp:GridView>
+                    </div>
+                </div>
 
             </asp:View>
 
